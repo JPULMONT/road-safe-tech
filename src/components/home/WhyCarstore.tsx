@@ -12,29 +12,33 @@ const differentiators = [
 
 export const WhyCarstore = () => {
   return (
-    <section id="nosotros" className="py-24 bg-muted/50">
-      <div className="container">
+    <section id="nosotros" className="relative py-28 bg-surface-dark">
+      <div className="absolute inset-0 grid-overlay" />
+      {/* Centered glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/[0.04] rounded-full blur-[150px]" />
+
+      <div className="container relative">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-3">¿Por qué Carstore?</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+            <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">¿Por qué Carstore?</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground tracking-tight">
               No somos un distribuidor. Somos el fabricante.
             </h2>
-            <p className="text-muted-foreground mt-4 text-base">
+            <p className="text-muted-foreground mt-5 text-base">
               Desarrollamos, fabricamos, instalamos y mantenemos la tecnología que protege su flota. Control total de la cadena de valor.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {differentiators.map((d, i) => (
             <ScrollReveal key={d.title} delay={i * 80}>
-              <div className="flex gap-4 bg-card rounded-lg p-5 border border-border">
+              <div className="flex gap-4 bg-card/50 backdrop-blur-sm rounded-lg p-5 border border-white/[0.06] hover:border-accent/15 transition-all duration-300">
                 <div className="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center flex-shrink-0">
                   <d.icon size={20} className="text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground text-sm mb-1">{d.title}</h3>
+                  <h3 className="font-semibold text-foreground text-sm mb-1 font-display">{d.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{d.description}</p>
                 </div>
               </div>

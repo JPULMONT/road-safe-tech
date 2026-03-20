@@ -11,16 +11,20 @@ const features = [
 
 export const PlatformSection = () => {
   return (
-    <section id="plataforma" className="py-24 bg-surface-dark text-surface-dark-foreground overflow-hidden">
-      <div className="container">
+    <section id="plataforma" className="relative py-28 bg-surface-dark overflow-hidden">
+      <div className="absolute inset-0 grid-overlay" />
+      {/* Glow behind dashboard image */}
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-accent/[0.06] rounded-full blur-[150px] translate-x-1/3 -translate-y-1/2" />
+
+      <div className="container relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <ScrollReveal direction="left">
-              <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-3">Plataforma</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+              <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Plataforma</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground tracking-tight leading-tight">
                 GPT Monitor: supervisión inteligente de su flota
               </h2>
-              <p className="text-surface-dark-foreground/60 mt-4 text-base leading-relaxed max-w-lg">
+              <p className="text-muted-foreground mt-5 text-base leading-relaxed max-w-lg">
                 Nuestra plataforma centraliza datos de todos sus dispositivos para ofrecer análisis predictivo, clasificación de alertas con IA, y visibilidad total de su operación en tiempo real.
               </p>
             </ScrollReveal>
@@ -29,10 +33,10 @@ export const PlatformSection = () => {
               <div className="space-y-4 mt-8">
                 {features.map((f) => (
                   <div key={f.label} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded bg-accent/15 flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 rounded bg-accent/10 flex items-center justify-center flex-shrink-0">
                       <f.icon size={16} className="text-accent" />
                     </div>
-                    <span className="text-sm font-medium text-surface-dark-foreground/80">{f.label}</span>
+                    <span className="text-sm font-medium text-foreground/70">{f.label}</span>
                   </div>
                 ))}
               </div>
@@ -51,13 +55,12 @@ export const PlatformSection = () => {
           </div>
 
           <ScrollReveal direction="right" delay={200}>
-            <div className="relative">
+            <div className="relative glow-red-subtle rounded-lg">
               <img
                 src={platformImage}
                 alt="GPT Monitor dashboard"
-                className="rounded-lg shadow-2xl border border-white/5"
+                className="rounded-lg border border-white/[0.06]"
               />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/20 rounded-full blur-3xl" />
             </div>
           </ScrollReveal>
         </div>
