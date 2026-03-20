@@ -1,40 +1,51 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-fleet.jpg";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { ArrowRight, Shield } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-surface-dark">
-      {/* Background image */}
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+      {/* Grid overlay */}
+      <div className="absolute inset-0 grid-overlay" />
+      
+      {/* Background image — very subtle */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
           alt="Fleet technology monitoring"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-15"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-surface-dark via-surface-dark/80 to-surface-dark/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/80" />
       </div>
 
-      <div className="container relative z-10 pt-24 pb-16">
-        <div className="max-w-2xl space-y-8">
+      {/* Red glow accent — bottom right */}
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-accent/[0.06] rounded-full blur-[150px] translate-x-1/3 translate-y-1/3" />
+
+      <div className="container relative z-10 pt-32 pb-20">
+        <div className="max-w-3xl space-y-8">
           <ScrollReveal delay={100}>
-            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5">
-              <Shield size={14} className="text-accent" />
-              <span className="text-xs font-medium text-accent tracking-wide uppercase">
+            <div className="inline-flex items-center gap-2 border border-white/[0.08] rounded-full px-4 py-1.5 bg-white/[0.03]">
+              <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              <span className="text-xs font-medium text-muted-foreground tracking-widest uppercase">
                 Tecnología para flotas
               </span>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-surface-dark-foreground leading-[1.05] tracking-tight">
-              Seguridad vial y control operativo para su flota
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[0.95] tracking-tight">
+              Seguridad vial y
+              <br />
+              <span className="text-accent">control operativo</span>
+              <br />
+              para su flota
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={350}>
-            <p className="text-lg text-surface-dark-foreground/70 max-w-xl leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
               Desarrollamos e integramos tecnología de prevención de riesgos, visibilidad en tiempo real y supervisión inteligente para operaciones de transporte.
             </p>
           </ScrollReveal>
@@ -54,15 +65,15 @@ export const HeroSection = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={650}>
-            <div className="flex gap-8 pt-4">
+            <div className="flex gap-12 pt-8 border-t border-white/[0.06]">
               {[
                 { value: "8,400+", label: "Unidades protegidas" },
                 { value: "150+", label: "Flotas activas" },
                 { value: "37%", label: "Reducción de siniestros" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-2xl font-bold text-surface-dark-foreground tabular-nums">{stat.value}</p>
-                  <p className="text-xs text-surface-dark-foreground/50 mt-0.5">{stat.label}</p>
+                  <p className="text-3xl font-display font-bold text-foreground tabular-nums">{stat.value}</p>
+                  <p className="text-xs text-muted-foreground mt-1 tracking-wide">{stat.label}</p>
                 </div>
               ))}
             </div>

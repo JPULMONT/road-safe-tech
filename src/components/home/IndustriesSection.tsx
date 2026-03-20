@@ -11,15 +11,17 @@ const industries = [
 
 export const IndustriesSection = () => {
   return (
-    <section id="industrias" className="py-24 bg-background">
-      <div className="container">
+    <section id="industrias" className="relative py-28 bg-background">
+      <div className="absolute inset-0 grid-overlay-fine" />
+      
+      <div className="container relative">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-3">Industrias</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+            <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Industrias</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground tracking-tight">
               Soluciones adaptadas a su sector
             </h2>
-            <p className="text-muted-foreground mt-4 text-base">
+            <p className="text-muted-foreground mt-5 text-base">
               Servimos a empresas que dependen del transporte seguro y la supervisión operativa de sus activos.
             </p>
           </div>
@@ -28,11 +30,11 @@ export const IndustriesSection = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {industries.map((ind, i) => (
             <ScrollReveal key={ind.name} delay={i * 80}>
-              <div className="bg-card border border-border rounded-lg p-6 text-center hover:border-accent/30 hover:shadow-md transition-all duration-300 group h-full">
+              <div className="bg-card/50 backdrop-blur-sm border border-white/[0.06] rounded-lg p-6 text-center hover:border-accent/20 transition-all duration-300 group h-full">
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/15 transition-colors">
                   <ind.icon size={22} className="text-accent" />
                 </div>
-                <h3 className="font-semibold text-sm text-foreground mb-1.5">{ind.name}</h3>
+                <h3 className="font-semibold text-sm text-foreground mb-1.5 font-display">{ind.name}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{ind.description}</p>
               </div>
             </ScrollReveal>

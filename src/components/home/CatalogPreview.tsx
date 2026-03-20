@@ -31,16 +31,18 @@ const categories = [
 
 export const CatalogPreview = () => {
   return (
-    <section id="catalogo" className="py-24 bg-muted/50">
-      <div className="container">
+    <section id="catalogo" className="relative py-28 bg-surface-dark">
+      <div className="absolute inset-0 grid-overlay" />
+      
+      <div className="container relative">
         <ScrollReveal>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
             <div>
-              <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-3">Catálogo</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+              <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Catálogo</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground tracking-tight">
                 Explore nuestra tecnología
               </h2>
-              <p className="text-muted-foreground mt-3 text-base max-w-lg">
+              <p className="text-muted-foreground mt-4 text-base max-w-lg">
                 Productos y soluciones curados para cada necesidad operativa de su flota.
               </p>
             </div>
@@ -53,15 +55,15 @@ export const CatalogPreview = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {categories.map((cat, i) => (
             <ScrollReveal key={cat.name} delay={i * 100}>
-              <a href="#" className="group block bg-card rounded-lg border border-border p-6 hover:border-accent/30 hover:shadow-lg transition-all duration-300 h-full">
-                <div className="w-12 h-12 rounded-lg bg-foreground/5 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
-                  <cat.icon size={22} className="text-foreground group-hover:text-accent transition-colors" />
+              <a href="#" className="group block bg-card/50 backdrop-blur-sm rounded-lg border border-white/[0.06] p-6 hover:border-accent/20 transition-all duration-300 h-full">
+                <div className="w-12 h-12 rounded-lg bg-white/[0.04] flex items-center justify-center mb-5 group-hover:bg-accent/10 transition-colors">
+                  <cat.icon size={22} className="text-muted-foreground group-hover:text-accent transition-colors" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">{cat.name}</h3>
-                <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{cat.description}</p>
+                <h3 className="font-semibold text-foreground mb-1 font-display">{cat.name}</h3>
+                <p className="text-xs text-muted-foreground mb-4 leading-relaxed">{cat.description}</p>
                 <span className="text-xs font-medium text-accent">{cat.count} productos →</span>
               </a>
             </ScrollReveal>

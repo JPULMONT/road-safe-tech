@@ -10,30 +10,32 @@ const steps = [
 
 export const ServicesSection = () => {
   return (
-    <section id="servicios" className="py-24 bg-background">
-      <div className="container">
+    <section id="servicios" className="relative py-28 bg-background">
+      <div className="absolute inset-0 grid-overlay-fine" />
+
+      <div className="container relative">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-3">Servicios</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+            <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Servicios</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground tracking-tight">
               De la consultoría a la operación
             </h2>
-            <p className="text-muted-foreground mt-4 text-base">
+            <p className="text-muted-foreground mt-5 text-base">
               No solo vendemos tecnología. Implementamos, instalamos, capacitamos y damos soporte a largo plazo.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((s, i) => (
             <ScrollReveal key={s.step} delay={i * 100}>
-              <div className="relative">
-                <span className="text-6xl font-bold text-foreground/[0.04] absolute -top-2 -left-1 select-none">{s.step}</span>
-                <div className="relative pt-8">
-                  <div className="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center mb-4">
+              <div className="relative bg-card/50 backdrop-blur-sm border border-white/[0.06] rounded-lg p-6 h-full">
+                <span className="text-5xl font-display font-bold text-white/[0.04] absolute top-4 right-4 select-none">{s.step}</span>
+                <div className="relative">
+                  <div className="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center mb-5">
                     <s.icon size={20} className="text-accent" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{s.title}</h3>
+                  <h3 className="font-semibold text-foreground mb-2 font-display">{s.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{s.description}</p>
                 </div>
               </div>
