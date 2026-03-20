@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/carstore-logo.png";
 
 const navLinks = [
   { label: "Soluciones", href: "#soluciones" },
@@ -15,15 +16,10 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-surface-dark/95 backdrop-blur-md border-b border-white/5">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/[0.04]">
       <div className="container flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded bg-accent flex items-center justify-center">
-            <span className="text-accent-foreground font-bold text-sm">CS</span>
-          </div>
-          <span className="text-surface-dark-foreground font-bold text-lg tracking-tight">
-            Carstore
-          </span>
+        <a href="#" className="flex items-center">
+          <img src={logo} alt="Carstore" className="h-7 w-auto brightness-0 invert" />
         </a>
 
         {/* Desktop */}
@@ -32,7 +28,7 @@ export const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-surface-dark-foreground/70 hover:text-surface-dark-foreground text-sm font-medium transition-colors duration-200"
+              className="text-muted-foreground hover:text-foreground text-[13px] font-medium tracking-wide uppercase transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -51,7 +47,7 @@ export const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden text-surface-dark-foreground p-2"
+          className="lg:hidden text-foreground p-2"
           aria-label="Menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -60,13 +56,13 @@ export const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-surface-dark border-t border-white/5 px-6 pb-6 pt-4 space-y-4">
+        <div className="lg:hidden bg-background border-t border-white/[0.04] px-6 pb-6 pt-4 space-y-4">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block text-surface-dark-foreground/70 hover:text-surface-dark-foreground text-base font-medium py-1"
+              className="block text-muted-foreground hover:text-foreground text-base font-medium py-1"
             >
               {link.label}
             </a>
