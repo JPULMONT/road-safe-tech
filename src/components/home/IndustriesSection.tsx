@@ -1,12 +1,15 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Truck, Container, Bus, Factory, HardHat } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Truck, Package, Bus, Factory, HardHat, Car, Zap } from "lucide-react";
 
 const industries = [
-  { icon: Truck, name: "Transporte de carga", description: "Protección y eficiencia para flotas de largo recorrido y última milla." },
-  { icon: Bus, name: "Transporte de pasajeros", description: "Seguridad del conductor y pasajeros con monitoreo en ruta." },
-  { icon: Container, name: "Logística y distribución", description: "Visibilidad en cadena de suministro y control de activos." },
-  { icon: Factory, name: "Industria y manufactura", description: "Seguridad operativa en patios, plantas y zonas de maniobra." },
-  { icon: HardHat, name: "Construcción y minería", description: "Tecnología anti-colisión para maquinaria pesada y vehículos en obra." },
+  { icon: Truck, name: "Transporte de carga", description: "Seguridad y eficiencia para flotas de largo recorrido.", href: "/industrias/transporte-de-carga" },
+  { icon: Package, name: "Reparto y última milla", description: "Control operativo para entregas urbanas y suburbanas.", href: "/industrias/reparto-y-ultima-milla" },
+  { icon: Bus, name: "Transporte de pasajeros", description: "Monitoreo de conductores y seguridad en ruta.", href: "/industrias/transporte-de-pasajeros" },
+  { icon: Factory, name: "Vehículos vocacionales", description: "Tecnología para vehículos especializados y maquinaria.", href: "/industrias/vehiculos-vocacionales" },
+  { icon: HardHat, name: "Montacargas e interiores", description: "Seguridad operativa en patios, naves y almacenes.", href: "/industrias/montacargas" },
+  { icon: Car, name: "Flotas corporativas", description: "Visibilidad y control para flotas mixtas empresariales.", href: "/industrias/flotas-corporativas" },
+  { icon: Zap, name: "Vehículos eléctricos", description: "Gestión de carga e infraestructura para flotas EV.", href: "/industrias/vehiculos-electricos" },
 ];
 
 export const IndustriesSection = () => {
@@ -16,27 +19,48 @@ export const IndustriesSection = () => {
       
       <div className="container relative">
         <ScrollReveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Industrias</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground tracking-tight">
-              Soluciones adaptadas a su sector
-            </h2>
-            <p className="text-muted-foreground mt-5 text-base">
-              Servimos a empresas que dependen del transporte seguro y la supervisión operativa de sus activos.
-            </p>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Industrias</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground tracking-tight leading-tight">
+                Soluciones adaptadas a cada sector
+              </h2>
+              <p className="text-muted-foreground mt-5 text-base">
+                Servimos a empresas que dependen del transporte seguro y la supervisión operativa de sus activos.
+              </p>
+            </div>
+            <Button variant="outline-dark" size="lg" asChild className="self-start lg:self-auto">
+              <a href="/industrias">
+                Ver industrias
+                <ArrowRight size={16} />
+              </a>
+            </Button>
           </div>
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {industries.map((ind, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {industries.slice(0, 4).map((ind, i) => (
             <ScrollReveal key={ind.name} delay={i * 80}>
-              <div className="bg-card/50 backdrop-blur-sm border border-white/[0.06] rounded-lg p-6 text-center hover:border-accent/20 transition-all duration-300 group h-full">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/15 transition-colors">
-                  <ind.icon size={22} className="text-accent" />
+              <a href={ind.href} className="group block bg-card/40 border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all duration-300 h-full">
+                <div className="w-11 h-11 rounded-lg bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
+                  <ind.icon size={20} className="text-accent" />
                 </div>
                 <h3 className="font-semibold text-sm text-foreground mb-1.5 font-display">{ind.name}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{ind.description}</p>
-              </div>
+                <p className="text-[13px] text-muted-foreground leading-relaxed">{ind.description}</p>
+              </a>
+            </ScrollReveal>
+          ))}
+        </div>
+        <div className="grid sm:grid-cols-3 gap-4 mt-4">
+          {industries.slice(4).map((ind, i) => (
+            <ScrollReveal key={ind.name} delay={(i + 4) * 80}>
+              <a href={ind.href} className="group block bg-card/40 border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all duration-300 h-full">
+                <div className="w-11 h-11 rounded-lg bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
+                  <ind.icon size={20} className="text-accent" />
+                </div>
+                <h3 className="font-semibold text-sm text-foreground mb-1.5 font-display">{ind.name}</h3>
+                <p className="text-[13px] text-muted-foreground leading-relaxed">{ind.description}</p>
+              </a>
             </ScrollReveal>
           ))}
         </div>
