@@ -1,52 +1,53 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-fleet.jpg";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-background">
       {/* Grid overlay */}
       <div className="absolute inset-0 grid-overlay" />
       
-      {/* Background image — very subtle */}
+      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Fleet technology monitoring"
-          className="w-full h-full object-cover opacity-15"
+          alt="Tecnología de seguridad para flotas de transporte"
+          className="w-full h-full object-cover opacity-[0.12]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/97 to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/90" />
       </div>
 
-      {/* Red glow accent — bottom right */}
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-accent/[0.06] rounded-full blur-[150px] translate-x-1/3 translate-y-1/3" />
+      {/* Red glow — bottom right, very subtle */}
+      <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-accent/[0.04] rounded-full blur-[200px] translate-x-1/4 translate-y-1/4" />
 
-      <div className="container relative z-10 pt-32 pb-20">
-        <div className="max-w-3xl space-y-8">
+      <div className="container relative z-10 pt-32 pb-24">
+        <div className="max-w-3xl space-y-10">
           <ScrollReveal delay={100}>
-            <div className="inline-flex items-center gap-2 border border-white/[0.08] rounded-full px-4 py-1.5 bg-white/[0.03]">
-              <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <a href="#soluciones" className="inline-flex items-center gap-2 border border-white/[0.06] rounded-full px-5 py-2 bg-white/[0.02] hover:bg-white/[0.04] transition-colors group">
+              <div className="w-1.5 h-1.5 rounded-full bg-accent" />
               <span className="text-xs font-medium text-muted-foreground tracking-widest uppercase">
                 Tecnología para flotas
               </span>
-            </div>
+              <ChevronRight size={12} className="text-muted-foreground group-hover:text-foreground transition-colors" />
+            </a>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[0.95] tracking-tight">
-              Seguridad vial y
+            <h1 className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-display font-bold text-foreground leading-[1.05] tracking-tight">
+              Prevención, visibilidad
               <br />
-              <span className="text-accent">control operativo</span>
+              y control para
               <br />
-              para su flota
+              <span className="text-accent">cada unidad</span> de su flota
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={350}>
             <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Desarrollamos e integramos tecnología de prevención de riesgos, visibilidad en tiempo real y supervisión inteligente para operaciones de transporte.
+              Desarrollamos e integramos tecnología de seguridad vial, monitoreo inteligente y supervisión operativa para empresas de transporte y flotas comerciales.
             </p>
           </ScrollReveal>
 
@@ -65,15 +66,16 @@ export const HeroSection = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={650}>
-            <div className="flex gap-12 pt-8 border-t border-white/[0.06]">
+            <div className="flex flex-wrap gap-x-16 gap-y-6 pt-10 border-t border-white/[0.05]">
               {[
                 { value: "8,400+", label: "Unidades protegidas" },
                 { value: "150+", label: "Flotas activas" },
                 { value: "37%", label: "Reducción de siniestros" },
+                { value: "24/7", label: "Monitoreo en tiempo real" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-3xl font-display font-bold text-foreground tabular-nums">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground mt-1 tracking-wide">{stat.label}</p>
+                  <p className="text-3xl font-display font-bold text-foreground tabular-nums tracking-tight">{stat.value}</p>
+                  <p className="text-[11px] text-muted-foreground mt-1 tracking-wide uppercase">{stat.label}</p>
                 </div>
               ))}
             </div>

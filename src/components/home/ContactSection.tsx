@@ -11,6 +11,8 @@ export const ContactSection = () => {
     setSubmitted(true);
   };
 
+  const inputClasses = "w-full h-10 rounded-md border border-white/[0.07] bg-white/[0.02] px-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-accent/40 focus:border-accent/25 transition-colors";
+
   return (
     <section id="contacto" className="relative py-28 bg-surface-dark">
       <div className="absolute inset-0 grid-overlay" />
@@ -20,26 +22,26 @@ export const ContactSection = () => {
           <div>
             <ScrollReveal direction="left">
               <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Contacto</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground tracking-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground tracking-tight leading-tight">
                 Hablemos de su operación
               </h2>
               <p className="text-muted-foreground mt-5 text-base leading-relaxed max-w-md">
-                Nuestro equipo de ventas puede ayudarle a encontrar la solución ideal para las necesidades de seguridad de su flota.
+                Nuestro equipo de especialistas puede ayudarle a encontrar la solución ideal para su flota.
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={200}>
-              <div className="space-y-5 mt-8">
-                <a href="tel:+525512345678" className="flex items-center gap-3 text-sm text-foreground/70 hover:text-accent transition-colors">
-                  <Phone size={16} className="text-accent" />
+              <div className="space-y-4 mt-8">
+                <a href="tel:+525512345678" className="flex items-center gap-3 text-sm text-foreground/60 hover:text-accent transition-colors">
+                  <Phone size={15} className="text-accent" />
                   +52 55 1234 5678
                 </a>
-                <a href="mailto:ventas@carstore.mx" className="flex items-center gap-3 text-sm text-foreground/70 hover:text-accent transition-colors">
-                  <Mail size={16} className="text-accent" />
+                <a href="mailto:ventas@carstore.mx" className="flex items-center gap-3 text-sm text-foreground/60 hover:text-accent transition-colors">
+                  <Mail size={15} className="text-accent" />
                   ventas@carstore.mx
                 </a>
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <MapPin size={16} className="text-accent" />
+                  <MapPin size={15} className="text-accent" />
                   Ciudad de México, México
                 </div>
               </div>
@@ -49,7 +51,7 @@ export const ContactSection = () => {
               <div className="mt-8">
                 <Button variant="accent" size="lg" asChild>
                   <a href="https://wa.me/525512345678" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle size={18} />
+                    <MessageCircle size={16} />
                     Escribir por WhatsApp
                   </a>
                 </Button>
@@ -58,67 +60,76 @@ export const ContactSection = () => {
           </div>
 
           <ScrollReveal direction="right" delay={150}>
-            <div className="bg-card/50 backdrop-blur-sm rounded-lg border border-white/[0.06] p-8">
+            <div className="bg-card/50 rounded-lg border border-white/[0.05] p-8">
               {submitted ? (
-                <div className="text-center py-12">
-                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                    <ArrowRight className="text-accent" />
+                <div className="text-center py-16">
+                  <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5">
+                    <ArrowRight className="text-accent" size={22} />
                   </div>
                   <h3 className="font-semibold text-foreground text-lg font-display">Mensaje enviado</h3>
-                  <p className="text-sm text-muted-foreground mt-2">Nos pondremos en contacto pronto.</p>
+                  <p className="text-sm text-muted-foreground mt-2 max-w-xs mx-auto">Nos pondremos en contacto con usted a la brevedad.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs font-medium text-foreground/70 mb-1.5 block">Nombre</label>
-                      <input
-                        type="text"
-                        required
-                        className="w-full h-10 rounded-md border border-white/[0.08] bg-white/[0.03] px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-accent/50 focus:border-accent/30"
-                        placeholder="Su nombre"
-                      />
+                      <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Nombre</label>
+                      <input type="text" required className={inputClasses} placeholder="Su nombre" />
                     </div>
                     <div>
-                      <label className="text-xs font-medium text-foreground/70 mb-1.5 block">Empresa</label>
-                      <input
-                        type="text"
-                        required
-                        className="w-full h-10 rounded-md border border-white/[0.08] bg-white/[0.03] px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-accent/50 focus:border-accent/30"
-                        placeholder="Nombre de la empresa"
-                      />
+                      <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Empresa</label>
+                      <input type="text" required className={inputClasses} placeholder="Nombre de la empresa" />
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Correo electrónico</label>
+                      <input type="email" required className={inputClasses} placeholder="correo@empresa.com" />
+                    </div>
+                    <div>
+                      <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Teléfono</label>
+                      <input type="tel" className={inputClasses} placeholder="+52 55 0000 0000" />
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Tamaño de flota</label>
+                      <select className={inputClasses}>
+                        <option value="">Seleccionar</option>
+                        <option>1–25 unidades</option>
+                        <option>26–100 unidades</option>
+                        <option>101–500 unidades</option>
+                        <option>500+ unidades</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Interés principal</label>
+                      <select className={inputClasses}>
+                        <option value="">Seleccionar</option>
+                        <option>Cámaras y ADAS</option>
+                        <option>Radares y sensores</option>
+                        <option>GPS y telemetría</option>
+                        <option>Plataforma GPT Monitor</option>
+                        <option>Vehículos eléctricos</option>
+                        <option>Otro</option>
+                      </select>
                     </div>
                   </div>
                   <div>
-                    <label className="text-xs font-medium text-foreground/70 mb-1.5 block">Correo electrónico</label>
-                    <input
-                      type="email"
-                      required
-                      className="w-full h-10 rounded-md border border-white/[0.08] bg-white/[0.03] px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-accent/50 focus:border-accent/30"
-                      placeholder="correo@empresa.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs font-medium text-foreground/70 mb-1.5 block">Tamaño de flota</label>
-                    <select className="w-full h-10 rounded-md border border-white/[0.08] bg-white/[0.03] px-3 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-accent/50 focus:border-accent/30">
-                      <option>1–25 unidades</option>
-                      <option>26–100 unidades</option>
-                      <option>101–500 unidades</option>
-                      <option>500+ unidades</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="text-xs font-medium text-foreground/70 mb-1.5 block">Mensaje</label>
+                    <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Mensaje</label>
                     <textarea
-                      rows={4}
-                      className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-accent/50 focus:border-accent/30 resize-none"
-                      placeholder="Cuéntenos sobre sus necesidades de seguridad..."
+                      rows={3}
+                      className="w-full rounded-md border border-white/[0.07] bg-white/[0.02] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-accent/40 focus:border-accent/25 resize-none transition-colors"
+                      placeholder="Cuéntenos sobre sus necesidades..."
                     />
                   </div>
                   <Button variant="accent" size="lg" type="submit" className="w-full">
                     Enviar solicitud
                     <ArrowRight size={16} />
                   </Button>
+                  <p className="text-[11px] text-muted-foreground/50 text-center">
+                    Al enviar acepta nuestro aviso de privacidad
+                  </p>
                 </form>
               )}
             </div>
