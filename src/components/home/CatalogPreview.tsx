@@ -84,7 +84,7 @@ export const CatalogPreview = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {categories.map((cat, i) => (
             <ScrollReveal key={cat.name} delay={i * 70}>
-              <a href={`/catalogo/${cat.name.toLowerCase().replace(/\s+/g, '-')}`} className="group block bg-card/40 rounded-lg border border-white/[0.05] p-6 hover:border-accent/20 transition-all duration-300 h-full">
+              <Link to={`/catalogo/${cat.name.toLowerCase().replace(/\s+/g, '-')}`} className="group block bg-card/40 rounded-lg border border-white/[0.05] p-6 hover:border-accent/20 transition-all duration-300 h-full">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-11 h-11 rounded-lg bg-white/[0.03] flex items-center justify-center group-hover:bg-accent/10 transition-colors">
                     <cat.icon size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
