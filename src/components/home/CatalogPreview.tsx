@@ -73,10 +73,10 @@ export const CatalogPreview = () => {
               </p>
             </div>
             <Button variant="accent" size="lg" asChild>
-              <a href="/catalogo">
+              <Link to="/catalogo">
                 Ver catálogo completo
                 <ArrowRight size={16} />
-              </a>
+              </Link>
             </Button>
           </div>
         </ScrollReveal>
