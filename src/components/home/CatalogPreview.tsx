@@ -1,6 +1,8 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { ArrowRight, Camera, Radar, MonitorSmartphone, Cpu, CircuitBoard, Zap, Wrench, Brain } from "lucide-react";
+import { getFeaturedProducts } from "@/data/products";
 
 const categories = [
   {
@@ -71,10 +73,10 @@ export const CatalogPreview = () => {
               </p>
             </div>
             <Button variant="accent" size="lg" asChild>
-              <a href="/catalogo">
+              <Link to="/catalogo">
                 Ver catálogo completo
                 <ArrowRight size={16} />
-              </a>
+              </Link>
             </Button>
           </div>
         </ScrollReveal>
@@ -82,7 +84,7 @@ export const CatalogPreview = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {categories.map((cat, i) => (
             <ScrollReveal key={cat.name} delay={i * 70}>
-              <a href={`/catalogo/${cat.name.toLowerCase().replace(/\s+/g, '-')}`} className="group block bg-card/40 rounded-lg border border-white/[0.05] p-6 hover:border-accent/20 transition-all duration-300 h-full">
+              <Link to={`/catalogo/${cat.name.toLowerCase().replace(/\s+/g, '-')}`} className="group block bg-card/40 rounded-lg border border-white/[0.05] p-6 hover:border-accent/20 transition-all duration-300 h-full">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-11 h-11 rounded-lg bg-white/[0.03] flex items-center justify-center group-hover:bg-accent/10 transition-colors">
                     <cat.icon size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
@@ -91,7 +93,7 @@ export const CatalogPreview = () => {
                 </div>
                 <h3 className="font-semibold text-foreground text-sm mb-1.5 font-display">{cat.name}</h3>
                 <p className="text-[13px] text-muted-foreground leading-relaxed">{cat.description}</p>
-              </a>
+              </Link>
             </ScrollReveal>
           ))}
         </div>

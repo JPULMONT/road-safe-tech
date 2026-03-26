@@ -1,6 +1,7 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Truck, Package, Bus, Factory, HardHat, Car, Zap } from "lucide-react";
+import bgIndustries from "@/assets/bg-industries.jpg";
 
 const industries = [
   { icon: Truck, name: "Transporte de carga", description: "Seguridad y eficiencia para flotas de largo recorrido.", href: "/industrias/transporte-de-carga" },
@@ -14,7 +15,11 @@ const industries = [
 
 export const IndustriesSection = () => {
   return (
-    <section id="industrias" className="relative py-28 bg-background">
+    <section id="industrias" className="relative py-28 bg-background overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={bgIndustries} alt="" className="w-full h-full object-cover opacity-[0.05]" loading="lazy" width={1920} height={1080} />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+      </div>
       <div className="absolute inset-0 grid-overlay-fine" />
       
       <div className="container relative">

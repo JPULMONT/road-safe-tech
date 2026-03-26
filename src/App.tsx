@@ -12,6 +12,8 @@ import Plataforma from "./pages/Plataforma.tsx";
 import Servicios from "./pages/Servicios.tsx";
 import Nosotros from "./pages/Nosotros.tsx";
 import Contacto from "./pages/Contacto.tsx";
+import CatalogoCategoria from "./pages/CatalogoCategoria.tsx";
+import ProductoDetalle from "./pages/ProductoDetalle.tsx";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/soluciones" element={<Soluciones />} />
           <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/catalogo/:categoria" element={<CatalogoCategoria />} />
+          <Route path="/producto/:slug" element={<ProductoDetalle />} />
           <Route path="/industrias" element={<Industrias />} />
           <Route path="/plataforma" element={<Plataforma />} />
           <Route path="/servicios" element={<Servicios />} />
