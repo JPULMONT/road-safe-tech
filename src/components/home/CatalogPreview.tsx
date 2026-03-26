@@ -93,7 +93,7 @@ export const CatalogPreview = () => {
                 </div>
                 <h3 className="font-semibold text-foreground text-sm mb-1.5 font-display">{cat.name}</h3>
                 <p className="text-[13px] text-muted-foreground leading-relaxed">{cat.description}</p>
-              </a>
+              </Link>
             </ScrollReveal>
           ))}
         </div>
