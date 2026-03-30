@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Eye, Radio, ShieldCheck, Cpu, BarChart3, CircuitBoard, Zap, Wrench } from "lucide-react";
-
+import { ArrowRight } from "lucide-react";
+import { solutions } from "@/data/solutions";
 const solutions = [
   {
     icon: Eye,
