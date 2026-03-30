@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Brain, Camera, Cpu, Radar, Wrench, CircuitBoard, MonitorSmartphone, Zap } from "lucide-react";
 import { categories, getFeaturedProducts } from "@/data/products";
-import bgIndustries from "@/assets/bg-industries.jpg";
 
 const iconMap: Record<string, React.ElementType> = {
   Brain, Camera, Cpu, Radar, Wrench, CircuitBoard, MonitorSmartphone, Zap,
@@ -18,11 +17,18 @@ const CatalogoPage = () => {
     <div className="min-h-screen">
       <Navbar />
 
-      {/* Hero with background */}
       <section className="relative pt-32 pb-20 bg-background overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={bgIndustries} alt="" className="w-full h-full object-cover opacity-[0.07]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1593787406444-30a3ba9e3b7b?w=1920&q=80"
+            alt=""
+            className="w-full h-full object-cover opacity-[0.10]"
+            loading="eager"
+            width={1920}
+            height={1080}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
         </div>
         <div className="absolute inset-0 grid-overlay" />
         <div className="container relative">
@@ -38,7 +44,6 @@ const CatalogoPage = () => {
         </div>
       </section>
 
-      {/* Featured products */}
       {featured.length > 0 && (
         <section className="py-20 bg-surface-dark">
           <div className="container">
@@ -76,7 +81,6 @@ const CatalogoPage = () => {
         </section>
       )}
 
-      {/* Categories grid */}
       <section className="py-20 bg-background">
         <div className="container">
           <ScrollReveal>
@@ -107,7 +111,6 @@ const CatalogoPage = () => {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-20 bg-surface-dark">
         <div className="container text-center">
           <ScrollReveal>

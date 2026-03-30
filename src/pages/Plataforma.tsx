@@ -21,6 +21,18 @@ const PlataformaPage = () => {
     <div className="min-h-screen">
       <Navbar />
       <section className="relative pt-32 pb-20 bg-background overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80"
+            alt=""
+            className="w-full h-full object-cover opacity-[0.10]"
+            loading="eager"
+            width={1920}
+            height={1080}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+        </div>
         <div className="absolute inset-0 grid-overlay" />
         <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-accent/[0.04] rounded-full blur-[200px] translate-x-1/3 -translate-y-1/2" />
         <div className="container relative">

@@ -10,7 +10,19 @@ const SolucionesPage = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <section className="relative pt-32 pb-20 bg-background">
+      <section className="relative pt-32 pb-20 bg-background overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1920&q=80"
+            alt=""
+            className="w-full h-full object-cover opacity-[0.12]"
+            loading="eager"
+            width={1920}
+            height={1080}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+        </div>
         <div className="absolute inset-0 grid-overlay" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/[0.03] rounded-full blur-[200px]" />
         <div className="container relative">
