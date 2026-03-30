@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/carstore-logo.png";
 import { Link, useLocation } from "react-router-dom";
+import { solutions } from "@/data/solutions";
 
 const navLinks = [
   { label: "Soluciones", href: "/soluciones", hasDropdown: true },
@@ -16,6 +17,8 @@ const navLinks = [
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const megaTimeout = useRef<ReturnType<typeof setTimeout>>();
   const location = useLocation();
   const isHome = location.pathname === "/";
 
@@ -24,6 +27,14 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleMegaEnter = () => {
+    clearTimeout(megaTimeout.current);
+    setMegaOpen(true);
+  };
+  const handleMegaLeave = () => {
+    megaTimeout.current = setTimeout(() => setMegaOpen(false), 150);
+  };
 
   const handleNavClick = (href: string) => {
     setOpen(false);
@@ -65,17 +76,66 @@ export const Navbar = () => {
 
         {/* Desktop */}
         <div className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={getHref(link.href)}
-              onClick={() => handleNavClick(getHref(link.href))}
-              className="text-muted-foreground hover:text-foreground text-[13px] font-medium tracking-wide transition-colors duration-200 flex items-center gap-1"
-            >
-              {link.label}
-              {link.hasDropdown && <ChevronDown size={12} className="opacity-50" />}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.hasDropdown ? (
+              <div
+                key={link.href}
+                className="relative"
+                onMouseEnter={handleMegaEnter}
+                onMouseLeave={handleMegaLeave}
+              >
+                <a
+                  href={getHref(link.href)}
+                  onClick={() => handleNavClick(getHref(link.href))}
+                  className="text-muted-foreground hover:text-foreground text-[13px] font-medium tracking-wide transition-colors duration-200 flex items-center gap-1"
+                >
+                  {link.label}
+                  <ChevronDown size={12} className={`opacity-50 transition-transform duration-200 ${megaOpen ? "rotate-180" : ""}`} />
+                </a>
+
+                {/* Mega-menu dropdown */}
+                <div
+                  className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-200 ${
+                    megaOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
+                  }`}
+                >
+                  <div
+                    className="w-[540px] rounded-xl p-4 grid grid-cols-2 gap-1 shadow-2xl"
+                    style={{ backgroundColor: "#111111", border: "1px solid rgba(255,255,255,0.08)" }}
+                  >
+                    {solutions.slice(0, 8).map((sol) => {
+                      const Icon = sol.icon;
+                      return (
+                        <Link
+                          key={sol.slug}
+                          to={`/soluciones/${sol.slug}`}
+                          onClick={() => setMegaOpen(false)}
+                          className="flex items-start gap-3 rounded-lg p-3 hover:bg-white/[0.04] transition-colors duration-150 group"
+                        >
+                          <div className="mt-0.5 flex-shrink-0 w-8 h-8 rounded-md bg-white/[0.06] flex items-center justify-center">
+                            <Icon size={16} className="text-primary" />
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-[13px] font-medium text-foreground group-hover:text-primary transition-colors">{sol.title}</p>
+                            <p className="text-[11px] text-muted-foreground leading-snug mt-0.5 line-clamp-1">{sol.subtitle}</p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <a
+                key={link.href}
+                href={getHref(link.href)}
+                onClick={() => handleNavClick(getHref(link.href))}
+                className="text-muted-foreground hover:text-foreground text-[13px] font-medium tracking-wide transition-colors duration-200 flex items-center gap-1"
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
