@@ -1,18 +1,10 @@
+import { Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Truck, Package, Bus, Factory, HardHat, Car, Zap } from "lucide-react";
-
-const industries = [
-  { icon: Truck, slug: "transporte-y-logistica", name: "Transporte y logística", description: "Protección y eficiencia para flotas de largo recorrido, cadena de suministro y distribución nacional.", solutions: ["Dashcam ADAS+DSM", "Radares de punto ciego", "GPS y telemetría", "GPT Monitor"] },
-  { icon: Package, slug: "reparto-y-ultima-milla", name: "Reparto y última milla", description: "Control operativo, visibilidad de entregas y prevención de riesgos para flotas urbanas y suburbanas.", solutions: ["Cámaras de reversa IA", "GPS OBD2", "Limitadores de velocidad", "Monitoreo en tiempo real"] },
-  { icon: Bus, slug: "transporte-de-pasajeros", name: "Transporte de pasajeros", description: "Seguridad del conductor y pasajeros, monitoreo de ruta y cumplimiento normativo.", solutions: ["DSM fatiga y distracción", "Visión 360°", "Grabación continua", "Alertas en tiempo real"] },
-  { icon: Factory, slug: "vehiculos-vocacionales", name: "Vehículos vocacionales", description: "Tecnología anti-colisión y visibilidad para maquinaria pesada y vehículos especializados.", solutions: ["Sistemas 360°", "Radares laterales", "Sensores de reversa", "Alarmas de proximidad"] },
-  { icon: HardHat, slug: "montacargas", name: "Montacargas e interiores", description: "Seguridad operativa en patios, naves industriales, almacenes y zonas de maniobra.", solutions: ["Alarma de presencia", "Limitador de velocidad", "Cámaras de zona", "Señalización"] },
-  { icon: Car, slug: "flotas-corporativas", name: "Flotas mixtas y corporativas", description: "Visibilidad y control para flotas empresariales con diferentes tipos de vehículos.", solutions: ["GPS multi-vehículo", "Dashcam básica", "Control de ralentí", "Reportes operativos"] },
-  { icon: Zap, slug: "vehiculos-electricos", name: "Vehículos eléctricos e híbridos", description: "Gestión de carga, telemetría EV e infraestructura para la transición a flotas eléctricas.", solutions: ["Cargadores nivel 2 y DC", "Telemetría de batería", "Gestión de carga", "Reportes de consumo"] },
-];
+import { ArrowRight } from "lucide-react";
+import { industries } from "@/data/industries";
 
 const IndustriasPage = () => {
   return (
@@ -46,18 +38,18 @@ const IndustriasPage = () => {
                       </div>
                       <h2 className="text-xl font-display font-bold text-foreground">{ind.name}</h2>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed mb-6 max-w-xl">{ind.description}</p>
+                    <p className="text-muted-foreground leading-relaxed mb-6 max-w-xl">{ind.heroDescription}</p>
                     <Button variant="outline-dark" size="sm" asChild>
-                      <a href={`/industrias/${ind.slug}`}>
+                      <Link to={`/industrias/${ind.slug}`}>
                         Ver soluciones para este sector
                         <ArrowRight size={14} />
-                      </a>
+                      </Link>
                     </Button>
                   </div>
                   <div className="lg:w-64 flex-shrink-0">
                     <p className="text-xs font-medium text-foreground/40 uppercase tracking-widest mb-3">Soluciones recomendadas</p>
                     <ul className="space-y-2">
-                      {ind.solutions.map((s) => (
+                      {ind.recommendedSolutions.map((s) => (
                         <li key={s} className="flex items-center gap-2 text-sm text-foreground/60">
                           <div className="w-1 h-1 rounded-full bg-accent" />
                           {s}

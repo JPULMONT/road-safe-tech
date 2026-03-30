@@ -5,64 +5,6 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { solutions } from "@/data/solutions";
-const solutions = [
-  {
-    icon: Eye,
-    slug: "seguridad-vial-inteligente",
-    title: "Seguridad vial inteligente",
-    description: "Dashcam + ADAS + DSM para monitoreo del conductor, prevención de colisiones y asistencia avanzada en tiempo real.",
-    features: ["Detección de fatiga y distracción", "Alerta de colisión frontal", "Aviso de cambio de carril", "Grabación continua con IA"],
-  },
-  {
-    icon: Cpu,
-    slug: "camaras-y-visibilidad-avanzada",
-    title: "Cámaras y visibilidad avanzada",
-    description: "Sistemas de visión 360°, cámaras de reversa con IA, monitoreo exterior e interior para eliminación total de puntos ciegos.",
-    features: ["Visión perimetral completa", "Cámaras inalámbricas", "Monitoreo nocturno", "Integración con plataforma"],
-  },
-  {
-    icon: Radio,
-    slug: "deteccion-de-riesgos",
-    title: "Detección de riesgos y puntos ciegos",
-    description: "Radares de punto ciego por microondas, sensores de reversa, sistemas BSIS y detección lateral para maniobras seguras.",
-    features: ["Radar de microondas", "Smart BSIS", "Sensores ultrasónicos", "Sistemas redundantes"],
-  },
-  {
-    icon: CircuitBoard,
-    slug: "telemetria-y-gps",
-    title: "GPS, telemetría y analítica",
-    description: "Rastreo en tiempo real, control de ralentí, geofencing, corte de corriente y análisis operativo de su flota.",
-    features: ["GPS OBD2 / GV300 / GV600", "Apagado por inactividad", "Geofencing inteligente", "Reportes automatizados"],
-  },
-  {
-    icon: BarChart3,
-    slug: "monitoreo-y-control-operativo",
-    title: "Monitoreo y control operativo",
-    description: "Plataforma GPT Monitor con análisis predictivo, clasificación de alertas con IA y supervisión centralizada de flotas.",
-    features: ["Dashboard en tiempo real", "Alertas clasificadas por IA", "Análisis predictivo", "Acceso web y móvil"],
-  },
-  {
-    icon: ShieldCheck,
-    slug: "seguridad-montacargas",
-    title: "Seguridad para montacargas",
-    description: "Soluciones especializadas para operación en patios, naves industriales y almacenes con vehículos de interior.",
-    features: ["Alarmas de proximidad", "Limitadores de velocidad", "Cámaras de zona", "Señalización inteligente"],
-  },
-  {
-    icon: Zap,
-    slug: "vehiculos-electricos",
-    title: "Vehículos eléctricos e infraestructura",
-    description: "Cargadores, telemetría EV y gestión de infraestructura de carga para flotas eléctricas e híbridas.",
-    features: ["Cargadores nivel 2 y DC", "Telemetría de batería", "Gestión de carga", "Reportes de consumo"],
-  },
-  {
-    icon: Wrench,
-    slug: "implementacion-y-soporte",
-    title: "Implementación, instalación y soporte",
-    description: "Diagnóstico, diseño de solución, instalación profesional, capacitación, mantenimiento y servicio postventa.",
-    features: ["Diagnóstico operativo", "Instalación certificada", "Capacitación de usuarios", "Soporte postventa"],
-  },
-];
 
 const SolucionesPage = () => {
   return (
@@ -97,12 +39,12 @@ const SolucionesPage = () => {
                       </div>
                       <h2 className="text-xl font-display font-bold text-foreground">{sol.title}</h2>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed mb-6 max-w-xl">{sol.description}</p>
+                    <p className="text-muted-foreground leading-relaxed mb-6 max-w-xl">{sol.heroDescription}</p>
                     <Button variant="outline-dark" size="sm" asChild>
-                      <a href={`/soluciones/${sol.slug}`}>
+                      <Link to={`/soluciones/${sol.slug}`}>
                         Conocer más
                         <ArrowRight size={14} />
-                      </a>
+                      </Link>
                     </Button>
                   </div>
                   <div className="lg:w-72 flex-shrink-0">
@@ -132,10 +74,10 @@ const SolucionesPage = () => {
               Nuestro equipo puede diagnosticar su operación y recomendar la combinación ideal de tecnología.
             </p>
             <Button variant="accent" size="xl" asChild>
-              <a href="/contacto">
+              <Link to="/contacto">
                 Hablar con un especialista
                 <ArrowRight size={18} />
-              </a>
+              </Link>
             </Button>
           </ScrollReveal>
         </div>
