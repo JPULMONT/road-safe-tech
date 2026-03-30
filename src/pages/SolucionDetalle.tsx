@@ -175,7 +175,7 @@ const SolucionDetallePage = () => {
       </section>
 
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 

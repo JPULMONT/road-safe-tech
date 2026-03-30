@@ -329,7 +329,7 @@ const ProductoDetalle = () => {
       </section>
 
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 
