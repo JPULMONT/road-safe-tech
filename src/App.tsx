@@ -16,6 +16,7 @@ import CatalogoCategoria from "./pages/CatalogoCategoria.tsx";
 import ProductoDetalle from "./pages/ProductoDetalle.tsx";
 import SolucionDetalle from "./pages/SolucionDetalle.tsx";
 import IndustriaDetalle from "./pages/IndustriaDetalle.tsx";
+import { WhatsAppButton } from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <WhatsAppButton />
     </TooltipProvider>
   </QueryClientProvider>
 );
