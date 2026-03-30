@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/carstore-logo.png";
 import { Link, useLocation } from "react-router-dom";
+import { solutions } from "@/data/solutions";
 
 const navLinks = [
   { label: "Soluciones", href: "/soluciones", hasDropdown: true },
@@ -16,6 +17,8 @@ const navLinks = [
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const megaTimeout = useRef<ReturnType<typeof setTimeout>>();
   const location = useLocation();
   const isHome = location.pathname === "/";
 
@@ -24,6 +27,14 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleMegaEnter = () => {
+    clearTimeout(megaTimeout.current);
+    setMegaOpen(true);
+  };
+  const handleMegaLeave = () => {
+    megaTimeout.current = setTimeout(() => setMegaOpen(false), 150);
+  };
 
   const handleNavClick = (href: string) => {
     setOpen(false);
