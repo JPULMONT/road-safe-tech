@@ -17,7 +17,19 @@ const NosotrosPage = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <section className="relative pt-32 pb-20 bg-background">
+      <section className="relative pt-32 pb-20 bg-background overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&q=80"
+            alt=""
+            className="w-full h-full object-cover opacity-[0.10]"
+            loading="eager"
+            width={1920}
+            height={1080}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+        </div>
         <div className="absolute inset-0 grid-overlay" />
         <div className="container relative">
           <ScrollReveal>

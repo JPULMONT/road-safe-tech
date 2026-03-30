@@ -5,59 +5,30 @@ import { ArrowRight, Camera, Radar, MonitorSmartphone, Cpu, CircuitBoard, Zap, W
 import { getFeaturedProducts } from "@/data/products";
 
 const categories = [
-  {
-    icon: Brain,
-    name: "Inteligencia artificial",
-    count: 6,
-    description: "Dashcams ADAS+DSM, cámaras con detección IA",
-  },
-  {
-    icon: Camera,
-    name: "Cámaras y video",
-    count: 14,
-    description: "Reversa, 360°, monitoreo exterior, inalámbricas",
-  },
-  {
-    icon: Cpu,
-    name: "Limitadores y control",
-    count: 5,
-    description: "Limitadores de velocidad, corte de corriente",
-  },
-  {
-    icon: Radar,
-    name: "Sensores y detección",
-    count: 8,
-    description: "Punto ciego, BSIS, reversa, redundantes",
-  },
-  {
-    icon: Wrench,
-    name: "Montacargas",
-    count: 4,
-    description: "Seguridad específica para operación en interiores",
-  },
-  {
-    icon: CircuitBoard,
-    name: "GPS y telemetría",
-    count: 6,
-    description: "OBD2, GV300, GV600, ralentí, geofencing",
-  },
-  {
-    icon: MonitorSmartphone,
-    name: "Complementarios",
-    count: 10,
-    description: "Presión de llantas, espejos, sirenas, ventiladores",
-  },
-  {
-    icon: Zap,
-    name: "Vehículos eléctricos",
-    count: 4,
-    description: "Cargadores, telemetría EV, infraestructura",
-  },
+  { icon: Brain, name: "Inteligencia artificial", count: 6, description: "Dashcams ADAS+DSM, cámaras con detección IA" },
+  { icon: Camera, name: "Cámaras y video", count: 14, description: "Reversa, 360°, monitoreo exterior, inalámbricas" },
+  { icon: Cpu, name: "Limitadores y control", count: 5, description: "Limitadores de velocidad, corte de corriente" },
+  { icon: Radar, name: "Sensores y detección", count: 8, description: "Punto ciego, BSIS, reversa, redundantes" },
+  { icon: Wrench, name: "Montacargas", count: 4, description: "Seguridad específica para operación en interiores" },
+  { icon: CircuitBoard, name: "GPS y telemetría", count: 6, description: "OBD2, GV300, GV600, ralentí, geofencing" },
+  { icon: MonitorSmartphone, name: "Complementarios", count: 10, description: "Presión de llantas, espejos, sirenas, ventiladores" },
+  { icon: Zap, name: "Vehículos eléctricos", count: 4, description: "Cargadores, telemetría EV, infraestructura" },
 ];
 
 export const CatalogPreview = () => {
   return (
-    <section id="catalogo" className="relative py-28 bg-surface-dark">
+    <section id="catalogo" className="relative py-28 bg-surface-dark overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1920&q=80"
+          alt=""
+          className="w-full h-full object-cover opacity-[0.04]"
+          loading="lazy"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/80" />
+      </div>
       <div className="absolute inset-0 grid-overlay" />
       
       <div className="container relative">
