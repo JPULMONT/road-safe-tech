@@ -16,7 +16,7 @@ const SolucionDetallePage = () => {
   const relatedProducts = getProductsForSolution(solution);
 
   return (
-    <div className="min-h-screen">
+    <PageTransition className="min-h-screen">
       <Navbar />
 
       {/* Hero */}
