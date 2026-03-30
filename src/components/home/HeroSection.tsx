@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-fleet.jpg";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ArrowRight, ChevronRight } from "lucide-react";
 
@@ -10,13 +9,16 @@ export const HeroSection = () => {
       <div className="absolute inset-0 grid-overlay" />
       
       {/* Background image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <img
-          src={heroImage}
+          src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80"
           alt="Tecnología de seguridad para flotas de transporte"
-          className="w-full h-full object-cover opacity-[0.12]"
+          className="w-full h-full object-cover opacity-[0.28]"
+          loading="eager"
+          width={1920}
+          height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/97 to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/90" />
       </div>
 

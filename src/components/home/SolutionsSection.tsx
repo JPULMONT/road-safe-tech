@@ -3,59 +3,30 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Eye, Radio, ShieldCheck, Cpu, BarChart3, Wrench, Zap, CircuitBoard } from "lucide-react";
 
 const solutions = [
-  {
-    icon: Eye,
-    title: "Dashcam + ADAS + DSM",
-    description: "Cámaras inteligentes con asistencia avanzada al conductor y monitoreo de fatiga en tiempo real.",
-    tag: "Visión",
-  },
-  {
-    icon: Radio,
-    title: "Radares de punto ciego",
-    description: "Detección lateral por microondas para maniobras seguras en vehículos pesados y urbanos.",
-    tag: "Detección",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Cámaras con IA de reversa",
-    description: "Visión trasera con inteligencia artificial para prevención de colisiones en operaciones de carga.",
-    tag: "Seguridad",
-  },
-  {
-    icon: Cpu,
-    title: "Sistemas de visión 360°",
-    description: "Cobertura perimetral completa para eliminación de puntos ciegos en unidades de gran tamaño.",
-    tag: "Visibilidad",
-  },
-  {
-    icon: BarChart3,
-    title: "GPT Monitor",
-    description: "Plataforma de análisis predictivo con clasificación inteligente de alertas y supervisión operativa.",
-    tag: "Plataforma",
-  },
-  {
-    icon: CircuitBoard,
-    title: "Telemetría y GPS",
-    description: "Rastreo en tiempo real, análisis de ralentí, corte de corriente y geofencing inteligente.",
-    tag: "Control",
-  },
-  {
-    icon: Zap,
-    title: "Vehículos eléctricos",
-    description: "Infraestructura de carga, telemetría EV y soluciones para flotas eléctricas e híbridas.",
-    tag: "EV",
-  },
-  {
-    icon: Wrench,
-    title: "Implementación y soporte",
-    description: "Instalación profesional, mantenimiento preventivo, servicio postventa y acompañamiento técnico.",
-    tag: "Servicios",
-  },
+  { icon: Eye, title: "Dashcam + ADAS + DSM", description: "Cámaras inteligentes con asistencia avanzada al conductor y monitoreo de fatiga en tiempo real.", tag: "Visión" },
+  { icon: Radio, title: "Radares de punto ciego", description: "Detección lateral por microondas para maniobras seguras en vehículos pesados y urbanos.", tag: "Detección" },
+  { icon: ShieldCheck, title: "Cámaras con IA de reversa", description: "Visión trasera con inteligencia artificial para prevención de colisiones en operaciones de carga.", tag: "Seguridad" },
+  { icon: Cpu, title: "Sistemas de visión 360°", description: "Cobertura perimetral completa para eliminación de puntos ciegos en unidades de gran tamaño.", tag: "Visibilidad" },
+  { icon: BarChart3, title: "GPT Monitor", description: "Plataforma de análisis predictivo con clasificación inteligente de alertas y supervisión operativa.", tag: "Plataforma" },
+  { icon: CircuitBoard, title: "Telemetría y GPS", description: "Rastreo en tiempo real, análisis de ralentí, corte de corriente y geofencing inteligente.", tag: "Control" },
+  { icon: Zap, title: "Vehículos eléctricos", description: "Infraestructura de carga, telemetría EV y soluciones para flotas eléctricas e híbridas.", tag: "EV" },
+  { icon: Wrench, title: "Implementación y soporte", description: "Instalación profesional, mantenimiento preventivo, servicio postventa y acompañamiento técnico.", tag: "Servicios" },
 ];
 
 export const SolutionsSection = () => {
   return (
-    <section id="soluciones" className="relative py-28 bg-background">
+    <section id="soluciones" className="relative py-28 bg-background overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1920&q=80"
+          alt=""
+          className="w-full h-full object-cover opacity-[0.05]"
+          loading="lazy"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+      </div>
       <div className="absolute inset-0 grid-overlay-fine" />
       
       <div className="container relative">
