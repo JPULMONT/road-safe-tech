@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { PageTransition } from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { getIndustryBySlug, getProductsForIndustry } from "@/data/industries";
