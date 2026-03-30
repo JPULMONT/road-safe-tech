@@ -1,45 +1,47 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { type ReactNode, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
   direction?: "up" | "left" | "right" | "fade";
+  once?: boolean;
 }
 
-export const ScrollReveal = ({ children, className = "", delay = 0, direction = "up" }: ScrollRevealProps) => {
+const directionVariants = {
+  up: { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } },
+  left: { hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0 } },
+  right: { hidden: { opacity: 0, x: 40 }, visible: { opacity: 1, x: 0 } },
+  fade: { hidden: { opacity: 0 }, visible: { opacity: 1 } },
+};
+
+export const ScrollReveal = ({
+  children,
+  className = "",
+  delay = 0,
+  direction = "up",
+  once = true,
+}: ScrollRevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const isInView = useInView(ref, { once, margin: "-60px 0px" });
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const animationClass = {
-    up: "animate-fade-up",
-    left: "animate-slide-in-left",
-    right: "animate-slide-in-right",
-    fade: "animate-fade-in",
-  }[direction];
+  const variants = directionVariants[direction];
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className={`${className} ${isVisible ? animationClass : "opacity-0"}`}
-      style={{ animationDelay: isVisible ? `${delay}ms` : "0ms" }}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={variants}
+      transition={{
+        duration: 0.6,
+        delay: delay / 1000,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className={className}
     >
       {children}
-    </div>
+    </motion.div>
   );
 };

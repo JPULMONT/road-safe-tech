@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { PageTransition } from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, getRelatedProducts, products } from "@/data/products";
 import { ArrowRight, ArrowLeft, CheckCircle2, Download, ChevronRight, Wrench, Phone } from "lucide-react";
@@ -31,7 +32,7 @@ const ProductoDetalle = () => {
   const related = getRelatedProducts(product);
 
   return (
-    <div className="min-h-screen">
+    <PageTransition className="min-h-screen">
       <Navbar />
 
       {/* Breadcrumb */}
@@ -328,7 +329,7 @@ const ProductoDetalle = () => {
       </section>
 
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 
