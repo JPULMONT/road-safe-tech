@@ -32,7 +32,7 @@ const ProductoDetalle = () => {
   const related = getRelatedProducts(product);
 
   return (
-    <div className="min-h-screen">
+    <PageTransition className="min-h-screen">
       <Navbar />
 
       {/* Breadcrumb */}
