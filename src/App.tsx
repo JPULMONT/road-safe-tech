@@ -14,6 +14,8 @@ import Nosotros from "./pages/Nosotros.tsx";
 import Contacto from "./pages/Contacto.tsx";
 import CatalogoCategoria from "./pages/CatalogoCategoria.tsx";
 import ProductoDetalle from "./pages/ProductoDetalle.tsx";
+import SolucionDetalle from "./pages/SolucionDetalle.tsx";
+import IndustriaDetalle from "./pages/IndustriaDetalle.tsx";
 
 const queryClient = new QueryClient();
 
