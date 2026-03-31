@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { PageTransition } from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { Link } from "react-router-dom";
 import { ArrowRight, Brain, Camera, Cpu, Radar, Wrench, CircuitBoard, MonitorSmartphone, Zap } from "lucide-react";
 import { categories, getFeaturedProducts } from "@/data/products";
