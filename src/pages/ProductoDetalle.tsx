@@ -128,7 +128,7 @@ const ProductoDetalle = () => {
                     </a>
                   </Button>
                   <Button variant="outline" size="xl" asChild>
-                    <a href="https://wa.me/5215512345678" target="_blank" rel="noopener">
+                    <a href="https://wa.me/5215556385619" target="_blank" rel="noopener">
                       <Phone size={16} />
                       WhatsApp
                     </a>

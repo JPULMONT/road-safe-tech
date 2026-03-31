@@ -32,25 +32,29 @@ export const ContactSection = () => {
 
             <ScrollReveal direction="left" delay={200}>
               <div className="space-y-4 mt-8">
-                <a href="tel:+525512345678" className="flex items-center gap-3 text-sm text-foreground/60 hover:text-accent transition-colors">
+                <a href="tel:+525550493484" className="flex items-center gap-3 text-sm text-foreground/60 hover:text-accent transition-colors">
                   <Phone size={15} className="text-accent" />
-                  +52 55 1234 5678
+                  55 5049 3484
                 </a>
-                <a href="mailto:ventas@carstore.mx" className="flex items-center gap-3 text-sm text-foreground/60 hover:text-accent transition-colors">
+                <a href="tel:+525524520562" className="flex items-center gap-3 text-sm text-foreground/60 hover:text-accent transition-colors">
+                  <Phone size={15} className="text-accent" />
+                  55 2452 0562
+                </a>
+                <a href="mailto:ventas@carstore.com.mx" className="flex items-center gap-3 text-sm text-foreground/60 hover:text-accent transition-colors">
                   <Mail size={15} className="text-accent" />
-                  ventas@carstore.mx
+                  ventas@carstore.com.mx
                 </a>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <MapPin size={15} className="text-accent" />
-                  Ciudad de México, México
-                </div>
+                <a href="https://maps.google.com/?q=Av+Miguel+de+Cervantes+Saavedra+507+Col+Irrigacion+Miguel+Hidalgo+CDMX" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-sm text-foreground/60 hover:text-accent transition-colors">
+                  <MapPin size={15} className="text-accent shrink-0 mt-0.5" />
+                  <span>Av. Miguel de Cervantes Saavedra #507, Col. Irrigación, Miguel Hidalgo, C.P. 11500, CDMX</span>
+                </a>
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={350}>
               <div className="mt-8">
                 <Button variant="accent" size="lg" asChild>
-                  <a href="https://wa.me/525512345678" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/5215556385619" target="_blank" rel="noopener noreferrer">
                     <MessageCircle size={16} />
                     Escribir por WhatsApp
                   </a>
