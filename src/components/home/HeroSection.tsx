@@ -17,6 +17,7 @@ export const HeroSection = () => {
         eager
         gradientDirection="hero"
       />
+      <div className="absolute inset-0 bg-background/75" />
 
       {/* Red glow — bottom right, very subtle */}
       <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-accent/[0.04] rounded-full blur-[200px] translate-x-1/4 translate-y-1/4" />
@@ -26,7 +27,7 @@ export const HeroSection = () => {
           <ScrollReveal delay={100}>
             <a href="#soluciones" className="inline-flex items-center gap-2 border border-white/[0.06] rounded-full px-5 py-2 bg-white/[0.02] hover:bg-white/[0.04] transition-colors group">
               <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-              <span className="text-xs font-medium text-muted-foreground tracking-widest uppercase">
+              <span className="text-xs font-medium text-foreground/70 tracking-widest uppercase">
                 Tecnología para flotas
               </span>
               <ChevronRight size={12} className="text-muted-foreground group-hover:text-foreground transition-colors" />
@@ -44,7 +45,7 @@ export const HeroSection = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={350}>
-            <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+            <p className="text-lg text-foreground/70 max-w-xl leading-relaxed">
               Desarrollamos e integramos tecnología de seguridad vial, monitoreo inteligente y supervisión operativa para empresas de transporte y flotas comerciales.
             </p>
           </ScrollReveal>
@@ -73,7 +74,7 @@ export const HeroSection = () => {
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="text-3xl font-display font-bold text-foreground tabular-nums tracking-tight">{stat.value}</p>
-                  <p className="text-[11px] text-muted-foreground mt-1 tracking-wide uppercase">{stat.label}</p>
+                  <p className="text-[11px] text-foreground/50 mt-1 tracking-wide uppercase">{stat.label}</p>
                 </div>
               ))}
             </div>
