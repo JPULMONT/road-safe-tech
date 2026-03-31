@@ -16,7 +16,7 @@ const milestones = [
 
 const NosotrosPage = () => {
   return (
-    <div className="min-h-screen">
+    <PageTransition className="min-h-screen">
       <Navbar />
       <section className="relative pt-32 pb-20 bg-background overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
