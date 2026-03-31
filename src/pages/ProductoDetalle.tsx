@@ -59,10 +59,14 @@ const ProductoDetalle = () => {
             <ScrollReveal>
               <div className="space-y-4">
                 <div className="relative aspect-square rounded-xl overflow-hidden bg-card border border-border">
-                  <img
+                  <ImageWithFallback
                     src={product.images[activeImage]}
                     alt={product.title}
+                    fallbackText={product.title}
                     className="w-full h-full object-cover"
+                    loading="eager"
+                    width={800}
+                    height={800}
                   />
                   <div className="absolute top-4 left-4">
                     {product.featured && (
