@@ -1,5 +1,6 @@
 import logo from "@/assets/carstore-logo.png";
 import { Link } from "react-router-dom";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const footerLinks = {
   Soluciones: [
@@ -28,6 +29,7 @@ export const Footer = () => {
   return (
     <footer className="bg-surface-dark border-t border-white/[0.04]">
       <div className="container py-16">
+        {/* Top: Brand + Nav Links */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
@@ -35,14 +37,20 @@ export const Footer = () => {
               <img src={logo} alt="Carstore" className="h-6 w-auto brightness-0 invert" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Tecnología para la seguridad vial, prevención de riesgos y visibilidad operativa en tiempo real.
+              Creando dispositivos de seguridad vial desde hace 21 años. Esforzándonos y creando soluciones que intervengan de forma directa en la seguridad vial.
             </p>
-            <p className="text-xs text-muted-foreground/50">
-              Ciudad de México · Shenzhen
-            </p>
+            {/* Certification badges */}
+            <div className="flex gap-3 pt-2">
+              <span className="inline-flex items-center rounded border border-accent/20 bg-accent/5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">
+                ESR — Empresa Socialmente Responsable
+              </span>
+              <span className="inline-flex items-center rounded border border-accent/20 bg-accent/5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">
+                Hecho en México
+              </span>
+            </div>
           </div>
 
-          {/* Links */}
+          {/* Nav Links */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
               <h4 className="font-display font-semibold text-xs uppercase tracking-widest text-foreground/50 mb-5">{title}</h4>
@@ -62,7 +70,59 @@ export const Footer = () => {
           ))}
         </div>
 
-        <div className="border-t border-white/[0.04] mt-14 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* Contact Info — Two Columns */}
+        <div className="border-t border-white/[0.04] mt-14 pt-10">
+          <h4 className="font-display font-semibold text-xs uppercase tracking-widest text-foreground/50 mb-6">Contacto</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Left: Main Office */}
+            <div className="space-y-3">
+              <a
+                href="https://maps.google.com/?q=Av+Miguel+de+Cervantes+Saavedra+507+Col+Irrigacion+Miguel+Hidalgo+CDMX"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <MapPin size={14} className="text-accent shrink-0 mt-0.5" />
+                <span>Av. Miguel de Cervantes Saavedra #507, Col. Irrigación, Deleg. Miguel Hidalgo, C.P. 11500, CDMX</span>
+              </a>
+              <div className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                <MapPin size={14} className="text-accent shrink-0 mt-0.5" />
+                <span>Presa Rodríguez 34, Col. Irrigación, Miguel Hidalgo, 11500 Ciudad de México, CDMX</span>
+              </div>
+              <a href="tel:+525550493484" className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Phone size={14} className="text-accent" />
+                55 5049 3484
+              </a>
+              <a href="tel:+525524520562" className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Phone size={14} className="text-accent" />
+                55 2452 0562
+              </a>
+            </div>
+
+            {/* Right: Planning Office */}
+            <div className="space-y-3">
+              <div className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                <MapPin size={14} className="text-accent shrink-0 mt-0.5" />
+                <span>Tintoreto #43 planta alta, Col. Nonoalco, Deleg. Benito Juárez, CDMX, C.P. 03700</span>
+              </div>
+              <a href="tel:+525575910324" className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Phone size={14} className="text-accent" />
+                55 7591 0324 ext 111 / 112
+              </a>
+              <a href="mailto:ventas@carstore.com.mx" className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Mail size={14} className="text-accent" />
+                ventas@carstore.com.mx
+              </a>
+              <a href="mailto:boutique@carstore.com.mx" className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Mail size={14} className="text-accent" />
+                boutique@carstore.com.mx
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="border-t border-white/[0.04] mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground/40">
             © {new Date().getFullYear()} Carstore. Todos los derechos reservados.
           </p>
