@@ -1,4 +1,5 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { Factory, Globe, ShieldCheck, Headphones, Cpu, Award } from "lucide-react";
 
 const differentiators = [
