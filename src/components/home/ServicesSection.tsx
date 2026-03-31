@@ -1,6 +1,7 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import bgTechnology from "@/assets/bg-technology.jpg";
 import { ArrowRight, BarChart3, Settings, Truck, Headphones } from "lucide-react";
 
 const steps = [
@@ -14,8 +15,8 @@ export const ServicesSection = () => {
   return (
     <section id="servicios" className="relative py-28 bg-background overflow-hidden">
       <ParallaxBackground
-        src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=80"
-        opacity="opacity-[0.30]"
+        src={bgTechnology}
+        opacity="opacity-[0.10]"
       />
       <div className="absolute inset-0 grid-overlay-fine" />
 
