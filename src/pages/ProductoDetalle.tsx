@@ -282,12 +282,15 @@ const ProductoDetalle = () => {
                     to={`/producto/${rp.slug}`}
                     className="group block bg-card/40 rounded-xl border border-white/[0.05] overflow-hidden hover:border-accent/20 transition-all duration-300"
                   >
-                    <div className="aspect-[4/3] overflow-hidden">
-                      <img
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <ImageWithFallback
                         src={rp.images[0]}
                         alt={rp.title}
+                        fallbackText={rp.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
+                        width={600}
+                        height={450}
                       />
                     </div>
                     <div className="p-5">

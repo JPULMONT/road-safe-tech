@@ -70,12 +70,15 @@ const CatalogoCategoria = () => {
                     to={`/producto/${product.slug}`}
                     className="group block bg-card/40 rounded-xl border border-white/[0.05] overflow-hidden hover:border-accent/20 transition-all duration-300 h-full"
                   >
-                    <div className="aspect-[4/3] overflow-hidden">
-                      <img
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <ImageWithFallback
                         src={product.images[0]}
                         alt={product.title}
+                        fallbackText={product.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
+                        width={600}
+                        height={450}
                       />
                     </div>
                     <div className="p-6">
