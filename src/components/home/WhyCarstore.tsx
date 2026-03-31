@@ -1,5 +1,6 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import bgIndustries from "@/assets/bg-industries.jpg";
 import { Factory, Globe, ShieldCheck, Headphones, Cpu, Award } from "lucide-react";
 
 const differentiators = [
@@ -15,8 +16,8 @@ export const WhyCarstore = () => {
   return (
     <section id="nosotros" className="relative py-28 bg-surface-dark overflow-hidden">
       <ParallaxBackground
-        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
-        opacity="opacity-[0.30]"
+        src={bgIndustries}
+        opacity="opacity-[0.10]"
       />
       <div className="absolute inset-0 grid-overlay" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-accent/[0.03] rounded-full blur-[200px]" />
