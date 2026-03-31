@@ -26,10 +26,10 @@ export const WhyCarstore = () => {
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">¿Por qué Carstore?</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground tracking-tight" style={{ textShadow: '0 2px 30px rgba(0,0,0,0.9)' }}>
               No somos un distribuidor. Somos el fabricante.
             </h2>
-            <p className="text-muted-foreground mt-5 text-base max-w-xl mx-auto">
+            <p className="text-foreground/80 mt-5 text-base max-w-xl mx-auto" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}>
               Desarrollamos, fabricamos, instalamos y mantenemos la tecnología que protege su flota. Control total de la cadena de valor.
             </p>
           </div>
