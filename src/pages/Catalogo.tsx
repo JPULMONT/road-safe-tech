@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { PageTransition } from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Brain, Camera, Cpu, Radar, Wrench, CircuitBoard, MonitorSmartphone, Zap } from "lucide-react";
@@ -14,7 +15,7 @@ const CatalogoPage = () => {
   const featured = getFeaturedProducts(4);
 
   return (
-    <div className="min-h-screen">
+    <PageTransition className="min-h-screen">
       <Navbar />
 
       <section className="relative pt-32 pb-20 bg-background overflow-hidden">

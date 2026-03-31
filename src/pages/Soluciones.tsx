@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { PageTransition } from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { solutions } from "@/data/solutions";
 
 const SolucionesPage = () => {
   return (
-    <div className="min-h-screen">
+    <PageTransition className="min-h-screen">
       <Navbar />
       <section className="relative pt-32 pb-20 bg-background overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
