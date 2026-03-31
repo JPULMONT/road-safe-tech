@@ -10,10 +10,11 @@ import { ServicesSection } from "@/components/home/ServicesSection";
 import { WhyCarstore } from "@/components/home/WhyCarstore";
 import { CTASection } from "@/components/home/CTASection";
 import { ContactSection } from "@/components/home/ContactSection";
+import { PageTransition } from "@/components/PageTransition";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <PageTransition className="min-h-screen">
       <Navbar />
       <HeroSection />
       <TrustBar />
@@ -26,7 +27,7 @@ const Index = () => {
       <CTASection />
       <ContactSection />
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 

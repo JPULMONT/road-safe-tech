@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { PageTransition } from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { getCategoryBySlug, getProductsByCategory, categories } from "@/data/products";
 import { ArrowRight, ChevronRight } from "lucide-react";
@@ -14,7 +15,7 @@ const CatalogoCategoria = () => {
 
   if (!category) {
     return (
-      <div className="min-h-screen">
+      <PageTransition className="min-h-screen">
         <Navbar />
         <div className="container pt-40 pb-20 text-center">
           <h1 className="text-3xl font-display font-bold text-foreground mb-4">Categoría no encontrada</h1>
@@ -23,12 +24,12 @@ const CatalogoCategoria = () => {
           </Button>
         </div>
         <Footer />
-      </div>
+      </PageTransition>
     );
   }
 
   return (
-    <div className="min-h-screen">
+    <PageTransition className="min-h-screen">
       <Navbar />
 
       {/* Hero */}
@@ -150,7 +151,7 @@ const CatalogoCategoria = () => {
       </section>
 
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 

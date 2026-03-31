@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
+import { PageTransition } from "@/components/PageTransition";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
@@ -15,7 +16,7 @@ const services = [
 
 const ServiciosPage = () => {
   return (
-    <div className="min-h-screen">
+    <PageTransition className="min-h-screen">
       <Navbar />
       <section className="relative pt-32 pb-20 bg-background overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
@@ -81,7 +82,7 @@ const ServiciosPage = () => {
         </div>
       </section>
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 
