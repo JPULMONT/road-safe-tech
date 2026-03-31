@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ArrowRight, ChevronRight } from "lucide-react";
 
 export const HeroSection = () => {
