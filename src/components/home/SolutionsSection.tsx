@@ -20,7 +20,7 @@ export const SolutionsSection = () => {
         <img
           src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover opacity-[0.18]"
+          className="w-full h-full object-cover opacity-[0.30]"
           loading="lazy"
           width={1920}
           height={1080}
