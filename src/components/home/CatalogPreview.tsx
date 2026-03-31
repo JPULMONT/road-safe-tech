@@ -27,7 +27,7 @@ export const CatalogPreview = () => {
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/80" />
       </div>
       <div className="absolute inset-0 grid-overlay" />
       
