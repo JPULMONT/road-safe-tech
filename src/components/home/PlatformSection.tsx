@@ -20,7 +20,7 @@ export const PlatformSection = () => {
         <img
           src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover opacity-[0.06]"
+          className="w-full h-full object-cover opacity-[0.20]"
           loading="lazy"
           width={1920}
           height={1080}

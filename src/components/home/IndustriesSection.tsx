@@ -19,7 +19,7 @@ export const IndustriesSection = () => {
         <img
           src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover opacity-[0.10]"
+          className="w-full h-full object-cover opacity-[0.22]"
           loading="lazy"
           width={1920}
           height={1080}
