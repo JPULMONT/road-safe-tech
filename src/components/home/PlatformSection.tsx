@@ -22,6 +22,7 @@ export const PlatformSection = () => {
         opacity="opacity-[0.30]"
       />
       <div className="absolute inset-0 grid-overlay" />
+      <div className="absolute inset-0 bg-background/75" />
       <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-accent/[0.04] rounded-full blur-[200px] translate-x-1/3 -translate-y-1/2" />
 
       <div className="container relative">
@@ -32,7 +33,7 @@ export const PlatformSection = () => {
               <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground tracking-tight leading-tight">
                 GPT Monitor: supervisión inteligente de su flota
               </h2>
-              <p className="text-muted-foreground mt-5 text-base leading-relaxed max-w-lg">
+              <p className="text-foreground/70 mt-5 text-base leading-relaxed max-w-lg">
                 Centralice datos de todos sus dispositivos en una plataforma con análisis predictivo, clasificación de alertas con IA, y visibilidad total de su operación.
               </p>
             </ScrollReveal>

@@ -21,6 +21,7 @@ export const IndustriesSection = () => {
         opacity="opacity-[0.35]"
       />
       <div className="absolute inset-0 grid-overlay-fine" />
+      <div className="absolute inset-0 bg-background/75" />
       
       <div className="container relative">
         <ScrollReveal>
@@ -30,7 +31,7 @@ export const IndustriesSection = () => {
               <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground tracking-tight leading-tight">
                 Soluciones adaptadas a cada sector
               </h2>
-              <p className="text-muted-foreground mt-5 text-base">
+              <p className="text-foreground/60 mt-5 text-base">
                 Servimos a empresas que dependen del transporte seguro y la supervisión operativa de sus activos.
               </p>
             </div>
@@ -46,12 +47,12 @@ export const IndustriesSection = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {industries.slice(0, 4).map((ind, i) => (
             <ScrollReveal key={ind.name} delay={i * 80}>
-              <a href={ind.href} className="group block bg-card/40 border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all duration-300 h-full">
+              <a href={ind.href} className="group block bg-card/60 backdrop-blur-sm border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all duration-300 h-full">
                 <div className="w-11 h-11 rounded-lg bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
                   <ind.icon size={20} className="text-accent" />
                 </div>
                 <h3 className="font-semibold text-sm text-foreground mb-1.5 font-display">{ind.name}</h3>
-                <p className="text-[13px] text-muted-foreground leading-relaxed">{ind.description}</p>
+                <p className="text-[13px] text-foreground/70 leading-relaxed">{ind.description}</p>
               </a>
             </ScrollReveal>
           ))}
@@ -59,12 +60,12 @@ export const IndustriesSection = () => {
         <div className="grid sm:grid-cols-3 gap-4 mt-4">
           {industries.slice(4).map((ind, i) => (
             <ScrollReveal key={ind.name} delay={(i + 4) * 80}>
-              <a href={ind.href} className="group block bg-card/40 border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all duration-300 h-full">
+              <a href={ind.href} className="group block bg-card/60 backdrop-blur-sm border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all duration-300 h-full">
                 <div className="w-11 h-11 rounded-lg bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
                   <ind.icon size={20} className="text-accent" />
                 </div>
                 <h3 className="font-semibold text-sm text-foreground mb-1.5 font-display">{ind.name}</h3>
-                <p className="text-[13px] text-muted-foreground leading-relaxed">{ind.description}</p>
+                <p className="text-[13px] text-foreground/70 leading-relaxed">{ind.description}</p>
               </a>
             </ScrollReveal>
           ))}
