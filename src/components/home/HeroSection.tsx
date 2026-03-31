@@ -15,6 +15,7 @@ export const HeroSection = () => {
           alt="Tecnología de seguridad para flotas de transporte"
           className="w-full h-full object-cover opacity-[0.28]"
           loading="eager"
+          fetchPriority="high"
           width={1920}
           height={1080}
         />
