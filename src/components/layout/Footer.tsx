@@ -1,4 +1,6 @@
 import logo from "@/assets/carstore-logo.png";
+import esrLogo from "@/assets/esr-logo.png";
+import hechoEnMexicoLogo from "@/assets/hecho-en-mexico.png";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 
