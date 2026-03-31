@@ -47,14 +47,57 @@ const NosotrosPage = () => {
 
       <section className="py-20 bg-background">
         <div className="container">
+          <div className="grid lg:grid-cols-3 gap-12">
+            <ScrollReveal>
+              <div className="space-y-4">
+                <h2 className="font-display font-bold text-sm uppercase tracking-[0.15em]">
+                  <span className="text-foreground">Nuestra </span>
+                  <span className="text-accent">Misión</span>
+                </h2>
+                <div className="border-b-2 border-accent w-12" />
+                <p className="text-muted-foreground leading-relaxed">
+                  Nos inspiramos en diseñar e implementar soluciones con tecnología de punta, impactando en la seguridad vial de los clientes con sistemas de prevención de accidentes que representan un apoyo para consolidar cambios culturales en todo usuario de la vía.
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <div className="space-y-4">
+                <h2 className="font-display font-bold text-sm uppercase tracking-[0.15em]">
+                  <span className="text-foreground">Nuestra </span>
+                  <span className="text-accent">Visión</span>
+                </h2>
+                <div className="border-b-2 border-accent w-12" />
+                <p className="text-muted-foreground leading-relaxed">
+                  Ser número uno como referente global integrando soluciones de seguridad vial y patrimonial, enfocadas al transporte con la convicción de salvar vidas.
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <div className="space-y-4">
+                <h2 className="font-display font-bold text-sm uppercase tracking-[0.15em]">
+                  <span className="text-foreground">Nuestros </span>
+                  <span className="text-accent">Valores</span>
+                </h2>
+                <div className="border-b-2 border-accent w-12" />
+                <div className="flex flex-wrap gap-2">
+                  {["Honestidad", "Pasión", "Ética", "Responsabilidad", "Disciplina", "Trabajo en equipo", "Perseverancia", "Compromiso"].map((value) => (
+                    <span key={value} className="bg-accent/10 text-accent/90 border border-accent/20 rounded-full px-4 py-2 text-sm font-medium">
+                      {value}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-background">
+        <div className="container">
           <div className="grid lg:grid-cols-2 gap-16">
             <ScrollReveal>
               <div className="space-y-6">
-                <h2 className="text-2xl font-display font-bold text-foreground">Nuestra misión</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Crear soluciones tecnológicas que beneficien a la sociedad y al medio ambiente, enfocándonos en la seguridad vial, la prevención de riesgos y la eficiencia operativa del transporte en México y el mundo.
-                </p>
-                <h2 className="text-2xl font-display font-bold text-foreground pt-4">Lo que nos hace diferentes</h2>
+                <h2 className="text-2xl font-display font-bold text-foreground">Lo que nos hace diferentes</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   Somos fabricantes, no distribuidores. Diseñamos y producimos nuestro propio hardware en Shenzhen, desarrollamos software y plataformas en México, e implementamos cada solución con equipos técnicos propios. Control total de la cadena de valor.
                 </p>
