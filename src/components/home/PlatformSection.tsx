@@ -1,6 +1,7 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import platformImage from "@/assets/platform-dashboard.jpg";
 import { ArrowRight, Activity, Bell, MapPin, Shield, BarChart3, Smartphone } from "lucide-react";
 
