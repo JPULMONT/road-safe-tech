@@ -17,7 +17,7 @@ export const WhyCarstore = () => {
         <img
           src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover opacity-[0.20]"
+          className="w-full h-full object-cover opacity-[0.30]"
           loading="lazy"
           width={1920}
           height={1080}
