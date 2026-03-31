@@ -1,5 +1,6 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ArrowRight, Eye, Radio, ShieldCheck, Cpu, BarChart3, Wrench, Zap, CircuitBoard } from "lucide-react";
 
 const solutions = [
