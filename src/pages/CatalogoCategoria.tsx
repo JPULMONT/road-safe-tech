@@ -24,7 +24,7 @@ const CatalogoCategoria = () => {
           </Button>
         </div>
         <Footer />
-      </div>
+      </PageTransition>
     );
   }
 
