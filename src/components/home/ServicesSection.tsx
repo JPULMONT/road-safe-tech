@@ -16,7 +16,7 @@ export const ServicesSection = () => {
         <img
           src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover opacity-[0.20]"
+          className="w-full h-full object-cover opacity-[0.30]"
           loading="lazy"
           width={1920}
           height={1080}
