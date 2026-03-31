@@ -96,7 +96,7 @@ const SolucionesPage = () => {
         </div>
       </section>
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 

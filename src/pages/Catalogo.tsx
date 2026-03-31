@@ -131,7 +131,7 @@ const CatalogoPage = () => {
         </div>
       </section>
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 

@@ -77,7 +77,7 @@ const IndustriasPage = () => {
         </div>
       </section>
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 
