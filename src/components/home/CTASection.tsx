@@ -9,7 +9,7 @@ export const CTASection = () => {
         <img
           src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover opacity-[0.25]"
+          className="w-full h-full object-cover opacity-[0.35]"
           loading="lazy"
           width={1920}
           height={1080}
