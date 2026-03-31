@@ -1,5 +1,6 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ArrowRight, Truck, Package, Bus, Factory, HardHat, Car, Zap } from "lucide-react";
 
 const industries = [
