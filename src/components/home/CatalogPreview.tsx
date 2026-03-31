@@ -24,6 +24,7 @@ export const CatalogPreview = () => {
         opacity="opacity-[0.30]"
       />
       <div className="absolute inset-0 grid-overlay" />
+      <div className="absolute inset-0 bg-background/80" />
       
       <div className="container relative">
         <ScrollReveal>
@@ -33,7 +34,7 @@ export const CatalogPreview = () => {
               <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground tracking-tight">
                 Explore nuestra tecnología
               </h2>
-              <p className="text-muted-foreground mt-4 text-base max-w-lg">
+              <p className="text-foreground/70 mt-4 text-base max-w-lg">
                 Más de 60 productos organizados por categoría. Encuentre la solución exacta para su operación.
               </p>
             </div>
@@ -49,15 +50,15 @@ export const CatalogPreview = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {categories.map((cat, i) => (
             <ScrollReveal key={cat.name} delay={i * 70}>
-              <Link to={`/catalogo/${cat.name.toLowerCase().replace(/\s+/g, '-')}`} className="group block bg-card/40 rounded-lg border border-white/[0.05] p-6 hover:border-accent/20 transition-all duration-300 h-full">
+              <Link to={`/catalogo/${cat.name.toLowerCase().replace(/\s+/g, '-')}`} className="group block bg-card/60 backdrop-blur-sm rounded-lg border border-white/[0.05] p-6 hover:border-accent/20 transition-all duration-300 h-full">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-11 h-11 rounded-lg bg-white/[0.03] flex items-center justify-center group-hover:bg-accent/10 transition-colors">
                     <cat.icon size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
                   </div>
-                  <span className="text-xs font-medium text-accent tabular-nums">{cat.count} productos</span>
+                  <span className="text-xs font-semibold text-accent tabular-nums">{cat.count} productos</span>
                 </div>
                 <h3 className="font-semibold text-foreground text-sm mb-1.5 font-display">{cat.name}</h3>
-                <p className="text-[13px] text-muted-foreground leading-relaxed">{cat.description}</p>
+                <p className="text-[13px] text-foreground/70 leading-relaxed">{cat.description}</p>
               </Link>
             </ScrollReveal>
           ))}
