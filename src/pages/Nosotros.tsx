@@ -98,7 +98,7 @@ const NosotrosPage = () => {
         </div>
       </section>
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 

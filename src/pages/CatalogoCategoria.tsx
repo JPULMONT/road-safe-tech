@@ -151,7 +151,7 @@ const CatalogoCategoria = () => {
       </section>
 
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 

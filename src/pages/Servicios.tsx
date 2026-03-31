@@ -82,7 +82,7 @@ const ServiciosPage = () => {
         </div>
       </section>
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 

@@ -113,7 +113,7 @@ const PlataformaPage = () => {
         </div>
       </section>
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 
