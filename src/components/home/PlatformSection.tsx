@@ -17,17 +17,10 @@ const features = [
 export const PlatformSection = () => {
   return (
     <section id="plataforma" className="relative py-28 bg-surface-dark overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80"
-          alt=""
-          className="w-full h-full object-cover opacity-[0.30]"
-          loading="lazy"
-          width={1920}
-          height={1080}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/60" />
-      </div>
+      <ParallaxBackground
+        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80"
+        opacity="opacity-[0.30]"
+      />
       <div className="absolute inset-0 grid-overlay" />
       <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-accent/[0.04] rounded-full blur-[200px] translate-x-1/3 -translate-y-1/2" />
 
