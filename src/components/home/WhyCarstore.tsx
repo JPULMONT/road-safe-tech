@@ -17,12 +17,12 @@ export const WhyCarstore = () => {
         <img
           src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover opacity-[0.20]"
+          className="w-full h-full object-cover opacity-[0.30]"
           loading="lazy"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/60" />
       </div>
       <div className="absolute inset-0 grid-overlay" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-accent/[0.03] rounded-full blur-[200px]" />

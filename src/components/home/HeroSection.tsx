@@ -13,14 +13,14 @@ export const HeroSection = () => {
         <img
           src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80"
           alt="Tecnología de seguridad para flotas de transporte"
-          className="w-full h-full object-cover opacity-[0.45]"
+          className="w-full h-full object-cover opacity-[0.55]"
           loading="eager"
           fetchPriority="high"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60" />
       </div>
 
       {/* Red glow — bottom right, very subtle */}

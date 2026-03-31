@@ -22,12 +22,12 @@ export const CatalogPreview = () => {
         <img
           src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover opacity-[0.18]"
+          className="w-full h-full object-cover opacity-[0.30]"
           loading="lazy"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/60" />
       </div>
       <div className="absolute inset-0 grid-overlay" />
       
