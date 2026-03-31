@@ -1,5 +1,6 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { Link } from "react-router-dom";
 import { ArrowRight, Camera, Radar, MonitorSmartphone, Cpu, CircuitBoard, Zap, Wrench, Brain } from "lucide-react";
 import { getFeaturedProducts } from "@/data/products";
