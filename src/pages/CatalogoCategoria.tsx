@@ -29,7 +29,7 @@ const CatalogoCategoria = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <PageTransition className="min-h-screen">
       <Navbar />
 
       {/* Hero */}
