@@ -14,7 +14,7 @@ export const CTASection = () => {
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/60" />
       </div>
       <div className="absolute inset-0 grid-overlay" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-accent/[0.05] rounded-full blur-[200px]" />
