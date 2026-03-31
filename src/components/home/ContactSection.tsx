@@ -54,7 +54,7 @@ export const ContactSection = () => {
             <ScrollReveal direction="left" delay={350}>
               <div className="mt-8">
                 <Button variant="accent" size="lg" asChild>
-                  <a href="https://wa.me/525512345678" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/5215556385619" target="_blank" rel="noopener noreferrer">
                     <MessageCircle size={16} />
                     Escribir por WhatsApp
                   </a>
