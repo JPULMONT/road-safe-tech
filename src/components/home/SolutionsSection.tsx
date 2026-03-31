@@ -1,5 +1,6 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ArrowRight, Eye, Radio, ShieldCheck, Cpu, BarChart3, Wrench, Zap, CircuitBoard } from "lucide-react";
 
 const solutions = [
@@ -16,17 +17,10 @@ const solutions = [
 export const SolutionsSection = () => {
   return (
     <section id="soluciones" className="relative py-28 bg-background overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1920&q=80"
-          alt=""
-          className="w-full h-full object-cover opacity-[0.30]"
-          loading="lazy"
-          width={1920}
-          height={1080}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/60" />
-      </div>
+      <ParallaxBackground
+        src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1920&q=80"
+        opacity="opacity-[0.30]"
+      />
       <div className="absolute inset-0 grid-overlay-fine" />
       
       <div className="container relative">
