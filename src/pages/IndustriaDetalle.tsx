@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { PageTransition } from "@/components/PageTransition";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { getIndustryBySlug, getProductsForIndustry } from "@/data/industries";
@@ -137,11 +138,15 @@ const IndustriaDetallePage = () => {
               {relatedProducts.slice(0, 6).map((product, i) => (
                 <ScrollReveal key={product.id} delay={i * 60}>
                   <Link to={`/producto/${product.slug}`} className="group block bg-card/40 border border-white/[0.05] rounded-lg overflow-hidden hover:border-accent/20 transition-all h-full">
-                    <div className="aspect-[4/3] bg-card/60 overflow-hidden">
-                      <img
+                    <div className="relative aspect-[4/3] bg-card/60 overflow-hidden">
+                      <ImageWithFallback
                         src={product.images[0]}
                         alt={product.title}
+                        fallbackText={product.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                        width={600}
+                        height={450}
                       />
                     </div>
                     <div className="p-5">

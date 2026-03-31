@@ -1,5 +1,6 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import platformImage from "@/assets/platform-dashboard.jpg";
 import { ArrowRight, Activity, Bell, MapPin, Shield, BarChart3, Smartphone } from "lucide-react";
 
@@ -71,11 +72,18 @@ export const PlatformSection = () => {
           <ScrollReveal direction="right" delay={200}>
             <div className="relative">
               <div className="absolute -inset-4 bg-accent/[0.03] rounded-2xl blur-[60px]" />
-              <img
-                src={platformImage}
-                alt="GPT Monitor — plataforma de supervisión inteligente"
-                className="relative rounded-lg border border-white/[0.06]"
-              />
+              <div className="relative rounded-lg border border-white/[0.06] overflow-hidden">
+                <ImageWithFallback
+                  src={platformImage}
+                  alt="GPT Monitor — plataforma de supervisión inteligente"
+                  fallbackText="GPT Monitor Dashboard"
+                  blurPlaceholder="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDn6KKKAPk//9k="
+                  className="relative w-full"
+                  loading="lazy"
+                  width={800}
+                  height={500}
+                />
+              </div>
             </div>
           </ScrollReveal>
         </div>

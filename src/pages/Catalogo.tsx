@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { PageTransition } from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { Link } from "react-router-dom";
 import { ArrowRight, Brain, Camera, Cpu, Radar, Wrench, CircuitBoard, MonitorSmartphone, Zap } from "lucide-react";
 import { categories, getFeaturedProducts } from "@/data/products";
@@ -61,12 +62,15 @@ const CatalogoPage = () => {
                     to={`/producto/${product.slug}`}
                     className="group block bg-card/40 rounded-xl border border-white/[0.05] overflow-hidden hover:border-accent/20 transition-all duration-300 h-full"
                   >
-                    <div className="aspect-square overflow-hidden">
-                      <img
+                    <div className="relative aspect-square overflow-hidden">
+                      <ImageWithFallback
                         src={product.images[0]}
                         alt={product.title}
+                        fallbackText={product.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
+                        width={400}
+                        height={400}
                       />
                     </div>
                     <div className="p-5">

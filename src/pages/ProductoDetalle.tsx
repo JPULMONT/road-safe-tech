@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { PageTransition } from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { getProductBySlug, getRelatedProducts, products } from "@/data/products";
 import { ArrowRight, ArrowLeft, CheckCircle2, Download, ChevronRight, Wrench, Phone } from "lucide-react";
 import { useState } from "react";
@@ -58,10 +59,14 @@ const ProductoDetalle = () => {
             <ScrollReveal>
               <div className="space-y-4">
                 <div className="relative aspect-square rounded-xl overflow-hidden bg-card border border-border">
-                  <img
+                  <ImageWithFallback
                     src={product.images[activeImage]}
                     alt={product.title}
+                    fallbackText={product.title}
                     className="w-full h-full object-cover"
+                    loading="eager"
+                    width={800}
+                    height={800}
                   />
                   <div className="absolute top-4 left-4">
                     {product.featured && (
@@ -277,12 +282,15 @@ const ProductoDetalle = () => {
                     to={`/producto/${rp.slug}`}
                     className="group block bg-card/40 rounded-xl border border-white/[0.05] overflow-hidden hover:border-accent/20 transition-all duration-300"
                   >
-                    <div className="aspect-[4/3] overflow-hidden">
-                      <img
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <ImageWithFallback
                         src={rp.images[0]}
                         alt={rp.title}
+                        fallbackText={rp.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
+                        width={600}
+                        height={450}
                       />
                     </div>
                     <div className="p-5">
