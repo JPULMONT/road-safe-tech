@@ -16,12 +16,12 @@ export const ServicesSection = () => {
         <img
           src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover opacity-[0.06]"
+          className="w-full h-full object-cover opacity-[0.20]"
           loading="lazy"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/80" />
       </div>
       <div className="absolute inset-0 grid-overlay-fine" />
 
