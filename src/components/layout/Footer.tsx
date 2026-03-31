@@ -1,4 +1,6 @@
 import logo from "@/assets/carstore-logo.png";
+import esrLogo from "@/assets/esr-logo.png";
+import hechoEnMexicoLogo from "@/assets/hecho-en-mexico.png";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 
@@ -40,13 +42,9 @@ export const Footer = () => {
               Creando dispositivos de seguridad vial desde hace 21 años. Esforzándonos y creando soluciones que intervengan de forma directa en la seguridad vial.
             </p>
             {/* Certification badges */}
-            <div className="flex gap-3 pt-2">
-              <span className="inline-flex items-center rounded border border-accent/20 bg-accent/5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">
-                ESR — Empresa Socialmente Responsable
-              </span>
-              <span className="inline-flex items-center rounded border border-accent/20 bg-accent/5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">
-                Hecho en México
-              </span>
+            <div className="flex items-center gap-4 pt-2">
+              <img src={esrLogo} alt="ESR — Empresa Socialmente Responsable" className="h-10 w-auto brightness-0 invert opacity-70" loading="lazy" width={120} height={40} />
+              <img src={hechoEnMexicoLogo} alt="Hecho en México" className="h-10 w-auto brightness-0 invert opacity-70" loading="lazy" width={40} height={40} />
             </div>
           </div>
 
