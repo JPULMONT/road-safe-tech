@@ -112,9 +112,3 @@ const StatsRow = () => {
     </div>
   );
 };
-          </ScrollReveal>
-        </div>
-      </div>
-    </section>
-  );
-};
