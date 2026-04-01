@@ -7,7 +7,18 @@ import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { getSolutionBySlug, getProductsForSolution } from "@/data/solutions";
+import { industries } from "@/data/industries";
 import NotFound from "./NotFound";
+
+const solutionIndustryMap: Record<string, string[]> = {
+  "seguridad-vial-inteligente": ["transporte-y-logistica", "transporte-de-pasajeros", "flotas-corporativas"],
+  "camaras-y-visibilidad-avanzada": ["transporte-y-logistica", "montacargas", "vehiculos-vocacionales"],
+  "deteccion-de-riesgos": ["transporte-y-logistica", "transporte-de-pasajeros", "vehiculos-vocacionales"],
+  "telemetria-y-gps": ["transporte-y-logistica", "reparto-y-ultima-milla", "flotas-corporativas"],
+  "monitoreo-y-control-operativo": ["transporte-y-logistica", "transporte-de-pasajeros", "reparto-y-ultima-milla"],
+  "seguridad-montacargas": ["montacargas", "vehiculos-vocacionales"],
+  "vehiculos-electricos": ["vehiculos-electricos", "flotas-corporativas"],
+};
 
 const SolucionDetallePage = () => {
   const { slug } = useParams<{ slug: string }>();
