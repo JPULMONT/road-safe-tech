@@ -67,19 +67,7 @@ export const HeroSection = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={650}>
-            <div className="flex flex-wrap gap-x-16 gap-y-6 pt-10 border-t border-white/[0.05]">
-              {[
-                { value: "8,400+", label: "Unidades protegidas" },
-                { value: "150+", label: "Flotas activas" },
-                { value: "37%", label: "Reducción de siniestros" },
-                { value: "24/7", label: "Monitoreo en tiempo real" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-3xl font-display font-bold text-foreground tabular-nums tracking-tight">{stat.value}</p>
-                  <p className="text-[11px] text-foreground/50 mt-1 tracking-wide uppercase">{stat.label}</p>
-                </div>
-              ))}
-            </div>
+            <StatsRow />
           </ScrollReveal>
         </div>
       </div>
