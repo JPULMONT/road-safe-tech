@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Factory, Globe, ShieldCheck, Cpu, Calendar, Users } from "lucide-react";
 
 const milestones = [
-  { icon: Calendar, label: "Fundada en 2000" },
+  { icon: Calendar, label: "+25 años de experiencia" },
   { icon: Factory, label: "Manufactura en Shenzhen y CDMX" },
   { icon: Globe, label: "Presencia internacional" },
   { icon: Users, label: "150+ flotas activas" },
