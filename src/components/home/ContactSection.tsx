@@ -2,6 +2,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useState } from "react";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
