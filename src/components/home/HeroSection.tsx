@@ -1,7 +1,9 @@
+import { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ArrowRight, ChevronRight } from "lucide-react";
+import { useCountUp } from "@/hooks/useCountUp";
 
 export const HeroSection = () => {
   return (
