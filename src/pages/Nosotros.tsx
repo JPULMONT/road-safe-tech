@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Factory, Globe, ShieldCheck, Cpu, Calendar, Users } from "lucide-react";
 
 const milestones = [
-  { icon: Calendar, label: "Fundada en 2000" },
+  { icon: Calendar, label: "+25 años de experiencia" },
   { icon: Factory, label: "Manufactura en Shenzhen y CDMX" },
   { icon: Globe, label: "Presencia internacional" },
   { icon: Users, label: "150+ flotas activas" },
@@ -39,7 +39,7 @@ const NosotrosPage = () => {
               Tecnología mexicana para la seguridad vial
             </h1>
             <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
-              Creando dispositivos de seguridad vial desde hace 21 años. Esforzándonos y creando soluciones que intervengan de forma directa en la seguridad vial.
+              Creando dispositivos de seguridad vial desde hace más de 25 años. Esforzándonos y creando soluciones que intervengan de forma directa en la seguridad vial.
             </p>
           </ScrollReveal>
         </div>

@@ -39,7 +39,7 @@ export const Footer = () => {
               <img src={logo} alt="Carstore" className="h-6 w-auto brightness-0 invert" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Creando dispositivos de seguridad vial desde hace 21 años. Esforzándonos y creando soluciones que intervengan de forma directa en la seguridad vial.
+              Creando dispositivos de seguridad vial desde hace más de 25 años. Esforzándonos y creando soluciones que intervengan de forma directa en la seguridad vial.
             </p>
             {/* Certification badges */}
             <div className="flex items-center gap-4 pt-2">
