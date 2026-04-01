@@ -5,8 +5,9 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { PageTransition } from "@/components/PageTransition";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowLeft, AlertTriangle, CheckCircle2, ChevronRight } from "lucide-react";
 import { getIndustryBySlug, getProductsForIndustry } from "@/data/industries";
+import { solutions } from "@/data/solutions";
 import NotFound from "./NotFound";
 
 const IndustriaDetallePage = () => {
