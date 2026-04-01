@@ -118,6 +118,19 @@ const NosotrosPage = () => {
         </div>
       </section>
 
+      <section className="py-20 bg-background">
+        <div className="container text-center">
+          <ScrollReveal>
+            <h3 className="text-2xl font-display font-bold text-foreground tracking-tight mb-6">
+              Síguenos en redes sociales
+            </h3>
+            <div className="flex justify-center">
+              <SocialLinks size="lg" variant="accent" />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       <section className="py-24 bg-surface-dark">
         <div className="container text-center">
           <ScrollReveal>

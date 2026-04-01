@@ -50,6 +50,10 @@ export const ContactSection = () => {
                   <span>Av. Miguel de Cervantes Saavedra #507, Col. Irrigación, Miguel Hidalgo, C.P. 11500, CDMX</span>
                 </a>
               </div>
+              <div className="mt-6">
+                <p className="font-display font-semibold text-xs uppercase tracking-widest text-foreground/50 mb-3">Redes sociales</p>
+                <SocialLinks size="sm" variant="muted" />
+              </div>
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={350}>
