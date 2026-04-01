@@ -22,8 +22,35 @@ const IndustriaDetallePage = () => {
     <PageTransition className="min-h-screen">
       <Navbar />
 
+      {/* Breadcrumb + JSON-LD */}
+      <div className="bg-background border-b border-border pt-24 pb-4">
+        <div className="container">
+          <nav className="flex items-center gap-2 text-xs text-muted-foreground">
+            <Link to="/" className="hover:text-foreground transition-colors">Inicio</Link>
+            <ChevronRight size={12} />
+            <Link to="/industrias" className="hover:text-foreground transition-colors">Industrias</Link>
+            <ChevronRight size={12} />
+            <span className="text-foreground">{industry.name}</span>
+          </nav>
+        </div>
+      </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Inicio", item: "https://carstore.lovable.app/" },
+              { "@type": "ListItem", position: 2, name: "Industrias", item: "https://carstore.lovable.app/industrias" },
+              { "@type": "ListItem", position: 3, name: industry.name, item: `https://carstore.lovable.app/industrias/${industry.slug}` },
+            ],
+          }),
+        }}
+      />
+
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-background overflow-hidden">
+      <section className="relative pt-12 pb-20 bg-background overflow-hidden">
         <div className="absolute inset-0 grid-overlay" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/[0.03] rounded-full blur-[200px]" />
         <div className="container relative">
