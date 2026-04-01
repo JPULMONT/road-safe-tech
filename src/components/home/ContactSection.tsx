@@ -2,6 +2,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useState } from "react";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -48,6 +49,10 @@ export const ContactSection = () => {
                   <MapPin size={15} className="text-accent shrink-0 mt-0.5" />
                   <span>Av. Miguel de Cervantes Saavedra #507, Col. Irrigación, Miguel Hidalgo, C.P. 11500, CDMX</span>
                 </a>
+              </div>
+              <div className="mt-6">
+                <p className="font-display font-semibold text-xs uppercase tracking-widest text-foreground/50 mb-3">Redes sociales</p>
+                <SocialLinks size="sm" variant="muted" />
               </div>
             </ScrollReveal>
 

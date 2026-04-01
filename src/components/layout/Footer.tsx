@@ -3,6 +3,7 @@ import esrLogo from "@/assets/esr-logo.png";
 import hechoEnMexicoLogo from "@/assets/hecho-en-mexico.png";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 const footerLinks = {
   Soluciones: [
@@ -45,6 +46,11 @@ export const Footer = () => {
             <div className="flex items-center gap-4 pt-2">
               <img src={esrLogo} alt="ESR — Empresa Socialmente Responsable" className="h-10 w-auto brightness-0 invert opacity-70" loading="lazy" width={120} height={40} />
               <img src={hechoEnMexicoLogo} alt="Hecho en México" className="h-10 w-auto brightness-0 invert opacity-70" loading="lazy" width={40} height={40} />
+            </div>
+            {/* Social media */}
+            <div className="pt-2">
+              <p className="font-display font-semibold text-xs uppercase tracking-widest text-foreground/50 mb-3">Síguenos</p>
+              <SocialLinks size="md" variant="muted" />
             </div>
           </div>
 
