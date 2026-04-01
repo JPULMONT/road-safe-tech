@@ -5,8 +5,9 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { PageTransition } from "@/components/PageTransition";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowLeft, AlertTriangle, CheckCircle2, ChevronRight } from "lucide-react";
 import { getIndustryBySlug, getProductsForIndustry } from "@/data/industries";
+import { solutions } from "@/data/solutions";
 import NotFound from "./NotFound";
 
 const IndustriaDetallePage = () => {
@@ -21,8 +22,35 @@ const IndustriaDetallePage = () => {
     <PageTransition className="min-h-screen">
       <Navbar />
 
+      {/* Breadcrumb + JSON-LD */}
+      <div className="bg-background border-b border-border pt-24 pb-4">
+        <div className="container">
+          <nav className="flex items-center gap-2 text-xs text-muted-foreground">
+            <Link to="/" className="hover:text-foreground transition-colors">Inicio</Link>
+            <ChevronRight size={12} />
+            <Link to="/industrias" className="hover:text-foreground transition-colors">Industrias</Link>
+            <ChevronRight size={12} />
+            <span className="text-foreground">{industry.name}</span>
+          </nav>
+        </div>
+      </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Inicio", item: "https://carstore.lovable.app/" },
+              { "@type": "ListItem", position: 2, name: "Industrias", item: "https://carstore.lovable.app/industrias" },
+              { "@type": "ListItem", position: 3, name: industry.name, item: `https://carstore.lovable.app/industrias/${industry.slug}` },
+            ],
+          }),
+        }}
+      />
+
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-background overflow-hidden">
+      <section className="relative pt-12 pb-20 bg-background overflow-hidden">
         <div className="absolute inset-0 grid-overlay" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/[0.03] rounded-full blur-[200px]" />
         <div className="container relative">
@@ -123,6 +151,47 @@ const IndustriaDetallePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Solutions */}
+      {(() => {
+        const relatedSolutions = solutions.filter((s) =>
+          s.relatedIndustrySlugs.includes(industry.slug)
+        );
+        return relatedSolutions.length > 0 ? (
+          <section className="py-20 bg-background">
+            <div className="container">
+              <ScrollReveal>
+                <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Soluciones recomendadas</p>
+                <h2 className="text-2xl sm:text-3xl font-display font-bold text-foreground tracking-tight leading-tight mb-12">
+                  Soluciones para esta industria
+                </h2>
+              </ScrollReveal>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {relatedSolutions.slice(0, 3).map((sol, i) => (
+                  <ScrollReveal key={sol.slug} delay={i * 60}>
+                    <Link
+                      to={`/soluciones/${sol.slug}`}
+                      className="group block bg-card/40 border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all h-full"
+                    >
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                          <sol.icon size={18} className="text-accent" />
+                        </div>
+                        <span className="text-[10px] font-semibold text-accent uppercase tracking-widest">{sol.tag}</span>
+                      </div>
+                      <h3 className="font-semibold text-foreground font-display mb-2 group-hover:text-accent transition-colors">{sol.title}</h3>
+                      <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3 mb-4">{sol.heroDescription}</p>
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-accent">
+                        Ver solución <ArrowRight size={12} />
+                      </span>
+                    </Link>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null;
+      })()}
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (

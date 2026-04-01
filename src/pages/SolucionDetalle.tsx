@@ -7,7 +7,18 @@ import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { getSolutionBySlug, getProductsForSolution } from "@/data/solutions";
+import { industries } from "@/data/industries";
 import NotFound from "./NotFound";
+
+const solutionIndustryMap: Record<string, string[]> = {
+  "seguridad-vial-inteligente": ["transporte-y-logistica", "transporte-de-pasajeros", "flotas-corporativas"],
+  "camaras-y-visibilidad-avanzada": ["transporte-y-logistica", "montacargas", "vehiculos-vocacionales"],
+  "deteccion-de-riesgos": ["transporte-y-logistica", "transporte-de-pasajeros", "vehiculos-vocacionales"],
+  "telemetria-y-gps": ["transporte-y-logistica", "reparto-y-ultima-milla", "flotas-corporativas"],
+  "monitoreo-y-control-operativo": ["transporte-y-logistica", "transporte-de-pasajeros", "reparto-y-ultima-milla"],
+  "seguridad-montacargas": ["montacargas", "vehiculos-vocacionales"],
+  "vehiculos-electricos": ["vehiculos-electricos", "flotas-corporativas"],
+};
 
 const SolucionDetallePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -152,6 +163,36 @@ const SolucionDetallePage = () => {
           </div>
         </section>
       )}
+
+      {/* Related Industries */}
+      {(() => {
+        const industrySlugs = solutionIndustryMap[solution.slug] || [];
+        const relatedIndustries = industrySlugs
+          .map((s) => industries.find((ind) => ind.slug === s))
+          .filter(Boolean);
+        return relatedIndustries.length > 0 ? (
+          <section className="py-16 bg-surface-dark">
+            <div className="container">
+              <ScrollReveal>
+                <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Esta solución aplica para:</p>
+              </ScrollReveal>
+              <div className="flex flex-wrap gap-3 mt-2">
+                {relatedIndustries.map((ind) => ind && (
+                  <ScrollReveal key={ind.slug}>
+                    <Link
+                      to={`/industrias/${ind.slug}`}
+                      className="inline-flex items-center gap-2.5 bg-card/40 border border-white/[0.05] rounded-full px-5 py-2.5 hover:border-accent/20 transition-all group"
+                    >
+                      <ind.icon size={16} className="text-accent" />
+                      <span className="text-sm font-medium text-foreground group-hover:text-accent transition-colors">{ind.name}</span>
+                    </Link>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null;
+      })()}
 
       {/* CTA */}
       <section className="py-20 bg-surface-dark">

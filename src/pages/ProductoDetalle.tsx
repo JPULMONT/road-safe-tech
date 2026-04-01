@@ -5,7 +5,8 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { PageTransition } from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
-import { getProductBySlug, getRelatedProducts, products } from "@/data/products";
+import { getProductBySlug, getRelatedProducts } from "@/data/products";
+import { solutions } from "@/data/solutions";
 import { ArrowRight, ArrowLeft, CheckCircle2, Download, ChevronRight, Wrench, Phone } from "lucide-react";
 import { useState } from "react";
 
@@ -305,6 +306,47 @@ const ProductoDetalle = () => {
           </div>
         </section>
       )}
+
+      {/* Related Solutions */}
+      {(() => {
+        const relatedSolutions = solutions.filter((s) =>
+          s.relatedCategorySlugs.includes(product.categorySlug)
+        ).slice(0, 2);
+        return relatedSolutions.length > 0 ? (
+          <section className="py-16 bg-surface-dark">
+            <div className="container">
+              <ScrollReveal>
+                <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Soluciones relacionadas</p>
+                <h2 className="text-2xl font-display font-bold text-foreground tracking-tight mb-8">
+                  Este producto forma parte de
+                </h2>
+              </ScrollReveal>
+              <div className="grid sm:grid-cols-2 gap-5">
+                {relatedSolutions.map((sol, i) => (
+                  <ScrollReveal key={sol.slug} delay={i * 60}>
+                    <Link
+                      to={`/soluciones/${sol.slug}`}
+                      className="group block bg-card/40 border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all h-full"
+                    >
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                          <sol.icon size={18} className="text-accent" />
+                        </div>
+                        <span className="text-[10px] font-semibold text-accent uppercase tracking-widest">{sol.tag}</span>
+                      </div>
+                      <h3 className="font-semibold text-foreground font-display mb-2 group-hover:text-accent transition-colors">{sol.title}</h3>
+                      <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-3">{sol.heroDescription}</p>
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-accent">
+                        Ver solución <ArrowRight size={12} />
+                      </span>
+                    </Link>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null;
+      })()}
 
       {/* Contact CTA */}
       <section className="relative py-20 bg-surface-dark overflow-hidden">
