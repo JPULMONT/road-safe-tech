@@ -39,7 +39,7 @@ const NosotrosPage = () => {
               Tecnología mexicana para la seguridad vial
             </h1>
             <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
-              Creando dispositivos de seguridad vial desde hace 21 años. Esforzándonos y creando soluciones que intervengan de forma directa en la seguridad vial.
+              Creando dispositivos de seguridad vial desde hace más de 25 años. Esforzándonos y creando soluciones que intervengan de forma directa en la seguridad vial.
             </p>
           </ScrollReveal>
         </div>
