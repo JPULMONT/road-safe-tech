@@ -74,3 +74,47 @@ export const HeroSection = () => {
     </section>
   );
 };
+
+const StatsRow = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const units = useCountUp(8400, 2000, visible);
+  const fleets = useCountUp(150, 2000, visible);
+  const reduction = useCountUp(37, 2000, visible);
+
+  const stats = [
+    { value: `${units.toLocaleString()}+`, label: "Unidades protegidas" },
+    { value: `${fleets}+`, label: "Flotas activas" },
+    { value: `${reduction}%`, label: "Reducción de siniestros" },
+    { value: "24/7", label: "Monitoreo en tiempo real" },
+  ];
+
+  return (
+    <div ref={ref} className="flex flex-wrap gap-x-16 gap-y-6 pt-10 border-t border-white/[0.05]">
+      {stats.map((stat) => (
+        <div key={stat.label}>
+          <p className="text-3xl font-display font-bold text-foreground tabular-nums tracking-tight">{stat.value}</p>
+          <p className="text-[11px] text-foreground/50 mt-1 tracking-wide uppercase">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
+  );
+};
