@@ -9,7 +9,7 @@ const socialLinks = [
   { href: "https://www.tiktok.com/@carstoreseguridadvialmex", label: "Carstore en TikTok", Icon: null },
 ];
 
-const sizeMap = { sm: { px: 16, gap: "gap-3" }, md: { px: 18, gap: "gap-4" }, lg: { px: 24, gap: "gap-5" } };
+const sizeMap = { sm: { px: 20, gap: "gap-4" }, md: { px: 24, gap: "gap-5" }, lg: { px: 30, gap: "gap-6" } };
 const variantMap = {
   muted: "text-muted-foreground hover:text-foreground",
   accent: "text-muted-foreground hover:text-accent",
