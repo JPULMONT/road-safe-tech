@@ -14,7 +14,7 @@ const AvisoDePrivacidad = () => {
                 Aviso de Privacidad
               </h1>
               <p className="text-sm text-foreground/50 tracking-wide uppercase">
-                Última actualización: abril de 2025
+                Última actualización: abril de 2026
               </p>
             </header>
 
