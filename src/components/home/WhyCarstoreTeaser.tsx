@@ -16,7 +16,7 @@ export const WhyCarstoreTeaser = () => {
       <ParallaxBackground src={bgMexicoChina} opacity="opacity-[0.10]" />
       <div className="absolute inset-0 bg-background/90" />
       <div className="absolute inset-0 grid-overlay" />
-      <div className="container">
+      <div className="container relative">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-12">
             <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">¿Por qué Carstore?</p>
