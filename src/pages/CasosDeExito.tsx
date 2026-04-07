@@ -97,15 +97,6 @@ const CasosDeExito = () => {
                   </blockquote>
                   <p className="text-xs text-foreground/40 mb-6 pl-4">— {caso.testimonioAutor}, {caso.testimonioCargoEmpresa}</p>
 
-                  {/* CTA */}
-                  <div className="mt-auto">
-                    <Link
-                      to="/contacto"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent/80 transition-colors"
-                    >
-                      Ver caso completo <ArrowRight size={14} />
-                    </Link>
-                  </div>
                 </div>
               </ScrollReveal>
             ))}
