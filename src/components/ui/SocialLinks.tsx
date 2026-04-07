@@ -6,7 +6,15 @@ const XIcon = ({ size }: { size: number }) => (
   </svg>
 );
 
-const socialLinks = [
+const TikTokIcon = ({ size }: { size: number }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z" />
+  </svg>
+);
+
+type CustomIconComponent = (({ size }: { size: number }) => JSX.Element) | null;
+
+const socialLinks: { href: string; label: string; Icon: typeof Facebook | null; CustomIcon?: CustomIconComponent }[] = [
   { href: "https://www.facebook.com/carstoremexico/", label: "Carstore en Facebook", Icon: Facebook },
   { href: "https://x.com/CarStoreMEX", label: "Carstore en X", Icon: null, CustomIcon: XIcon },
   { href: "https://www.instagram.com/carstoremexico/", label: "Carstore en Instagram", Icon: Instagram },
@@ -15,11 +23,11 @@ const socialLinks = [
   { href: "https://www.tiktok.com/@carstoreseguridadvialmex", label: "Carstore en TikTok", Icon: null, CustomIcon: TikTokIcon },
 ];
 
-const TikTokIcon = ({ size }: { size: number }) => (
-  <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
-    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z" />
-  </svg>
-);
+const sizeMap = { sm: { px: 20, gap: "gap-4" }, md: { px: 24, gap: "gap-5" }, lg: { px: 30, gap: "gap-6" } };
+const variantMap = {
+  muted: "text-muted-foreground hover:text-foreground",
+  accent: "text-muted-foreground hover:text-accent",
+};
 
 interface SocialLinksProps {
   size?: "sm" | "md" | "lg";
