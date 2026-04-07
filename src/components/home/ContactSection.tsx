@@ -26,7 +26,7 @@ export const ContactSection = () => {
               <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground tracking-tight leading-tight">
                 Hablemos de su operación
               </h2>
-              <p className="text-muted-foreground mt-5 text-base leading-relaxed max-w-md">
+              <p className="text-foreground/70 mt-5 text-base leading-relaxed max-w-md">
                 Nuestro equipo de especialistas puede ayudarle a encontrar la solución ideal para su flota.
               </p>
             </ScrollReveal>
@@ -76,7 +76,7 @@ export const ContactSection = () => {
                     <ArrowRight className="text-accent" size={22} />
                   </div>
                   <h3 className="font-semibold text-foreground text-lg font-display">Mensaje enviado</h3>
-                  <p className="text-sm text-muted-foreground mt-2 max-w-xs mx-auto">Nos pondremos en contacto con usted a la brevedad.</p>
+                  <p className="text-sm text-foreground/70 mt-2 max-w-xs mx-auto">Nos pondremos en contacto con usted a la brevedad.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">

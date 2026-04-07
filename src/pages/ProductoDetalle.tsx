@@ -21,7 +21,7 @@ const ProductoDetalle = () => {
         <Navbar />
         <div className="container pt-40 pb-20 text-center">
           <h1 className="text-3xl font-display font-bold text-foreground mb-4">Producto no encontrado</h1>
-          <p className="text-muted-foreground mb-8">El producto que busca no existe o ha sido descontinuado.</p>
+          <p className="text-foreground/70 mb-8">El producto que busca no existe o ha sido descontinuado.</p>
           <Button variant="accent" asChild>
             <Link to="/catalogo">Volver al catálogo</Link>
           </Button>
@@ -101,11 +101,11 @@ const ProductoDetalle = () => {
                   <h1 className="text-3xl sm:text-4xl font-display font-bold text-foreground tracking-tight leading-tight">
                     {product.title}
                   </h1>
-                  <p className="text-lg text-muted-foreground mt-3">{product.subtitle}</p>
+                  <p className="text-lg text-foreground/70 mt-3">{product.subtitle}</p>
                   <p className="text-xs text-muted-foreground mt-2">SKU: {product.sku}</p>
                 </div>
 
-                <p className="text-muted-foreground leading-relaxed">{product.shortDescription}</p>
+                <p className="text-foreground/70 leading-relaxed">{product.shortDescription}</p>
 
                 {/* Highlights */}
                 <div className="space-y-3">
@@ -162,7 +162,7 @@ const ProductoDetalle = () => {
               <ScrollReveal>
                 <div>
                   <h2 className="text-2xl font-display font-bold text-foreground tracking-tight mb-6">Descripción detallada</h2>
-                  <p className="text-muted-foreground leading-relaxed">{product.longDescription}</p>
+                  <p className="text-foreground/70 leading-relaxed">{product.longDescription}</p>
                 </div>
               </ScrollReveal>
 
@@ -170,7 +170,7 @@ const ProductoDetalle = () => {
                 <div>
                   <h2 className="text-2xl font-display font-bold text-foreground tracking-tight mb-6">Problema que resuelve</h2>
                   <div className="bg-card/50 rounded-lg border border-border p-6">
-                    <p className="text-muted-foreground leading-relaxed">{product.problemSolved}</p>
+                    <p className="text-foreground/70 leading-relaxed">{product.problemSolved}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -185,7 +185,7 @@ const ProductoDetalle = () => {
                         <div className="w-7 h-7 rounded bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
                           <CheckCircle2 size={14} className="text-accent" />
                         </div>
-                        <span className="text-sm text-muted-foreground leading-relaxed">{h}</span>
+                        <span className="text-sm text-foreground/70 leading-relaxed">{h}</span>
                       </div>
                     ))}
                   </div>
@@ -297,7 +297,7 @@ const ProductoDetalle = () => {
                     <div className="p-5">
                       <p className="text-[10px] font-semibold text-accent uppercase tracking-widest mb-2">{rp.category}</p>
                       <h3 className="font-display font-semibold text-foreground mb-1.5">{rp.title}</h3>
-                      <p className="text-xs text-muted-foreground line-clamp-2">{rp.shortDescription}</p>
+                      <p className="text-xs text-foreground/70 line-clamp-2">{rp.shortDescription}</p>
                     </div>
                   </Link>
                 </ScrollReveal>
@@ -335,7 +335,7 @@ const ProductoDetalle = () => {
                         <span className="text-[10px] font-semibold text-accent uppercase tracking-widest">{sol.tag}</span>
                       </div>
                       <h3 className="font-semibold text-foreground font-display mb-2 group-hover:text-accent transition-colors">{sol.title}</h3>
-                      <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-3">{sol.heroDescription}</p>
+                      <p className="text-xs text-foreground/70 leading-relaxed line-clamp-2 mb-3">{sol.heroDescription}</p>
                       <span className="inline-flex items-center gap-1 text-xs font-medium text-accent">
                         Ver solución <ArrowRight size={12} />
                       </span>
@@ -357,7 +357,7 @@ const ProductoDetalle = () => {
             <h2 className="text-3xl font-display font-bold text-foreground tracking-tight mb-5">
               ¿Interesado en el {product.title}?
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+            <p className="text-foreground/70 mb-8 max-w-lg mx-auto">
               Nuestros especialistas pueden ayudarle a evaluar si este producto es la solución correcta para su flota.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

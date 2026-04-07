@@ -39,7 +39,7 @@ const CatalogoPage = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight max-w-3xl">
               Tecnología para cada necesidad de su flota
             </h1>
-            <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
+            <p className="text-lg text-foreground/70 mt-6 max-w-2xl leading-relaxed">
               Más de 60 productos organizados por categoría. Encuentre la solución exacta para su operación.
             </p>
           </ScrollReveal>
@@ -76,7 +76,7 @@ const CatalogoPage = () => {
                     <div className="p-5">
                       <p className="text-[10px] font-semibold text-accent uppercase tracking-widest mb-2">{product.category}</p>
                       <h3 className="font-display font-semibold text-foreground mb-1.5">{product.title}</h3>
-                      <p className="text-xs text-muted-foreground line-clamp-2">{product.shortDescription}</p>
+                      <p className="text-xs text-foreground/70 line-clamp-2">{product.shortDescription}</p>
                     </div>
                   </Link>
                 </ScrollReveal>
@@ -107,7 +107,7 @@ const CatalogoPage = () => {
                       <span className="text-xs font-medium text-accent tabular-nums">{cat.productCount}</span>
                     </div>
                     <h3 className="font-display font-semibold text-foreground mb-2">{cat.name}</h3>
-                    <p className="text-[13px] text-muted-foreground leading-relaxed">{cat.description}</p>
+                    <p className="text-[13px] text-foreground/70 leading-relaxed">{cat.description}</p>
                   </Link>
                 </ScrollReveal>
               );
@@ -122,7 +122,7 @@ const CatalogoPage = () => {
             <h2 className="text-3xl font-display font-bold text-foreground tracking-tight mb-5">
               ¿Necesita ayuda para elegir?
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+            <p className="text-foreground/70 mb-8 max-w-lg mx-auto">
               Nuestros especialistas pueden recomendar los productos ideales para su tipo de flota y operación.
             </p>
             <Button variant="accent" size="xl" asChild>

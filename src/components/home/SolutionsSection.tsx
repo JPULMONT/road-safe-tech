@@ -32,7 +32,7 @@ export const SolutionsSection = () => {
               <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground tracking-tight leading-tight">
                 Tecnología integral para la seguridad de su operación
               </h2>
-              <p className="text-muted-foreground mt-5 text-base leading-relaxed">
+              <p className="text-foreground/70 mt-5 text-base leading-relaxed">
                 Desde cámaras con IA hasta plataformas de supervisión inteligente. Cada solución está diseñada para prevenir riesgos y proteger su flota.
               </p>
             </div>
@@ -56,7 +56,7 @@ export const SolutionsSection = () => {
                   <span className="text-[10px] font-medium text-muted-foreground/60 uppercase tracking-widest">{sol.tag}</span>
                 </div>
                 <h3 className="font-semibold text-foreground text-sm mb-2 font-display">{sol.title}</h3>
-                <p className="text-[13px] text-muted-foreground leading-relaxed flex-1">{sol.description}</p>
+                <p className="text-[13px] text-foreground/70 leading-relaxed flex-1">{sol.description}</p>
               </div>
             </ScrollReveal>
           ))}

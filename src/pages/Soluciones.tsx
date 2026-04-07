@@ -32,7 +32,7 @@ const SolucionesPage = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight max-w-3xl">
               Tecnología integral para la seguridad de su flota
             </h1>
-            <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
+            <p className="text-lg text-foreground/70 mt-6 max-w-2xl leading-relaxed">
               Cada solución está diseñada para resolver problemas operativos reales: prevenir accidentes, dar visibilidad y optimizar su operación de transporte.
             </p>
           </ScrollReveal>
@@ -52,7 +52,7 @@ const SolucionesPage = () => {
                       </div>
                       <h2 className="text-xl font-display font-bold text-foreground">{sol.title}</h2>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed mb-6 max-w-xl">{sol.heroDescription}</p>
+                    <p className="text-foreground/70 leading-relaxed mb-6 max-w-xl">{sol.heroDescription}</p>
                     <Button variant="outline-dark" size="sm" asChild>
                       <Link to={`/soluciones/${sol.slug}`}>
                         Conocer más
@@ -83,7 +83,7 @@ const SolucionesPage = () => {
             <h2 className="text-3xl font-display font-bold text-foreground tracking-tight mb-5">
               ¿No sabe qué solución necesita?
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+            <p className="text-foreground/70 mb-8 max-w-lg mx-auto">
               Nuestro equipo puede diagnosticar su operación y recomendar la combinación ideal de tecnología.
             </p>
             <Button variant="accent" size="xl" asChild>

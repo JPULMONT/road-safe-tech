@@ -53,7 +53,7 @@ const CatalogoCategoria = () => {
             <h1 className="text-4xl sm:text-5xl font-display font-bold text-foreground tracking-tight leading-tight max-w-3xl">
               {category.name}
             </h1>
-            <p className="text-lg text-muted-foreground mt-5 max-w-2xl leading-relaxed">
+            <p className="text-lg text-foreground/70 mt-5 max-w-2xl leading-relaxed">
               {category.description}
             </p>
           </ScrollReveal>
@@ -89,7 +89,7 @@ const CatalogoCategoria = () => {
                         </span>
                       )}
                       <h3 className="font-display font-semibold text-foreground text-lg mb-2">{product.title}</h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2 mb-4">{product.shortDescription}</p>
+                      <p className="text-sm text-foreground/70 line-clamp-2 mb-4">{product.shortDescription}</p>
                       <div className="flex items-center gap-2 text-accent text-sm font-medium group-hover:gap-3 transition-all">
                         Ver producto <ArrowRight size={14} />
                       </div>
@@ -100,7 +100,7 @@ const CatalogoCategoria = () => {
             </div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-muted-foreground mb-6">Próximamente agregaremos productos a esta categoría.</p>
+              <p className="text-foreground/70 mb-6">Próximamente agregaremos productos a esta categoría.</p>
               <Button variant="accent" asChild>
                 <Link to="/catalogo">Ver todas las categorías</Link>
               </Button>
@@ -126,7 +126,7 @@ const CatalogoCategoria = () => {
                     className="group block bg-card/40 rounded-lg border border-white/[0.05] p-6 hover:border-accent/20 transition-all duration-300"
                   >
                     <h3 className="font-display font-semibold text-foreground mb-1.5">{cat.name}</h3>
-                    <p className="text-xs text-muted-foreground line-clamp-2">{cat.description}</p>
+                    <p className="text-xs text-foreground/70 line-clamp-2">{cat.description}</p>
                   </Link>
                 </ScrollReveal>
               ))}
@@ -141,7 +141,7 @@ const CatalogoCategoria = () => {
             <h2 className="text-3xl font-display font-bold text-foreground tracking-tight mb-5">
               ¿Necesita ayuda para elegir?
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+            <p className="text-foreground/70 mb-8 max-w-lg mx-auto">
               Nuestros especialistas pueden recomendar los productos ideales para su tipo de flota y operación.
             </p>
             <Button variant="accent" size="xl" asChild>

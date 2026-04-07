@@ -39,7 +39,7 @@ export const Footer = () => {
             <Link to="/">
               <img src={logo} alt="Carstore" className="h-6 w-auto brightness-0 invert" />
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+            <p className="text-sm text-foreground/60 leading-relaxed max-w-xs">
               Creando dispositivos de seguridad vial desde hace más de 25 años. Esforzándonos y creando soluciones que intervengan de forma directa en la seguridad vial.
             </p>
             {/* Certification badges */}
@@ -63,7 +63,7 @@ export const Footer = () => {
                   <li key={link.label}>
                     <Link
                       to={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                      className="text-sm text-foreground/60 hover:text-foreground transition-colors duration-200"
                     >
                       {link.label}
                     </Link>
@@ -84,20 +84,20 @@ export const Footer = () => {
                 href="https://maps.google.com/?q=Av+Miguel+de+Cervantes+Saavedra+507+Col+Irrigacion+Miguel+Hidalgo+CDMX"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-start gap-2.5 text-sm text-foreground/60 hover:text-foreground transition-colors"
               >
                 <MapPin size={14} className="text-accent shrink-0 mt-0.5" />
                 <span>Av. Miguel de Cervantes Saavedra #507, Col. Irrigación, Deleg. Miguel Hidalgo, C.P. 11500, CDMX</span>
               </a>
-              <div className="flex items-start gap-2.5 text-sm text-muted-foreground">
+              <div className="flex items-start gap-2.5 text-sm text-foreground/60">
                 <MapPin size={14} className="text-accent shrink-0 mt-0.5" />
                 <span>Presa Rodríguez 34, Col. Irrigación, Miguel Hidalgo, 11500 Ciudad de México, CDMX</span>
               </div>
-              <a href="tel:+525550493484" className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="tel:+525550493484" className="flex items-center gap-2.5 text-sm text-foreground/60 hover:text-foreground transition-colors">
                 <Phone size={14} className="text-accent" />
                 55 5049 3484
               </a>
-              <a href="tel:+525524520562" className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="tel:+525524520562" className="flex items-center gap-2.5 text-sm text-foreground/60 hover:text-foreground transition-colors">
                 <Phone size={14} className="text-accent" />
                 55 2452 0562
               </a>
@@ -105,19 +105,19 @@ export const Footer = () => {
 
             {/* Right: Planning Office */}
             <div className="space-y-3">
-              <div className="flex items-start gap-2.5 text-sm text-muted-foreground">
+              <div className="flex items-start gap-2.5 text-sm text-foreground/60">
                 <MapPin size={14} className="text-accent shrink-0 mt-0.5" />
                 <span>Tintoreto #43 planta alta, Col. Nonoalco, Deleg. Benito Juárez, CDMX, C.P. 03700</span>
               </div>
-              <a href="tel:+525575910324" className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="tel:+525575910324" className="flex items-center gap-2.5 text-sm text-foreground/60 hover:text-foreground transition-colors">
                 <Phone size={14} className="text-accent" />
                 55 7591 0324 ext 111 / 112
               </a>
-              <a href="mailto:ventas@carstore.com.mx" className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="mailto:ventas@carstore.com.mx" className="flex items-center gap-2.5 text-sm text-foreground/60 hover:text-foreground transition-colors">
                 <Mail size={14} className="text-accent" />
                 ventas@carstore.com.mx
               </a>
-              <a href="mailto:boutique@carstore.com.mx" className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="mailto:boutique@carstore.com.mx" className="flex items-center gap-2.5 text-sm text-foreground/60 hover:text-foreground transition-colors">
                 <Mail size={14} className="text-accent" />
                 boutique@carstore.com.mx
               </a>
@@ -127,14 +127,14 @@ export const Footer = () => {
 
         {/* Bottom bar */}
         <div className="border-t border-white/[0.04] mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-muted-foreground/40">
+          <p className="text-xs text-foreground/60/40">
             © {new Date().getFullYear()} Carstore. Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
-            <Link to="#" className="text-xs text-muted-foreground/40 hover:text-muted-foreground transition-colors">
+            <Link to="#" className="text-xs text-foreground/60/40 hover:text-foreground/60 transition-colors">
               Aviso de privacidad
             </Link>
-            <Link to="#" className="text-xs text-muted-foreground/40 hover:text-muted-foreground transition-colors">
+            <Link to="#" className="text-xs text-foreground/60/40 hover:text-foreground/60 transition-colors">
               Términos y condiciones
             </Link>
           </div>

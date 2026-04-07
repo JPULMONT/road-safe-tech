@@ -28,7 +28,7 @@ export const ServicesSection = () => {
               <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground tracking-tight leading-tight">
                 De la consultoría a la operación
               </h2>
-              <p className="text-muted-foreground mt-5 text-base">
+              <p className="text-foreground/70 mt-5 text-base">
                 No solo vendemos tecnología. Diagnosticamos, diseñamos, instalamos, capacitamos y damos soporte a largo plazo.
               </p>
             </div>
@@ -51,7 +51,7 @@ export const ServicesSection = () => {
                     <s.icon size={18} className="text-accent" />
                   </div>
                   <h3 className="font-semibold text-foreground text-sm mb-2 font-display">{s.title}</h3>
-                  <p className="text-[13px] text-muted-foreground leading-relaxed">{s.description}</p>
+                  <p className="text-[13px] text-foreground/70 leading-relaxed">{s.description}</p>
                 </div>
               </div>
             </ScrollReveal>
