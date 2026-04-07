@@ -15,6 +15,11 @@ export interface Industry {
   relatedCategorySlugs: string[];
   stats: { value: string; label: string }[];
   ctaText: string;
+  faqs: { question: string; answer: string }[];
+  processNotes: string;
+  featuredStat: { value: string; label: string; context: string };
+  seoTitle: string;
+  seoDescription: string;
 }
 
 export const industries: Industry[] = [
@@ -48,6 +53,15 @@ export const industries: Industry[] = [
       { value: "100%", label: "Visibilidad" },
     ],
     ctaText: "Solicitar evaluación de flota",
+    faqs: [
+      { question: "¿Sus soluciones funcionan en rutas de largo recorrido sin cobertura constante?", answer: "Sí. Nuestros dispositivos GPS cuentan con almacenamiento local de datos y sincronización automática cuando recuperan señal. Las dashcams graban localmente en tarjeta SD de hasta 256GB. Ningún evento se pierde aunque la ruta pase por zonas sin cobertura." },
+      { question: "¿Pueden monitorear temperatura de carga refrigerada?", answer: "Sí, contamos con sensores de temperatura que se integran a nuestra plataforma GPT Monitor para alertar en tiempo real si la cadena de frío se rompe." },
+      { question: "¿Cómo instalan los dispositivos sin detener mi operación?", answer: "Coordinamos la instalación por etapas aprovechando los tiempos de carga, descarga y descanso de sus unidades. En la mayoría de los casos no es necesario detener vehículos más de 2-3 horas por unidad." },
+    ],
+    processNotes: "Instalación coordinada en patios de operación para no interrumpir rutas activas",
+    featuredStat: { value: "37%", label: "Reducción de siniestros", context: "en flotas de transporte de carga en los primeros 6 meses" },
+    seoTitle: "Tecnología de Seguridad para Transporte de Carga | Carstore México",
+    seoDescription: "Soluciones de cámaras, GPS, sensores y plataforma de monitoreo para flotas de transporte de carga. Reducción comprobada de siniestros. Instalación en CDMX y toda la república.",
   },
   {
     slug: "reparto-y-ultima-milla",
@@ -79,6 +93,15 @@ export const industries: Industry[] = [
       { value: "< 1min", label: "Alertas" },
     ],
     ctaText: "Cotizar para mi flota de reparto",
+    faqs: [
+      { question: "¿Sus GPS funcionan bien en zonas urbanas con mucho tráfico?", answer: "Sí. Nuestros dispositivos GPS utilizan tecnología GPS + GLONASS + red celular (LBS) para triangulación precisa incluso en zonas urbanas densas. La actualización de posición es cada 10-30 segundos en movimiento." },
+      { question: "¿Pueden saber si el repartidor hizo la entrega correctamente?", answer: "Sí. A través de geofencing inteligente, la plataforma GPT Monitor registra automáticamente la llegada y salida de cada punto de entrega, el tiempo de permanencia y cualquier desviación de ruta." },
+      { question: "¿Qué tan fácil es para los repartidores usar el sistema?", answer: "Los dispositivos son transparentes para el conductor — no requieren ninguna acción de su parte. Las dashcams y GPS operan automáticamente. Solo el supervisor o gerente interactúa con la plataforma de monitoreo." },
+    ],
+    processNotes: "Instalación express de 1-2 horas por unidad, compatible con vans y camionetas de cualquier marca",
+    featuredStat: { value: "45%", label: "Menos incidentes en maniobras", context: "en flotas de reparto urbano con cámaras de reversa IA" },
+    seoTitle: "Tecnología para Flotas de Reparto y Última Milla | Carstore México",
+    seoDescription: "GPS, cámaras y monitoreo para flotas de reparto urbano y última milla. Control de entregas, seguridad en maniobras y visibilidad total de su operación.",
   },
   {
     slug: "transporte-de-pasajeros",
@@ -110,6 +133,15 @@ export const industries: Industry[] = [
       { value: "0", label: "Incidentes" },
     ],
     ctaText: "Hablar con un especialista en transporte",
+    faqs: [
+      { question: "¿Sus soluciones cumplen con la normativa de transporte público en CDMX?", answer: "Sí. Nuestros sistemas de videovigilancia y telemetría cumplen con los requisitos establecidos por la Secretaría de Movilidad de la CDMX y la normativa federal de transporte de pasajeros. Le ayudamos con la documentación necesaria para su cumplimiento regulatorio." },
+      { question: "¿Las cámaras graban a los pasajeros?", answer: "Nuestros sistemas pueden configurarse para cumplir con la normativa de privacidad. Las cámaras interiores enfocadas a pasajeros almacenan grabaciones localmente y solo son accesibles bajo protocolos específicos con autorización." },
+      { question: "¿Pueden monitorear múltiples rutas y unidades al mismo tiempo?", answer: "Sí. La plataforma GPT Monitor permite supervisar toda su flota simultáneamente, con vista de mapa en tiempo real, alertas por unidad y reportes consolidados por ruta, conductor o período." },
+    ],
+    processNotes: "Instalación certificada compatible con autobuses, minibuses y vehículos de transporte ejecutivo",
+    featuredStat: { value: "100%", label: "Cumplimiento normativo", context: "en flotas de transporte de pasajeros con nuestros sistemas certificados" },
+    seoTitle: "Tecnología de Seguridad para Transporte de Pasajeros | Carstore México",
+    seoDescription: "Cámaras, DSM, GPS y monitoreo para autobuses y transporte de pasajeros. Cumplimiento normativo, seguridad del conductor y grabación de evidencia.",
   },
   {
     slug: "vehiculos-vocacionales",
@@ -141,6 +173,15 @@ export const industries: Industry[] = [
       { value: "< 0.5s", label: "Alerta" },
     ],
     ctaText: "Cotizar para vehículos vocacionales",
+    faqs: [
+      { question: "¿Sus cámaras resisten las condiciones extremas de operación en obra?", answer: "Sí. Nuestros equipos cuentan con certificación IP68 y están diseñados para resistir vibración, polvo, agua, lodo y temperaturas extremas de -20°C a 70°C, ideales para obras civiles y operación en campo." },
+      { question: "¿Pueden adaptar el sistema 360° a vehículos de geometría especial?", answer: "Sí. Nuestro equipo de ingeniería realiza un levantamiento técnico de cada tipo de vehículo para posicionar las cámaras de manera óptima según su geometría específica — grúas, revolvedoras, pipas, recolectores y más." },
+      { question: "¿Los sensores de proximidad funcionan en ambientes con mucho ruido?", answer: "Sí. Las alertas son multimodales: combinan señales sonoras de alta intensidad con indicadores LED visuales en la cabina, garantizando que el operador reciba la alerta incluso en entornos industriales ruidosos." },
+    ],
+    processNotes: "Levantamiento técnico previo para adaptar la instalación a la geometría específica de cada tipo de maquinaria",
+    featuredStat: { value: "360°", label: "Cobertura perimetral", context: "adaptada a la geometría específica de cada vehículo vocacional" },
+    seoTitle: "Tecnología Anti-Colisión para Vehículos Vocacionales | Carstore México",
+    seoDescription: "Visión 360°, radares y sensores de proximidad para grúas, revolvedoras, pipas y maquinaria pesada. Proteja a su personal y equipamiento.",
   },
   {
     slug: "montacargas",
@@ -172,6 +213,15 @@ export const industries: Industry[] = [
       { value: "Auto", label: "Alertas" },
     ],
     ctaText: "Cotizar seguridad para montacargas",
+    faqs: [
+      { question: "¿Sus sistemas funcionan en almacenes sin señal GPS interior?", answer: "Sí. Para operación en interiores usamos tecnología de detección por sensores y cámaras, que no depende de señal GPS. La plataforma registra eventos, alertas y recorridos dentro del almacén mediante puntos de referencia físicos." },
+      { question: "¿Pueden limitar la velocidad del montacargas solo en ciertas zonas?", answer: "Sí. Nuestros limitadores de velocidad pueden configurarse por zona mediante geofencing interior — reducen automáticamente la velocidad al detectar que el montacargas entra a una zona peatonal o de alto riesgo." },
+      { question: "¿El sistema alerta a los peatones o solo al operador?", answer: "Alertamos a ambos. El operador recibe alerta sonora y visual en la cabina. Los peatones son alertados mediante alarmas de presencia externas instaladas en el montacargas que se activan automáticamente en movimiento." },
+    ],
+    processNotes: "Instalación sin necesidad de modificar la estructura del almacén — los dispositivos se montan directamente en cada montacargas",
+    featuredStat: { value: "70%", label: "Reducción de incidentes", context: "en almacenes e instalaciones industriales con nuestro sistema integral" },
+    seoTitle: "Seguridad para Montacargas y Almacenes | Carstore México",
+    seoDescription: "Alarmas de presencia, limitadores de velocidad y cámaras para montacargas. Proteja a su personal en patios, almacenes y naves industriales.",
   },
   {
     slug: "flotas-corporativas",
@@ -203,6 +253,15 @@ export const industries: Industry[] = [
       { value: "ROI", label: "Comprobado" },
     ],
     ctaText: "Solicitar propuesta corporativa",
+    faqs: [
+      { question: "¿Pueden gestionar vehículos de diferentes tipos en una sola plataforma?", answer: "Sí. GPT Monitor gestiona cualquier combinación de vehículos — desde sedanes ejecutivos hasta camionetas de servicio — en un solo dashboard. Cada tipo de vehículo puede tener sus propias reglas, alertas y reportes." },
+      { question: "¿Pueden generar reportes automáticos para la dirección?", answer: "Sí. La plataforma genera reportes programados con los KPIs que defina: kilometraje, consumo, alertas de velocidad, uso en horario no autorizado y más. Los reportes se envían automáticamente por correo en la frecuencia que prefiera." },
+      { question: "¿Cómo controlan que los vehículos no se usen fuera del horario laboral?", answer: "Mediante geofencing por horario: la plataforma genera alertas automáticas cuando un vehículo se mueve fuera del horario autorizado o sale de la zona geográfica permitida. También es posible configurar corte de corriente remoto para vehículos no autorizados." },
+    ],
+    processNotes: "Solución modular — cada vehículo recibe solo la tecnología que necesita según su perfil de uso",
+    featuredStat: { value: "1 plataforma", label: "Para toda la flota", context: "sin importar la mezcla de tipos de vehículos o tamaño de la flotilla" },
+    seoTitle: "Gestión y Seguridad para Flotas Corporativas | Carstore México",
+    seoDescription: "GPS, monitoreo y control para flotas mixtas empresariales. Una sola plataforma para todos sus vehículos. Reportes automáticos para dirección.",
   },
   {
     slug: "vehiculos-electricos",
@@ -234,6 +293,15 @@ export const industries: Industry[] = [
       { value: "0", label: "Emisiones" },
     ],
     ctaText: "Solicitar asesoría en electromovilidad",
+    faqs: [
+      { question: "¿Sus cargadores son compatibles con todas las marcas de VE?", answer: "Nuestros cargadores Nivel 2 son compatibles con el estándar SAE J1772 y Tipo 2, que cubre la mayoría de vehículos eléctricos comerciales disponibles en México, incluyendo BYD, JMEV, Volvo Electric, Mercedes EQV y otros." },
+      { question: "¿Cómo saben cuándo cargar para aprovechar la tarifa más baja?", answer: "La plataforma de gestión de carga se integra con los horarios de tarifas de CFE. Puede programar la carga automáticamente en horario de tarifa reducida (generalmente nocturno) para maximizar el ahorro energético de toda su flotilla." },
+      { question: "¿Pueden monitorear el estado de salud de las baterías?", answer: "Sí. Nuestra telemetría EV monitorea en tiempo real: nivel de carga, temperatura de batería, ciclos de carga, autonomía estimada y alertas de degradación. Esto permite planificar el mantenimiento preventivo y anticipar reemplazos." },
+    ],
+    processNotes: "Instalación de cargadores certificada por técnicos especializados en infraestructura eléctrica automotriz",
+    featuredStat: { value: "60%", label: "Ahorro vs combustible", context: "en flotas que han completado su transición a vehículos eléctricos" },
+    seoTitle: "Tecnología para Flotas de Vehículos Eléctricos | Carstore México",
+    seoDescription: "Cargadores, telemetría EV y gestión de infraestructura para flotas eléctricas en México. Monitoreo de batería, programación de carga y análisis de ahorro.",
   },
 ];
 

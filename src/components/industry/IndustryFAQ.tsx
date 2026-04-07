@@ -8,21 +8,21 @@ import {
 
 const defaultFaqs = [
   {
-    q: "¿Cuánto tiempo tarda la instalación en mis unidades?",
-    a: "El tiempo varía según el tamaño de su flotilla. Para flotas de hasta 20 unidades, completamos la instalación en 3-5 días hábiles. Para flotillas más grandes, diseñamos un plan por etapas sin detener su operación.",
+    question: "¿Cuánto tiempo tarda la instalación en mis unidades?",
+    answer: "El tiempo varía según el tamaño de su flotilla. Para flotas de hasta 20 unidades, completamos la instalación en 3-5 días hábiles. Para flotillas más grandes, diseñamos un plan por etapas sin detener su operación.",
   },
   {
-    q: "¿Los dispositivos funcionan con cualquier marca de vehículo?",
-    a: "Sí. Nuestras soluciones son compatibles con las principales marcas de vehículos comerciales que operan en México: Kenworth, Freightliner, International, Mercedes-Benz, Volkswagen, entre otras.",
+    question: "¿Los dispositivos funcionan con cualquier marca de vehículo?",
+    answer: "Sí. Nuestras soluciones son compatibles con las principales marcas de vehículos comerciales que operan en México: Kenworth, Freightliner, International, Mercedes-Benz, Volkswagen, entre otras.",
   },
   {
-    q: "¿Qué pasa si tengo problemas técnicos después de la instalación?",
-    a: "Contamos con soporte técnico permanente. Puede contactarnos por teléfono, WhatsApp o correo. Respondemos en menos de 24 horas hábiles y contamos con técnicos de campo para visitas presenciales cuando sea necesario.",
+    question: "¿Qué pasa si tengo problemas técnicos después de la instalación?",
+    answer: "Contamos con soporte técnico permanente. Puede contactarnos por teléfono, WhatsApp o correo. Respondemos en menos de 24 horas hábiles y contamos con técnicos de campo para visitas presenciales cuando sea necesario.",
   },
 ];
 
 interface IndustryFAQProps {
-  faqs?: { q: string; a: string }[];
+  faqs?: { question: string; answer: string }[];
 }
 
 export const IndustryFAQ = ({ faqs }: IndustryFAQProps) => {
@@ -46,10 +46,10 @@ export const IndustryFAQ = ({ faqs }: IndustryFAQProps) => {
                 className="bg-card/40 border border-white/[0.05] rounded-lg px-6 data-[state=open]:border-accent/15 transition-colors"
               >
                 <AccordionTrigger className="text-sm font-medium text-foreground hover:no-underline py-5">
-                  {item.q}
+                  {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-sm text-foreground/70 leading-relaxed pb-5">
-                  {item.a}
+                  {item.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}

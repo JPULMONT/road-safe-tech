@@ -168,7 +168,7 @@ const IndustriaDetallePage = () => {
       <ImplementationTimeline />
 
       {/* FAQ */}
-      <IndustryFAQ />
+      <IndustryFAQ faqs={industry.faqs} />
 
       {/* CTA */}
       <IndustryCTA industry={industry} />
