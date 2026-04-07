@@ -9,11 +9,17 @@ import { getProductBySlug, getRelatedProducts } from "@/data/products";
 import { solutions } from "@/data/solutions";
 import { ArrowRight, ArrowLeft, CheckCircle2, Download, ChevronRight, Wrench, Phone } from "lucide-react";
 import { useState } from "react";
+import { useSeo } from "@/hooks/useSeo";
 
 const ProductoDetalle = () => {
   const { slug } = useParams<{ slug: string }>();
   const product = getProductBySlug(slug || "");
   const [activeImage, setActiveImage] = useState(0);
+
+  useSeo({
+    title: product ? `${product.title} | Catálogo Carstore` : undefined,
+    description: product?.shortDescription,
+  });
 
   if (!product) {
     return (

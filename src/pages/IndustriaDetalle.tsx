@@ -11,11 +11,17 @@ import { ProofSection } from "@/components/industry/ProofSection";
 import { ImplementationTimeline } from "@/components/industry/ImplementationTimeline";
 import { IndustryFAQ } from "@/components/industry/IndustryFAQ";
 import { IndustryCTA } from "@/components/industry/IndustryCTA";
+import { useSeo } from "@/hooks/useSeo";
 import NotFound from "./NotFound";
 
 const IndustriaDetallePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const industry = getIndustryBySlug(slug || "");
+
+  useSeo({
+    title: industry?.seoTitle || (industry ? `${industry.name} | Tecnología para Flotas | Carstore` : undefined),
+    description: industry?.seoDescription || industry?.heroDescription,
+  });
 
   if (!industry) return <NotFound />;
 
