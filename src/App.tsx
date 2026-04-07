@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AnimatedRoutes } from "@/components/AnimatedRoutes";
 import { WhatsAppButton } from "./components/WhatsAppButton";
+import { CookieBanner } from "./components/CookieBanner";
 import { storeUTMs } from "@/lib/utm";
 
 const queryClient = new QueryClient();
