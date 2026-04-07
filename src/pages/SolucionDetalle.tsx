@@ -51,8 +51,8 @@ const SolucionDetallePage = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight max-w-3xl">
               {solution.title}
             </h1>
-            <p className="text-base text-muted-foreground/80 mt-2 font-medium">{solution.subtitle}</p>
-            <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
+            <p className="text-base text-foreground/70 mt-2 font-medium">{solution.subtitle}</p>
+            <p className="text-lg text-foreground/70 mt-6 max-w-2xl leading-relaxed">
               {solution.heroDescription}
             </p>
           </ScrollReveal>
@@ -67,7 +67,7 @@ const SolucionDetallePage = () => {
               <ScrollReveal key={stat.label}>
                 <div className="text-center">
                   <p className="text-3xl sm:text-4xl font-display font-bold text-accent">{stat.value}</p>
-                  <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+                  <p className="text-sm text-foreground/60 mt-1">{stat.label}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -84,11 +84,11 @@ const SolucionDetallePage = () => {
               <h2 className="text-2xl sm:text-3xl font-display font-bold text-foreground tracking-tight leading-tight mb-6">
                 ¿Por qué necesita esta solución?
               </h2>
-              <p className="text-muted-foreground leading-relaxed">{solution.problemStatement}</p>
+              <p className="text-foreground/70 leading-relaxed">{solution.problemStatement}</p>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <p className="text-xs font-semibold text-foreground/40 uppercase tracking-[0.2em] mb-4">Nuestra respuesta</p>
-              <p className="text-muted-foreground leading-relaxed">{solution.longDescription}</p>
+              <p className="text-foreground/70 leading-relaxed">{solution.longDescription}</p>
               <div className="mt-8 flex flex-wrap gap-2">
                 {solution.features.map((f) => (
                   <span key={f} className="text-xs px-3 py-1.5 rounded-full bg-accent/8 text-accent/90 font-medium">
@@ -118,7 +118,7 @@ const SolucionDetallePage = () => {
                     <CheckCircle2 size={18} className="text-accent mt-0.5 flex-shrink-0" />
                     <h3 className="font-semibold text-foreground font-display">{b.title}</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed pl-[30px]">{b.description}</p>
+                  <p className="text-sm text-foreground/70 leading-relaxed pl-[30px]">{b.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -154,7 +154,7 @@ const SolucionDetallePage = () => {
                     <div className="p-5">
                       <p className="text-[10px] font-medium text-muted-foreground/60 uppercase tracking-widest mb-2">{product.category}</p>
                       <h3 className="font-semibold text-foreground font-display text-sm mb-2">{product.title}</h3>
-                      <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">{product.shortDescription}</p>
+                      <p className="text-xs text-foreground/70 leading-relaxed line-clamp-2">{product.shortDescription}</p>
                     </div>
                   </Link>
                 </ScrollReveal>
@@ -201,7 +201,7 @@ const SolucionDetallePage = () => {
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground tracking-tight mb-5">
               ¿Listo para implementar esta solución?
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+            <p className="text-foreground/70 mb-8 max-w-lg mx-auto">
               Nuestro equipo puede evaluar su operación y diseñar la implementación ideal para su flota.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

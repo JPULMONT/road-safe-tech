@@ -38,7 +38,7 @@ const ServiciosPage = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight max-w-3xl">
               De la consultoría a la operación continua
             </h1>
-            <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
+            <p className="text-lg text-foreground/70 mt-6 max-w-2xl leading-relaxed">
               No solo vendemos tecnología. Diagnosticamos, diseñamos, instalamos, capacitamos y damos soporte permanente.
             </p>
           </ScrollReveal>
@@ -55,7 +55,7 @@ const ServiciosPage = () => {
                     <svc.icon size={20} className="text-accent" />
                   </div>
                   <h3 className="font-display font-semibold text-foreground mb-2">{svc.title}</h3>
-                  <p className="text-[13px] text-muted-foreground leading-relaxed">{svc.description}</p>
+                  <p className="text-[13px] text-foreground/70 leading-relaxed">{svc.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -69,7 +69,7 @@ const ServiciosPage = () => {
             <h2 className="text-3xl font-display font-bold text-foreground tracking-tight mb-5">
               ¿Listo para implementar?
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+            <p className="text-foreground/70 mb-8 max-w-lg mx-auto">
               Comience con un diagnóstico gratuito de su operación. Nuestro equipo le ayudará a definir el plan ideal.
             </p>
             <Button variant="accent" size="xl" asChild>

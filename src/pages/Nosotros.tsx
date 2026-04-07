@@ -56,7 +56,7 @@ const NosotrosPage = () => {
                   <span className="text-accent">Misión</span>
                 </h2>
                 <div className="border-b-2 border-accent w-12" />
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed">
                   Nos inspiramos en diseñar e implementar soluciones con tecnología de punta, impactando en la seguridad vial de los clientes con sistemas de prevención de accidentes que representan un apoyo para consolidar cambios culturales en todo usuario de la vía.
                 </p>
               </div>
@@ -68,7 +68,7 @@ const NosotrosPage = () => {
                   <span className="text-accent">Visión</span>
                 </h2>
                 <div className="border-b-2 border-accent w-12" />
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed">
                   Ser número uno como referente global integrando soluciones de seguridad vial y patrimonial, enfocadas al transporte con la convicción de salvar vidas.
                 </p>
               </div>
@@ -99,7 +99,7 @@ const NosotrosPage = () => {
             <ScrollReveal>
               <div className="space-y-6">
                 <h2 className="text-2xl font-display font-bold text-foreground">Lo que nos hace diferentes</h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed">
                   Somos fabricantes, no distribuidores. Diseñamos y producimos nuestro propio hardware en Shenzhen, desarrollamos software y plataformas en México, e implementamos cada solución con equipos técnicos propios. Control total de la cadena de valor.
                 </p>
               </div>
@@ -137,7 +137,7 @@ const NosotrosPage = () => {
             <h2 className="text-3xl font-display font-bold text-foreground tracking-tight mb-5">
               Conozca nuestras soluciones
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+            <p className="text-foreground/70 mb-8 max-w-lg mx-auto">
               Explore cómo nuestra tecnología puede proteger su flota y optimizar su operación.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

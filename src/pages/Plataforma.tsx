@@ -43,8 +43,8 @@ const PlataformaPage = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-display font-bold text-foreground tracking-tight leading-tight">
                 GPT Monitor
               </h1>
-              <p className="text-xl text-muted-foreground mt-2 font-display">Supervisión inteligente de flotas</p>
-              <p className="text-muted-foreground mt-6 leading-relaxed max-w-lg">
+              <p className="text-xl text-foreground/70 mt-2 font-display">Supervisión inteligente de flotas</p>
+              <p className="text-foreground/70 mt-6 leading-relaxed max-w-lg">
                 Centralice los datos de todos sus dispositivos — cámaras, sensores, GPS, radares — en una sola plataforma con análisis predictivo y clasificación de alertas por inteligencia artificial.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mt-8">
@@ -77,7 +77,7 @@ const PlataformaPage = () => {
               <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground tracking-tight">
                 Todo lo que necesita en un solo lugar
               </h2>
-              <p className="text-muted-foreground mt-5">Capacidades diseñadas para operaciones de transporte reales.</p>
+              <p className="text-foreground/70 mt-5">Capacidades diseñadas para operaciones de transporte reales.</p>
             </div>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -86,7 +86,7 @@ const PlataformaPage = () => {
                 <div className="bg-card/40 border border-white/[0.05] rounded-lg p-6 h-full hover:border-accent/15 transition-all">
                   <cap.icon size={18} className="text-accent mb-4" />
                   <h3 className="font-display font-semibold text-foreground text-sm mb-2">{cap.title}</h3>
-                  <p className="text-[13px] text-muted-foreground leading-relaxed">{cap.description}</p>
+                  <p className="text-[13px] text-foreground/70 leading-relaxed">{cap.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -100,7 +100,7 @@ const PlataformaPage = () => {
             <h2 className="text-3xl font-display font-bold text-foreground tracking-tight mb-5">
               Tome el control de su operación
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+            <p className="text-foreground/70 mb-8 max-w-lg mx-auto">
               Solicite una demostración personalizada y vea cómo GPT Monitor puede transformar la supervisión de su flota.
             </p>
             <Button variant="accent" size="xl" asChild>

@@ -31,7 +31,7 @@ const IndustriasPage = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight max-w-3xl">
               Soluciones para cada sector
             </h1>
-            <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
+            <p className="text-lg text-foreground/70 mt-6 max-w-2xl leading-relaxed">
               Entendemos los desafíos operativos de cada industria y configuramos la tecnología ideal para su contexto.
             </p>
           </ScrollReveal>
@@ -51,7 +51,7 @@ const IndustriasPage = () => {
                       </div>
                       <h2 className="text-xl font-display font-bold text-foreground">{ind.name}</h2>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed mb-6 max-w-xl">{ind.heroDescription}</p>
+                    <p className="text-foreground/70 leading-relaxed mb-6 max-w-xl">{ind.heroDescription}</p>
                     <Button variant="outline-dark" size="sm" asChild>
                       <Link to={`/industrias/${ind.slug}`}>
                         Ver soluciones para este sector

@@ -68,7 +68,7 @@ const IndustriaDetallePage = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight max-w-3xl">
               {industry.name}
             </h1>
-            <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
+            <p className="text-lg text-foreground/70 mt-6 max-w-2xl leading-relaxed">
               {industry.heroDescription}
             </p>
           </ScrollReveal>
@@ -83,7 +83,7 @@ const IndustriaDetallePage = () => {
               <ScrollReveal key={stat.label}>
                 <div className="text-center">
                   <p className="text-3xl sm:text-4xl font-display font-bold text-accent">{stat.value}</p>
-                  <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+                  <p className="text-sm text-foreground/60 mt-1">{stat.label}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -104,14 +104,14 @@ const IndustriaDetallePage = () => {
                 {industry.challenges.map((challenge) => (
                   <div key={challenge} className="flex items-start gap-3">
                     <AlertTriangle size={16} className="text-accent/60 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-muted-foreground leading-relaxed">{challenge}</p>
+                    <p className="text-sm text-foreground/70 leading-relaxed">{challenge}</p>
                   </div>
                 ))}
               </div>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <p className="text-xs font-semibold text-foreground/40 uppercase tracking-[0.2em] mb-4">Nuestra propuesta</p>
-              <p className="text-muted-foreground leading-relaxed mb-8">{industry.longDescription}</p>
+              <p className="text-foreground/70 leading-relaxed mb-8">{industry.longDescription}</p>
               <div>
                 <p className="text-xs font-medium text-foreground/40 uppercase tracking-widest mb-3">Soluciones recomendadas</p>
                 <div className="flex flex-wrap gap-2">
@@ -144,7 +144,7 @@ const IndustriaDetallePage = () => {
                     <CheckCircle2 size={18} className="text-accent mt-0.5 flex-shrink-0" />
                     <h3 className="font-semibold text-foreground font-display">{b.title}</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed pl-[30px]">{b.description}</p>
+                  <p className="text-sm text-foreground/70 leading-relaxed pl-[30px]">{b.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -180,7 +180,7 @@ const IndustriaDetallePage = () => {
                         <span className="text-[10px] font-semibold text-accent uppercase tracking-widest">{sol.tag}</span>
                       </div>
                       <h3 className="font-semibold text-foreground font-display mb-2 group-hover:text-accent transition-colors">{sol.title}</h3>
-                      <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3 mb-4">{sol.heroDescription}</p>
+                      <p className="text-xs text-foreground/70 leading-relaxed line-clamp-3 mb-4">{sol.heroDescription}</p>
                       <span className="inline-flex items-center gap-1 text-xs font-medium text-accent">
                         Ver solución <ArrowRight size={12} />
                       </span>
@@ -221,7 +221,7 @@ const IndustriaDetallePage = () => {
                     <div className="p-5">
                       <p className="text-[10px] font-medium text-muted-foreground/60 uppercase tracking-widest mb-2">{product.category}</p>
                       <h3 className="font-semibold text-foreground font-display text-sm mb-2">{product.title}</h3>
-                      <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">{product.shortDescription}</p>
+                      <p className="text-xs text-foreground/70 leading-relaxed line-clamp-2">{product.shortDescription}</p>
                     </div>
                   </Link>
                 </ScrollReveal>
@@ -238,7 +238,7 @@ const IndustriaDetallePage = () => {
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground tracking-tight mb-5">
               ¿Opera en este sector?
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+            <p className="text-foreground/70 mb-8 max-w-lg mx-auto">
               Podemos diseñar una solución a medida para los desafíos específicos de su industria.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
