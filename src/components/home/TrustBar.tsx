@@ -68,7 +68,7 @@ export const TrustBar = () => {
 
         <ScrollReveal delay={300}>
           <div className="border-t border-white/[0.04] mt-12 pt-10">
-            <p className="text-[10px] font-semibold text-muted-foreground/40 uppercase tracking-[0.25em] text-center mb-8">
+            <p className="text-[11px] font-semibold text-foreground/50 uppercase tracking-[0.25em] text-center mb-8">
               Tecnología en la que confían las flotillas mexicanas
             </p>
 
