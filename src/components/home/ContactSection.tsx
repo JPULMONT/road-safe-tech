@@ -103,7 +103,7 @@ export const ContactSection = () => {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Tamaño de flota</label>
-                      <select className={inputClasses}>
+                      <select name="fleet_size" className={inputClasses}>
                         <option value="">Seleccionar</option>
                         <option>1–25 unidades</option>
                         <option>26–100 unidades</option>
@@ -113,7 +113,7 @@ export const ContactSection = () => {
                     </div>
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Interés principal</label>
-                      <select className={inputClasses}>
+                      <select name="interest" className={inputClasses}>
                         <option value="">Seleccionar</option>
                         <option>Cámaras y ADAS</option>
                         <option>Radares y sensores</option>
@@ -127,6 +127,7 @@ export const ContactSection = () => {
                   <div>
                     <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Mensaje</label>
                     <textarea
+                      name="message"
                       rows={3}
                       className="w-full rounded-md border border-white/[0.07] bg-white/[0.02] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-accent/40 focus:border-accent/25 resize-none transition-colors"
                       placeholder="Cuéntenos sobre sus necesidades..."
