@@ -94,7 +94,7 @@ export const TrustBar = () => {
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className={`${client.size} w-auto object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-500`}
+                      className={`${client.size} w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity duration-500`}
                     />
                   </div>
                 ))}
