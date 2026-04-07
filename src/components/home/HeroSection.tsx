@@ -13,14 +13,14 @@ export const HeroSection = () => {
       <div className="absolute inset-0 grid-overlay" />
       
       {/* Background image */}
-      <ParallaxBackground
-        src={heroImage}
-        alt="Tecnología de seguridad para flotas de transporte"
-        opacity="opacity-[0.70]"
-        opacityRange={[0.8, 1, 1, 0.8]}
-        eager
-        gradientDirection="hero"
-      />
+        <ParallaxBackground
+          src={heroImage}
+          alt="Tecnología de seguridad para flotas de transporte"
+          opacity="opacity-[0.85]"
+          opacityRange={[0.92, 1, 1, 0.92]}
+          eager
+          gradientDirection="hero"
+        />
 
       <div className="container relative z-10 pt-32 pb-24">
         <div className="max-w-3xl space-y-10">
