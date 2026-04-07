@@ -131,7 +131,7 @@ export const Footer = () => {
             © {new Date().getFullYear()} Carstore. Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
-            <Link to="#" className="text-xs text-foreground/60/40 hover:text-foreground/60 transition-colors">
+            <Link to="/aviso-de-privacidad" className="text-xs text-foreground/60/40 hover:text-foreground/60 transition-colors">
               Aviso de privacidad
             </Link>
             <Link to="#" className="text-xs text-foreground/60/40 hover:text-foreground/60 transition-colors">
