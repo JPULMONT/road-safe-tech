@@ -7,7 +7,7 @@ import { PlatformSection } from "@/components/home/PlatformSection";
 import { IndustriesSection } from "@/components/home/IndustriesSection";
 import { CatalogPreview } from "@/components/home/CatalogPreview";
 import { ServicesSection } from "@/components/home/ServicesSection";
-import { WhyCarstore } from "@/components/home/WhyCarstore";
+import { WhyCarstoreTeaser } from "@/components/home/WhyCarstoreTeaser";
 import { CasosSection } from "@/components/home/CasosSection";
 import { CTASection } from "@/components/home/CTASection";
 import { ContactSection } from "@/components/home/ContactSection";
@@ -24,7 +24,7 @@ const Index = () => {
       <IndustriesSection />
       <CatalogPreview />
       <ServicesSection />
-      <WhyCarstore />
+      <WhyCarstoreTeaser />
       <CasosSection />
       <CTASection />
       <ContactSection />
