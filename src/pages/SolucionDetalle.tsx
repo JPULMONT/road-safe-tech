@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { getSolutionBySlug, getProductsForSolution } from "@/data/solutions";
 import { industries } from "@/data/industries";
+import { useSeo } from "@/hooks/useSeo";
 import NotFound from "./NotFound";
 
 const solutionIndustryMap: Record<string, string[]> = {
@@ -23,6 +24,11 @@ const solutionIndustryMap: Record<string, string[]> = {
 const SolucionDetallePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const solution = getSolutionBySlug(slug || "");
+
+  useSeo({
+    title: solution ? `${solution.title} | Soluciones Carstore` : undefined,
+    description: solution?.heroDescription,
+  });
 
   if (!solution) return <NotFound />;
 
