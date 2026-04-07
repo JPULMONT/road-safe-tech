@@ -17,7 +17,7 @@ const TerminosYCondiciones = () => {
                 Términos y Condiciones de Uso
               </h1>
               <p className="text-sm text-foreground/50 tracking-wide uppercase">
-                Última actualización: abril de 2025
+                Última actualización: abril de 2026
               </p>
             </header>
 
@@ -151,7 +151,7 @@ const TerminosYCondiciones = () => {
                   <li>Teléfono: <a href="tel:+525563856619" className="text-accent hover:underline">55 6385 6619</a></li>
                   <li>Domicilio: Av. Miguel de Cervantes Saavedra #507 B, Col. Irrigación, Del. Miguel Hidalgo, Ciudad de México, C.P. 11500</li>
                 </ul>
-                <p className="text-foreground/50 text-sm">Última actualización: abril de 2025</p>
+                <p className="text-foreground/50 text-sm">Última actualización: abril de 2026</p>
               </section>
 
               {/* Footer note + CTA */}
