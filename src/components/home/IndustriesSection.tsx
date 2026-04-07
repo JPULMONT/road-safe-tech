@@ -1,17 +1,8 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
-import { ArrowRight, Truck, Package, Bus, Factory, HardHat, Car, Zap } from "lucide-react";
-
-const industries = [
-  { icon: Truck, name: "Transporte de carga", description: "Seguridad y eficiencia para flotas de largo recorrido.", href: "/industrias/transporte-de-carga" },
-  { icon: Package, name: "Reparto y última milla", description: "Control operativo para entregas urbanas y suburbanas.", href: "/industrias/reparto-y-ultima-milla" },
-  { icon: Bus, name: "Transporte de pasajeros", description: "Monitoreo de conductores y seguridad en ruta.", href: "/industrias/transporte-de-pasajeros" },
-  { icon: Factory, name: "Vehículos vocacionales", description: "Tecnología para vehículos especializados y maquinaria.", href: "/industrias/vehiculos-vocacionales" },
-  { icon: HardHat, name: "Montacargas e interiores", description: "Seguridad operativa en patios, naves y almacenes.", href: "/industrias/montacargas" },
-  { icon: Car, name: "Flotas corporativas", description: "Visibilidad y control para flotas mixtas empresariales.", href: "/industrias/flotas-corporativas" },
-  { icon: Zap, name: "Vehículos eléctricos", description: "Gestión de carga e infraestructura para flotas EV.", href: "/industrias/vehiculos-electricos" },
-];
+import { ArrowRight } from "lucide-react";
+import { industries } from "@/data/industries";
 
 export const IndustriesSection = () => {
   return (
@@ -46,26 +37,26 @@ export const IndustriesSection = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {industries.slice(0, 4).map((ind, i) => (
-            <ScrollReveal key={ind.name} delay={i * 80}>
-              <a href={ind.href} className="group block bg-card/60 backdrop-blur-sm border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all duration-300 h-full">
+            <ScrollReveal key={ind.slug} delay={i * 80}>
+              <a href={`/industrias/${ind.slug}`} className="group block bg-card/60 backdrop-blur-sm border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all duration-300 h-full">
                 <div className="w-11 h-11 rounded-lg bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
                   <ind.icon size={20} className="text-accent" />
                 </div>
                 <h3 className="font-semibold text-sm text-foreground mb-1.5 font-display">{ind.name}</h3>
-                <p className="text-[13px] text-foreground/70 leading-relaxed">{ind.description}</p>
+                <p className="text-[13px] text-foreground/70 leading-relaxed">{ind.heroDescription.slice(0, 80)}…</p>
               </a>
             </ScrollReveal>
           ))}
         </div>
         <div className="grid sm:grid-cols-3 gap-4 mt-4">
           {industries.slice(4).map((ind, i) => (
-            <ScrollReveal key={ind.name} delay={(i + 4) * 80}>
-              <a href={ind.href} className="group block bg-card/60 backdrop-blur-sm border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all duration-300 h-full">
+            <ScrollReveal key={ind.slug} delay={(i + 4) * 80}>
+              <a href={`/industrias/${ind.slug}`} className="group block bg-card/60 backdrop-blur-sm border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all duration-300 h-full">
                 <div className="w-11 h-11 rounded-lg bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
                   <ind.icon size={20} className="text-accent" />
                 </div>
                 <h3 className="font-semibold text-sm text-foreground mb-1.5 font-display">{ind.name}</h3>
-                <p className="text-[13px] text-foreground/70 leading-relaxed">{ind.description}</p>
+                <p className="text-[13px] text-foreground/70 leading-relaxed">{ind.heroDescription.slice(0, 80)}…</p>
               </a>
             </ScrollReveal>
           ))}
