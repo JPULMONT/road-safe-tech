@@ -50,8 +50,8 @@ export const ParallaxBackground = ({
       />
       {gradientDirection === "hero" ? (
         <>
-          <div className="absolute inset-0 bg-gradient-to-r from-background/82 via-background/62 to-background/18" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/58 via-transparent to-background/38" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/75 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/50" />
         </>
       ) : (
         <div className={`absolute inset-0 ${gradientClass}`} />
