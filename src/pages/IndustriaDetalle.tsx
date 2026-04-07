@@ -3,11 +3,14 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { PageTransition } from "@/components/PageTransition";
-import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, AlertTriangle, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowLeft, AlertTriangle, CheckCircle2, ChevronRight } from "lucide-react";
 import { getIndustryBySlug, getProductsForIndustry } from "@/data/industries";
-import { solutions } from "@/data/solutions";
+import { IndustrySolutions } from "@/components/industry/IndustrySolutions";
+import { IndustryProducts } from "@/components/industry/IndustryProducts";
+import { ProofSection } from "@/components/industry/ProofSection";
+import { ImplementationTimeline } from "@/components/industry/ImplementationTimeline";
+import { IndustryFAQ } from "@/components/industry/IndustryFAQ";
+import { IndustryCTA } from "@/components/industry/IndustryCTA";
 import NotFound from "./NotFound";
 
 const IndustriaDetallePage = () => {
@@ -98,7 +101,7 @@ const IndustriaDetallePage = () => {
             <ScrollReveal>
               <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Desafíos del sector</p>
               <h2 className="text-2xl sm:text-3xl font-display font-bold text-foreground tracking-tight leading-tight mb-8">
-                Riesgos que enfrentan las flotas de este sector
+                Retos operativos de esta industria
               </h2>
               <div className="space-y-4">
                 {industry.challenges.map((challenge) => (
@@ -127,6 +130,9 @@ const IndustriaDetallePage = () => {
         </div>
       </section>
 
+      {/* Solutions */}
+      <IndustrySolutions industrySlug={industry.slug} />
+
       {/* Benefits */}
       <section className="py-20 bg-surface-dark">
         <div className="container">
@@ -152,111 +158,20 @@ const IndustriaDetallePage = () => {
         </div>
       </section>
 
-      {/* Related Solutions */}
-      {(() => {
-        const relatedSolutions = solutions.filter((s) =>
-          s.relatedIndustrySlugs.includes(industry.slug)
-        );
-        return relatedSolutions.length > 0 ? (
-          <section className="py-20 bg-background">
-            <div className="container">
-              <ScrollReveal>
-                <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Soluciones recomendadas</p>
-                <h2 className="text-2xl sm:text-3xl font-display font-bold text-foreground tracking-tight leading-tight mb-12">
-                  Soluciones para esta industria
-                </h2>
-              </ScrollReveal>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {relatedSolutions.slice(0, 3).map((sol, i) => (
-                  <ScrollReveal key={sol.slug} delay={i * 60}>
-                    <Link
-                      to={`/soluciones/${sol.slug}`}
-                      className="group block bg-card/40 border border-white/[0.05] rounded-lg p-6 hover:border-accent/20 transition-all h-full"
-                    >
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                          <sol.icon size={18} className="text-accent" />
-                        </div>
-                        <span className="text-[10px] font-semibold text-accent uppercase tracking-widest">{sol.tag}</span>
-                      </div>
-                      <h3 className="font-semibold text-foreground font-display mb-2 group-hover:text-accent transition-colors">{sol.title}</h3>
-                      <p className="text-xs text-foreground/70 leading-relaxed line-clamp-3 mb-4">{sol.heroDescription}</p>
-                      <span className="inline-flex items-center gap-1 text-xs font-medium text-accent">
-                        Ver solución <ArrowRight size={12} />
-                      </span>
-                    </Link>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-          </section>
-        ) : null;
-      })()}
+      {/* Products */}
+      <IndustryProducts products={relatedProducts} />
 
-      {/* Related Products */}
-      {relatedProducts.length > 0 && (
-        <section className="py-20 bg-background">
-          <div className="container">
-            <ScrollReveal>
-              <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Productos recomendados</p>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-foreground tracking-tight leading-tight mb-12">
-                Tecnología para este sector
-              </h2>
-            </ScrollReveal>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {relatedProducts.slice(0, 6).map((product, i) => (
-                <ScrollReveal key={product.id} delay={i * 60}>
-                  <Link to={`/producto/${product.slug}`} className="group block bg-card/40 border border-white/[0.05] rounded-lg overflow-hidden hover:border-accent/20 transition-all h-full">
-                    <div className="relative aspect-[4/3] bg-card/60 overflow-hidden">
-                      <ImageWithFallback
-                        src={product.images[0]}
-                        alt={product.title}
-                        fallbackText={product.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                        width={600}
-                        height={450}
-                      />
-                    </div>
-                    <div className="p-5">
-                      <p className="text-[10px] font-medium text-muted-foreground/60 uppercase tracking-widest mb-2">{product.category}</p>
-                      <h3 className="font-semibold text-foreground font-display text-sm mb-2">{product.title}</h3>
-                      <p className="text-xs text-foreground/70 leading-relaxed line-clamp-2">{product.shortDescription}</p>
-                    </div>
-                  </Link>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Proof / Case study teaser */}
+      <ProofSection industry={industry} />
+
+      {/* Implementation Timeline */}
+      <ImplementationTimeline />
+
+      {/* FAQ */}
+      <IndustryFAQ />
 
       {/* CTA */}
-      <section className="py-20 bg-surface-dark">
-        <div className="container text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground tracking-tight mb-5">
-              ¿Opera en este sector?
-            </h2>
-            <p className="text-foreground/70 mb-8 max-w-lg mx-auto">
-              Podemos diseñar una solución a medida para los desafíos específicos de su industria.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="accent" size="xl" asChild>
-                <Link to="/contacto">
-                  {industry.ctaText}
-                  <ArrowRight size={18} />
-                </Link>
-              </Button>
-              <Button variant="outline-dark" size="xl" asChild>
-                <Link to="/soluciones">
-                  Ver todas las soluciones
-                </Link>
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <IndustryCTA industry={industry} />
 
       <Footer />
     </PageTransition>
