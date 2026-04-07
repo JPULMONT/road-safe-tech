@@ -31,15 +31,15 @@ const pillars = [
 ];
 
 const clients = [
-  { name: "FEMSA", logo: femsa },
-  { name: "Coca-Cola", logo: cocaCola },
-  { name: "PepsiCo", logo: pepsico },
-  { name: "Streamax", logo: streamax },
-  { name: "CEMEX", logo: cemex },
-  { name: "Grupo Bimbo", logo: bimbo },
-  { name: "LALA", logo: lala },
-  { name: "Trimble", logo: trimble },
-  { name: "Quálitas", logo: qualitas },
+  { name: "FEMSA", logo: femsa, size: "max-h-[30px]" },
+  { name: "Coca-Cola", logo: cocaCola, size: "max-h-[30px]" },
+  { name: "PepsiCo", logo: pepsico, size: "max-h-[30px]" },
+  { name: "Streamax", logo: streamax, size: "max-h-[42px]" },
+  { name: "CEMEX", logo: cemex, size: "max-h-[42px]" },
+  { name: "Grupo Bimbo", logo: bimbo, size: "max-h-[30px]" },
+  { name: "LALA", logo: lala, size: "max-h-[30px]" },
+  { name: "Trimble", logo: trimble, size: "max-h-[30px]" },
+  { name: "Quálitas", logo: qualitas, size: "max-h-[30px]" },
 ];
 
 const duplicatedClients = [...clients, ...clients];
