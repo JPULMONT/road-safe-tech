@@ -131,7 +131,6 @@ export const ContactSection = () => {
                     Al enviar acepta nuestro aviso de privacidad
                   </p>
                 </form>
-              )}
             </div>
           </ScrollReveal>
         </div>
