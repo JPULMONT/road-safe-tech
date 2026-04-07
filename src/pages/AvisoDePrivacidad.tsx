@@ -122,6 +122,19 @@ const AvisoDePrivacidad = () => {
                 <p>Puede gestionar o rechazar las cookies no esenciales desde el banner de consentimiento al ingresar al sitio, o configurando su navegador. La desactivación de cookies técnicas puede afectar el funcionamiento del sitio.</p>
 
                 <p>
+                  <button
+                    onClick={() => {
+                      localStorage.removeItem('carstore_cookie_consent');
+                      localStorage.removeItem('carstore_cookie_consent_date');
+                      window.location.reload();
+                    }}
+                    className="text-sm text-accent underline hover:no-underline"
+                  >
+                    Cambiar mis preferencias de cookies
+                  </button>
+                </p>
+
+                <p>
                   Para más información sobre el uso de cookies de Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">policies.google.com/privacy</a>
                   <br />
                   Para más información sobre Meta: <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">facebook.com/privacy/policy</a>
