@@ -70,15 +70,6 @@ export const ContactSection = () => {
 
           <ScrollReveal direction="right" delay={150}>
             <div className="bg-card/50 rounded-lg border border-white/[0.05] p-8">
-              {submitted ? (
-                <div className="text-center py-16">
-                  <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5">
-                    <ArrowRight className="text-accent" size={22} />
-                  </div>
-                  <h3 className="font-semibold text-foreground text-lg font-display">Mensaje enviado</h3>
-                  <p className="text-sm text-foreground/70 mt-2 max-w-xs mx-auto">Nos pondremos en contacto con usted a la brevedad.</p>
-                </div>
-              ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
