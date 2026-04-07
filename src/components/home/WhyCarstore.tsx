@@ -44,7 +44,7 @@ export const WhyCarstore = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground text-sm mb-1 font-display">{d.title}</h3>
-                  <p className="text-[13px] text-muted-foreground leading-relaxed">{d.description}</p>
+                  <p className="text-[13px] text-foreground/70 leading-relaxed">{d.description}</p>
                 </div>
               </div>
             </ScrollReveal>

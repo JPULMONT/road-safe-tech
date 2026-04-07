@@ -59,7 +59,7 @@ export const TrustBar = () => {
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-foreground text-sm mb-1">{p.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{p.description}</p>
+                  <p className="text-xs text-foreground/70 leading-relaxed">{p.description}</p>
                 </div>
               </div>
             ))}
