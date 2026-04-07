@@ -31,15 +31,15 @@ const pillars = [
 ];
 
 const clients = [
-  { name: "FEMSA", logo: femsa, size: "max-h-[30px]" },
-  { name: "Coca-Cola", logo: cocaCola, size: "max-h-[30px]" },
+  { name: "FEMSA", logo: femsa, size: "max-h-[28px]" },
+  { name: "Coca-Cola", logo: cocaCola, size: "max-h-[32px]" },
   { name: "PepsiCo", logo: pepsico, size: "max-h-[30px]" },
-  { name: "Streamax", logo: streamax, size: "max-h-[42px]" },
-  { name: "CEMEX", logo: cemex, size: "max-h-[42px]" },
+  { name: "Streamax", logo: streamax, size: "max-h-[40px]" },
+  { name: "CEMEX", logo: cemex, size: "max-h-[38px]" },
   { name: "Grupo Bimbo", logo: bimbo, size: "max-h-[30px]" },
-  { name: "LALA", logo: lala, size: "max-h-[30px]" },
-  { name: "Trimble", logo: trimble, size: "max-h-[30px]" },
-  { name: "Quálitas", logo: qualitas, size: "max-h-[30px]" },
+  { name: "LALA", logo: lala, size: "max-h-[32px]" },
+  { name: "Trimble", logo: trimble, size: "max-h-[28px]" },
+  { name: "Quálitas", logo: qualitas, size: "max-h-[28px]" },
 ];
 
 const duplicatedClients = [...clients, ...clients];
@@ -73,32 +73,29 @@ export const TrustBar = () => {
             </p>
 
             <div
-              className="relative overflow-hidden"
+              className="relative overflow-hidden bg-white rounded-xl py-5"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
               {/* Fade edges */}
-              <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[hsl(var(--surface-dark))] to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[hsl(var(--surface-dark))] to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
               {/* Scrolling track */}
               <div
-                className="flex animate-ticker"
+                className="flex items-center animate-ticker"
                 style={{ animationPlayState: isPaused ? "paused" : "running" }}
               >
                 {duplicatedClients.map((client, i) => (
                   <div
                     key={i}
-                    className="flex-shrink-0 mx-8 flex items-center justify-center"
+                    className="flex-shrink-0 mx-10 flex items-center justify-center"
                   >
-                    <div className="bg-white/[0.15] rounded-lg px-5 py-3 border border-white/[0.06] hover:bg-white/[0.22] transition-colors duration-500">
-                      <img
-                        src={client.logo}
-                        alt={client.name}
-                        className={`${client.size} w-auto object-contain opacity-70 hover:opacity-95 transition-opacity duration-500`}
-                        style={{ mixBlendMode: "screen" }}
-                      />
-                    </div>
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className={`${client.size} w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-500`}
+                    />
                   </div>
                 ))}
               </div>
