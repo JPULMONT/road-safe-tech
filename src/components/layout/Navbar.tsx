@@ -87,7 +87,7 @@ export const Navbar = () => {
                 <a
                   href={getHref(link.href)}
                   onClick={() => handleNavClick(getHref(link.href))}
-                  className="text-muted-foreground hover:text-foreground text-[13px] font-medium tracking-wide transition-colors duration-200 flex items-center gap-1"
+                  className="text-foreground/90 hover:text-foreground text-[13px] font-semibold tracking-wide transition-colors duration-200 flex items-center gap-1"
                 >
                   {link.label}
                   <ChevronDown size={12} className={`opacity-50 transition-transform duration-200 ${megaOpen ? "rotate-180" : ""}`} />
@@ -130,7 +130,7 @@ export const Navbar = () => {
                 key={link.href}
                 href={getHref(link.href)}
                 onClick={() => handleNavClick(getHref(link.href))}
-                className="text-muted-foreground hover:text-foreground text-[13px] font-medium tracking-wide transition-colors duration-200 flex items-center gap-1"
+                className="text-foreground/90 hover:text-foreground text-[13px] font-semibold tracking-wide transition-colors duration-200 flex items-center gap-1"
               >
                 {link.label}
               </a>
