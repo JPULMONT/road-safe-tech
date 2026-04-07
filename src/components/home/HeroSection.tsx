@@ -16,7 +16,7 @@ export const HeroSection = () => {
       <ParallaxBackground
         src={heroImage}
         alt="Tecnología de seguridad para flotas de transporte"
-        opacity="opacity-[0.55]"
+        opacity="opacity-[0.70]"
         eager
         gradientDirection="hero"
       />
