@@ -1,15 +1,15 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export const ContactSection = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    navigate('/gracias-contacto', { state: { fromForm: true } });
   };
 
   const inputClasses = "w-full h-10 rounded-md border border-white/[0.07] bg-white/[0.02] px-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-accent/40 focus:border-accent/25 transition-colors";
@@ -70,15 +70,6 @@ export const ContactSection = () => {
 
           <ScrollReveal direction="right" delay={150}>
             <div className="bg-card/50 rounded-lg border border-white/[0.05] p-8">
-              {submitted ? (
-                <div className="text-center py-16">
-                  <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5">
-                    <ArrowRight className="text-accent" size={22} />
-                  </div>
-                  <h3 className="font-semibold text-foreground text-lg font-display">Mensaje enviado</h3>
-                  <p className="text-sm text-foreground/70 mt-2 max-w-xs mx-auto">Nos pondremos en contacto con usted a la brevedad.</p>
-                </div>
-              ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
@@ -140,7 +131,6 @@ export const ContactSection = () => {
                     Al enviar acepta nuestro aviso de privacidad
                   </p>
                 </form>
-              )}
             </div>
           </ScrollReveal>
         </div>
