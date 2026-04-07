@@ -68,7 +68,7 @@ export const TrustBar = () => {
 
         <ScrollReveal delay={300}>
           <div className="border-t border-white/[0.04] mt-12 pt-10">
-            <p className="text-[10px] font-semibold text-muted-foreground/40 uppercase tracking-[0.25em] text-center mb-8">
+            <p className="text-[11px] font-semibold text-foreground/50 uppercase tracking-[0.25em] text-center mb-8">
               Tecnología en la que confían las flotillas mexicanas
             </p>
 
@@ -89,15 +89,15 @@ export const TrustBar = () => {
                 {duplicatedClients.map((client, i) => (
                   <div
                     key={i}
-                    className="flex-shrink-0 mx-8 flex items-center justify-center"
+                    className="flex-shrink-0 mx-10 flex items-center justify-center"
                   >
                     <img
                       src={client.logo}
                       alt={client.name}
                       className={
                         client.name === "Grupo Bimbo"
-                          ? "max-h-[32px] w-auto object-contain opacity-40 hover:opacity-80 transition-opacity duration-500"
-                          : "max-h-[32px] w-auto object-contain brightness-0 invert opacity-40 hover:opacity-80 transition-opacity duration-500"
+                          ? "max-h-[44px] w-auto object-contain opacity-40 hover:opacity-80 transition-opacity duration-500"
+                          : "max-h-[44px] w-auto object-contain brightness-0 invert opacity-40 hover:opacity-80 transition-opacity duration-500"
                       }
                       style={client.name === "Grupo Bimbo" ? { mixBlendMode: "screen" } : undefined}
                     />
