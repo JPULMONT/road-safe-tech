@@ -5,8 +5,10 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
-import { ArrowRight, Factory, Globe, ShieldCheck, Cpu, Calendar, Users, Headphones, Award, BadgeCheck, Flag } from "lucide-react";
+import { ArrowRight, Factory, Globe, ShieldCheck, Cpu, Calendar, Users, Headphones, Award } from "lucide-react";
 import bgIndustries from "@/assets/bg-industries.jpg";
+import certEsr from "@/assets/cert-esr-only.png";
+import certHechoMx from "@/assets/cert-hecho-mx.png";
 
 /* ── Section 3: Differentiators ── */
 const differentiators = [
@@ -30,8 +32,8 @@ const milestones = [
 
 /* ── Section 5: Certifications ── */
 const certifications = [
-  { icon: BadgeCheck, title: "ESR — Empresa Socialmente Responsable", description: "Reconocimiento por nuestras prácticas de responsabilidad social empresarial y compromiso con la comunidad." },
-  { icon: Flag, title: "Hecho en México", description: "Orgullosamente diseñamos e integramos nuestras soluciones en territorio mexicano, generando empleo y valor local." },
+  { image: certEsr, title: "ESR — Empresa Socialmente Responsable", description: "Reconocimiento por nuestras prácticas de responsabilidad social empresarial y compromiso con la comunidad." },
+  { image: certHechoMx, title: "Hecho en México", description: "Orgullosamente diseñamos e integramos nuestras soluciones en territorio mexicano, generando empleo y valor local." },
 ];
 
 const NosotrosPage = () => {
@@ -174,15 +176,18 @@ const NosotrosPage = () => {
               Respaldo y certificaciones
             </h2>
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {certifications.map((cert, i) => (
               <ScrollReveal key={cert.title} delay={i * 100}>
-                <div className="bg-card/40 border border-white/[0.05] rounded-xl p-6 text-center">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                    <cert.icon size={24} className="text-accent" />
-                  </div>
-                  <h3 className="font-display font-semibold text-foreground text-sm mb-2">{cert.title}</h3>
-                  <p className="text-xs text-foreground/70 leading-relaxed">{cert.description}</p>
+                <div className="bg-card/40 border border-white/[0.05] rounded-xl p-8 text-center flex flex-col items-center">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="h-28 w-auto object-contain mb-6 brightness-0 invert opacity-90"
+                    loading="lazy"
+                  />
+                  <h3 className="font-display font-semibold text-foreground text-base mb-2">{cert.title}</h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed">{cert.description}</p>
                 </div>
               </ScrollReveal>
             ))}
