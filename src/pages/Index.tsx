@@ -8,6 +8,7 @@ import { IndustriesSection } from "@/components/home/IndustriesSection";
 import { CatalogPreview } from "@/components/home/CatalogPreview";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { WhyCarstore } from "@/components/home/WhyCarstore";
+import { CasosSection } from "@/components/home/CasosSection";
 import { CTASection } from "@/components/home/CTASection";
 import { ContactSection } from "@/components/home/ContactSection";
 import { PageTransition } from "@/components/PageTransition";
@@ -24,6 +25,7 @@ const Index = () => {
       <CatalogPreview />
       <ServicesSection />
       <WhyCarstore />
+      <CasosSection />
       <CTASection />
       <ContactSection />
       <Footer />

@@ -18,6 +18,7 @@ import TerminosYCondiciones from "@/pages/TerminosYCondiciones";
 import GraciasContacto from "@/pages/GraciasContacto";
 import GraciasDemo from "@/pages/GraciasDemo";
 import GraciasCotizacion from "@/pages/GraciasCotizacion";
+import CasosDeExito from "@/pages/CasosDeExito";
 
 export const AnimatedRoutes = () => {
   const location = useLocation();
@@ -42,6 +43,7 @@ export const AnimatedRoutes = () => {
         <Route path="/gracias-contacto" element={<GraciasContacto />} />
         <Route path="/gracias-demo" element={<GraciasDemo />} />
         <Route path="/gracias-cotizacion" element={<GraciasCotizacion />} />
+        <Route path="/casos-de-exito" element={<CasosDeExito />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

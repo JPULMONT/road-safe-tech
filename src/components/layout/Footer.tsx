@@ -23,6 +23,7 @@ const footerLinks = {
   Empresa: [
     { label: "Nosotros", href: "/nosotros" },
     { label: "Industrias", href: "/industrias" },
+    { label: "Casos de éxito", href: "/casos-de-exito" },
     { label: "Servicios", href: "/servicios" },
     { label: "Contacto", href: "/contacto" },
   ],
