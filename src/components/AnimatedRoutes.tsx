@@ -15,6 +15,9 @@ import SolucionDetalle from "@/pages/SolucionDetalle";
 import IndustriaDetalle from "@/pages/IndustriaDetalle";
 import AvisoDePrivacidad from "@/pages/AvisoDePrivacidad";
 import TerminosYCondiciones from "@/pages/TerminosYCondiciones";
+import GraciasContacto from "@/pages/GraciasContacto";
+import GraciasDemo from "@/pages/GraciasDemo";
+import GraciasCotizacion from "@/pages/GraciasCotizacion";
 
 export const AnimatedRoutes = () => {
   const location = useLocation();
@@ -36,6 +39,9 @@ export const AnimatedRoutes = () => {
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/aviso-de-privacidad" element={<AvisoDePrivacidad />} />
         <Route path="/terminos-y-condiciones" element={<TerminosYCondiciones />} />
+        <Route path="/gracias-contacto" element={<GraciasContacto />} />
+        <Route path="/gracias-demo" element={<GraciasDemo />} />
+        <Route path="/gracias-cotizacion" element={<GraciasCotizacion />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

@@ -1,15 +1,15 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export const ContactSection = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    navigate('/gracias-contacto', { state: { fromForm: true } });
   };
 
   const inputClasses = "w-full h-10 rounded-md border border-white/[0.07] bg-white/[0.02] px-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-accent/40 focus:border-accent/25 transition-colors";
