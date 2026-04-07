@@ -17,7 +17,7 @@ export const CasosSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/75 to-background/30" />
         <div className="absolute inset-0 grid-overlay" />
       </div>
-      <div className="container">
+      <div className="container relative z-10">
         <ScrollReveal>
           <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Casos de éxito</p>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground tracking-tight leading-tight mb-12 max-w-2xl">
