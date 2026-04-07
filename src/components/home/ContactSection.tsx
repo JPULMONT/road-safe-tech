@@ -79,25 +79,25 @@ export const ContactSection = () => {
 
           <ScrollReveal direction="right" delay={150}>
             <div className="bg-card/50 rounded-lg border border-white/[0.05] p-8">
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Nombre</label>
-                      <input type="text" required className={inputClasses} placeholder="Su nombre" />
+                      <input type="text" name="name" required className={inputClasses} placeholder="Su nombre" />
                     </div>
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Empresa</label>
-                      <input type="text" required className={inputClasses} placeholder="Nombre de la empresa" />
+                      <input type="text" name="company" required className={inputClasses} placeholder="Nombre de la empresa" />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Correo electrónico</label>
-                      <input type="email" required className={inputClasses} placeholder="correo@empresa.com" />
+                      <input type="email" name="email" required className={inputClasses} placeholder="correo@empresa.com" />
                     </div>
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Teléfono</label>
-                      <input type="tel" className={inputClasses} placeholder="+52 55 0000 0000" />
+                      <input type="tel" name="phone" className={inputClasses} placeholder="+52 55 0000 0000" />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
