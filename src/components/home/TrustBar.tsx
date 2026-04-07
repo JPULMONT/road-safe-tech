@@ -94,7 +94,12 @@ export const TrustBar = () => {
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className="max-h-[32px] w-auto object-contain brightness-0 invert opacity-40 hover:opacity-80 transition-opacity duration-500"
+                      className={
+                        client.name === "Grupo Bimbo"
+                          ? "max-h-[32px] w-auto object-contain opacity-40 hover:opacity-80 transition-opacity duration-500"
+                          : "max-h-[32px] w-auto object-contain brightness-0 invert opacity-40 hover:opacity-80 transition-opacity duration-500"
+                      }
+                      style={client.name === "Grupo Bimbo" ? { mixBlendMode: "screen" } : undefined}
                     />
                   </div>
                 ))}
