@@ -2,13 +2,22 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 import { SocialLinks } from "@/components/ui/SocialLinks";
+import { getStoredUTMs, pushFormEvent } from "@/lib/utm";
 
 export const ContactSection = () => {
   const navigate = useNavigate();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const form = formRef.current;
+    const fleetSize = form ? (form.querySelector<HTMLSelectElement>('[name="fleet_size"]')?.value || '') : '';
+    const utms = getStoredUTMs();
+    // Payload ready for backend integration
+    const _payload = { ...Object.fromEntries(new FormData(form!)), ...utms };
+    pushFormEvent('contact', fleetSize);
     navigate('/gracias-contacto', { state: { fromForm: true } });
   };
 
