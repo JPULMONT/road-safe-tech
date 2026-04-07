@@ -8,7 +8,7 @@ import { SocialLinks } from "@/components/ui/SocialLinks";
 const footerLinks = {
   Soluciones: [
     { label: "Seguridad vial inteligente", href: "/soluciones/seguridad-vial-inteligente" },
-    { label: "Cámaras y visibilidad", href: "/soluciones/camaras-y-visibilidad" },
+    { label: "Cámaras y visibilidad", href: "/soluciones/camaras-y-visibilidad-avanzada" },
     { label: "Detección de riesgos", href: "/soluciones/deteccion-de-riesgos" },
     { label: "Telemetría y GPS", href: "/soluciones/telemetria-y-gps" },
     { label: "GPT Monitor", href: "/plataforma" },
