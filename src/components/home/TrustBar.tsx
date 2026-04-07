@@ -89,15 +89,13 @@ export const TrustBar = () => {
                 {duplicatedClients.map((client, i) => (
                   <div
                     key={i}
-                    className="flex-shrink-0 mx-6 flex items-center justify-center"
+                    className="flex-shrink-0 mx-8 flex items-center justify-center"
                   >
-                    <div className="w-[140px] h-[48px] bg-[#1A1A1A] border border-white/[0.06] rounded-lg px-4 flex items-center justify-center opacity-40 hover:opacity-90 transition-all duration-500 grayscale hover:grayscale-0">
-                      <img
-                        src={client.logo}
-                        alt={client.name}
-                        className="max-h-[28px] w-auto object-contain"
-                      />
-                    </div>
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="max-h-[32px] w-auto object-contain brightness-0 invert opacity-40 hover:opacity-80 transition-opacity duration-500"
+                    />
                   </div>
                 ))}
               </div>
