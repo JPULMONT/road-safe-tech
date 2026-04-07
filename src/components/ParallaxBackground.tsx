@@ -8,6 +8,7 @@ interface ParallaxBackgroundProps {
   eager?: boolean;
   gradientDirection?: "vertical" | "hero";
   gradientStrength?: { from: string; via: string; to: string };
+  opacityRange?: [number, number, number, number];
 }
 
 export const ParallaxBackground = ({
@@ -17,6 +18,7 @@ export const ParallaxBackground = ({
   eager = false,
   gradientDirection = "vertical",
   gradientStrength = { from: "from-background/60", via: "via-background/50", to: "to-background/60" },
+  opacityRange = [0.4, 1, 1, 0.4],
 }: ParallaxBackgroundProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -27,7 +29,7 @@ export const ParallaxBackground = ({
 
   const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.1, 1.0, 1.1]);
-  const imgOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.4, 1, 1, 0.4]);
+  const imgOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], opacityRange);
 
   const gradientClass =
     gradientDirection === "hero"

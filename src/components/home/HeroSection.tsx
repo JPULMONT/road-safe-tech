@@ -17,6 +17,7 @@ export const HeroSection = () => {
         src={heroImage}
         alt="Tecnología de seguridad para flotas de transporte"
         opacity="opacity-[0.70]"
+        opacityRange={[0.8, 1, 1, 0.8]}
         eager
         gradientDirection="hero"
       />
