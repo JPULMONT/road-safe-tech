@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { Button } from "@/components/ui/button";
 import { Factory, ShieldCheck, Award, ArrowRight } from "lucide-react";
-
+import bgMexicoChina from "@/assets/bg-mexico-china.png";
 const highlights = [
   { icon: Factory, title: "Fabricación propia", description: "Producción en Shenzhen y Ciudad de México. Control total de calidad." },
   { icon: ShieldCheck, title: "Enfoque en seguridad vial", description: "Cada producto existe para prevenir accidentes y proteger vidas." },
