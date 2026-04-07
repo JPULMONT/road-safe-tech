@@ -134,7 +134,7 @@ export const Footer = () => {
             <Link to="/aviso-de-privacidad" className="text-xs text-foreground/60/40 hover:text-foreground/60 transition-colors">
               Aviso de privacidad
             </Link>
-            <Link to="#" className="text-xs text-foreground/60/40 hover:text-foreground/60 transition-colors">
+            <Link to="/terminos-y-condiciones" className="text-xs text-foreground/60/40 hover:text-foreground/60 transition-colors">
               Términos y condiciones
             </Link>
           </div>
