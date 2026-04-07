@@ -2,13 +2,22 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 import { SocialLinks } from "@/components/ui/SocialLinks";
+import { getStoredUTMs, pushFormEvent } from "@/lib/utm";
 
 export const ContactSection = () => {
   const navigate = useNavigate();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const form = formRef.current;
+    const fleetSize = form ? (form.querySelector<HTMLSelectElement>('[name="fleet_size"]')?.value || '') : '';
+    const utms = getStoredUTMs();
+    // Payload ready for backend integration
+    const _payload = { ...Object.fromEntries(new FormData(form!)), ...utms };
+    pushFormEvent('contact', fleetSize);
     navigate('/gracias-contacto', { state: { fromForm: true } });
   };
 
@@ -70,31 +79,31 @@ export const ContactSection = () => {
 
           <ScrollReveal direction="right" delay={150}>
             <div className="bg-card/50 rounded-lg border border-white/[0.05] p-8">
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Nombre</label>
-                      <input type="text" required className={inputClasses} placeholder="Su nombre" />
+                      <input type="text" name="name" required className={inputClasses} placeholder="Su nombre" />
                     </div>
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Empresa</label>
-                      <input type="text" required className={inputClasses} placeholder="Nombre de la empresa" />
+                      <input type="text" name="company" required className={inputClasses} placeholder="Nombre de la empresa" />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Correo electrónico</label>
-                      <input type="email" required className={inputClasses} placeholder="correo@empresa.com" />
+                      <input type="email" name="email" required className={inputClasses} placeholder="correo@empresa.com" />
                     </div>
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Teléfono</label>
-                      <input type="tel" className={inputClasses} placeholder="+52 55 0000 0000" />
+                      <input type="tel" name="phone" className={inputClasses} placeholder="+52 55 0000 0000" />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Tamaño de flota</label>
-                      <select className={inputClasses}>
+                      <select name="fleet_size" className={inputClasses}>
                         <option value="">Seleccionar</option>
                         <option>1–25 unidades</option>
                         <option>26–100 unidades</option>
@@ -104,7 +113,7 @@ export const ContactSection = () => {
                     </div>
                     <div>
                       <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Interés principal</label>
-                      <select className={inputClasses}>
+                      <select name="interest" className={inputClasses}>
                         <option value="">Seleccionar</option>
                         <option>Cámaras y ADAS</option>
                         <option>Radares y sensores</option>
@@ -118,6 +127,7 @@ export const ContactSection = () => {
                   <div>
                     <label className="text-xs font-medium text-foreground/60 mb-1.5 block">Mensaje</label>
                     <textarea
+                      name="message"
                       rows={3}
                       className="w-full rounded-md border border-white/[0.07] bg-white/[0.02] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-accent/40 focus:border-accent/25 resize-none transition-colors"
                       placeholder="Cuéntenos sobre sus necesidades..."
