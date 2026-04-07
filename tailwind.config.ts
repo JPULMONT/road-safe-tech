@@ -107,6 +107,7 @@ export default {
         "slide-in-left": "slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "slide-in-right": "slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "count-up": "count-up 0.5s ease-out forwards",
+        ticker: "ticker 35s linear infinite",
       },
     },
   },
