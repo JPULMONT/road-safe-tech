@@ -7,8 +7,8 @@ import { SocialLinks } from "@/components/ui/SocialLinks";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ArrowRight, Factory, Globe, ShieldCheck, Cpu, Calendar, Users, Headphones, Award } from "lucide-react";
 import bgIndustries from "@/assets/bg-industries.jpg";
-import certEsr from "@/assets/cert-esr-only.png";
-import certHechoMx from "@/assets/cert-hecho-mx.png";
+import esrLogo from "@/assets/esr-logo.png";
+import hechoEnMexicoLogo from "@/assets/hecho-en-mexico.png";
 
 /* ── Section 3: Differentiators ── */
 const differentiators = [
@@ -32,8 +32,8 @@ const milestones = [
 
 /* ── Section 5: Certifications ── */
 const certifications = [
-  { image: certEsr, title: "ESR — Empresa Socialmente Responsable", description: "Reconocimiento por nuestras prácticas de responsabilidad social empresarial y compromiso con la comunidad." },
-  { image: certHechoMx, title: "Hecho en México", description: "Orgullosamente diseñamos e integramos nuestras soluciones en territorio mexicano, generando empleo y valor local." },
+  { image: esrLogo, title: "ESR — Empresa Socialmente Responsable", description: "Reconocimiento por nuestras prácticas de responsabilidad social empresarial y compromiso con la comunidad." },
+  { image: hechoEnMexicoLogo, title: "Hecho en México", description: "Orgullosamente diseñamos e integramos nuestras soluciones en territorio mexicano, generando empleo y valor local." },
 ];
 
 const NosotrosPage = () => {
