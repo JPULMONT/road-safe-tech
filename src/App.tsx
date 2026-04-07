@@ -23,9 +23,9 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <AnimatedRoutes />
+          <CookieBanner />
         </BrowserRouter>
         <WhatsAppButton />
-        <CookieBanner />
       </TooltipProvider>
     </QueryClientProvider>
   );
