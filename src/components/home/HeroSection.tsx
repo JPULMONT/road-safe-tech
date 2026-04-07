@@ -4,6 +4,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { useCountUp } from "@/hooks/useCountUp";
+import heroImage from "@/assets/hero-fleet-night.jpg";
 
 export const HeroSection = () => {
   return (
@@ -13,16 +14,12 @@ export const HeroSection = () => {
       
       {/* Background image */}
       <ParallaxBackground
-        src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80"
+        src={heroImage}
         alt="Tecnología de seguridad para flotas de transporte"
-        opacity="opacity-[0.55]"
+        opacity="opacity-[0.35]"
         eager
         gradientDirection="hero"
       />
-      <div className="absolute inset-0 bg-background/75" />
-
-      {/* Red glow — bottom right, very subtle */}
-      <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-accent/[0.04] rounded-full blur-[200px] translate-x-1/4 translate-y-1/4" />
 
       <div className="container relative z-10 pt-32 pb-24">
         <div className="max-w-3xl space-y-10">
