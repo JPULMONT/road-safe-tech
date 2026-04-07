@@ -89,14 +89,16 @@ export const TrustBar = () => {
                 {duplicatedClients.map((client, i) => (
                   <div
                     key={i}
-                    className="flex-shrink-0 mx-10 flex items-center justify-center"
+                    className="flex-shrink-0 mx-8 flex items-center justify-center"
                   >
-                    <img
-                      src={client.logo}
-                      alt={client.name}
-                      className="max-h-[32px] w-auto object-contain opacity-50 hover:opacity-90 transition-opacity duration-500"
-                      style={{ mixBlendMode: "screen" }}
-                    />
+                    <div className="bg-white/[0.08] rounded-lg px-5 py-3 backdrop-blur-sm border border-white/[0.04] hover:bg-white/[0.12] transition-colors duration-500">
+                      <img
+                        src={client.logo}
+                        alt={client.name}
+                        className="max-h-[28px] w-auto object-contain opacity-60 hover:opacity-95 transition-opacity duration-500"
+                        style={{ mixBlendMode: "screen" }}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
