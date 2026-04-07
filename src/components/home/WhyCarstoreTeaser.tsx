@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { Button } from "@/components/ui/button";
 import { Factory, ShieldCheck, Award, ArrowRight } from "lucide-react";
-
+import bgMexicoChina from "@/assets/bg-mexico-china.png";
 const highlights = [
   { icon: Factory, title: "Fabricación propia", description: "Producción en Shenzhen y Ciudad de México. Control total de calidad." },
   { icon: ShieldCheck, title: "Enfoque en seguridad vial", description: "Cada producto existe para prevenir accidentes y proteger vidas." },
@@ -11,8 +12,11 @@ const highlights = [
 
 export const WhyCarstoreTeaser = () => {
   return (
-    <section className="py-20 bg-surface-dark">
-      <div className="container">
+    <section className="relative py-20 bg-surface-dark overflow-hidden">
+      <ParallaxBackground src={bgMexicoChina} opacity="opacity-[0.10]" />
+      <div className="absolute inset-0 bg-background/90" />
+      <div className="absolute inset-0 grid-overlay" />
+      <div className="container relative">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-12">
             <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">¿Por qué Carstore?</p>
