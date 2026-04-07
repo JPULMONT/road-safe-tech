@@ -31,15 +31,15 @@ const pillars = [
 ];
 
 const clients = [
-  { name: "FEMSA", logo: femsa },
-  { name: "Coca-Cola", logo: cocaCola },
-  { name: "PepsiCo", logo: pepsico },
-  { name: "Streamax", logo: streamax },
-  { name: "CEMEX", logo: cemex },
-  { name: "Grupo Bimbo", logo: bimbo },
-  { name: "LALA", logo: lala },
-  { name: "Trimble", logo: trimble },
-  { name: "Quálitas", logo: qualitas },
+  { name: "FEMSA", logo: femsa, size: "max-h-[30px]" },
+  { name: "Coca-Cola", logo: cocaCola, size: "max-h-[30px]" },
+  { name: "PepsiCo", logo: pepsico, size: "max-h-[30px]" },
+  { name: "Streamax", logo: streamax, size: "max-h-[42px]" },
+  { name: "CEMEX", logo: cemex, size: "max-h-[42px]" },
+  { name: "Grupo Bimbo", logo: bimbo, size: "max-h-[30px]" },
+  { name: "LALA", logo: lala, size: "max-h-[30px]" },
+  { name: "Trimble", logo: trimble, size: "max-h-[30px]" },
+  { name: "Quálitas", logo: qualitas, size: "max-h-[30px]" },
 ];
 
 const duplicatedClients = [...clients, ...clients];
@@ -91,11 +91,11 @@ export const TrustBar = () => {
                     key={i}
                     className="flex-shrink-0 mx-8 flex items-center justify-center"
                   >
-                    <div className="bg-white/[0.08] rounded-lg px-5 py-3 backdrop-blur-sm border border-white/[0.04] hover:bg-white/[0.12] transition-colors duration-500">
+                    <div className="bg-white/[0.15] rounded-lg px-5 py-3 border border-white/[0.06] hover:bg-white/[0.22] transition-colors duration-500">
                       <img
                         src={client.logo}
                         alt={client.name}
-                        className="max-h-[28px] w-auto object-contain opacity-60 hover:opacity-95 transition-opacity duration-500"
+                        className={`${client.size} w-auto object-contain opacity-70 hover:opacity-95 transition-opacity duration-500`}
                         style={{ mixBlendMode: "screen" }}
                       />
                     </div>
