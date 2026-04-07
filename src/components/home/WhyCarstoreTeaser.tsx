@@ -12,7 +12,10 @@ const highlights = [
 
 export const WhyCarstoreTeaser = () => {
   return (
-    <section className="py-20 bg-surface-dark">
+    <section className="relative py-20 bg-surface-dark overflow-hidden">
+      <ParallaxBackground src={bgMexicoChina} opacity="opacity-[0.10]" />
+      <div className="absolute inset-0 bg-background/90" />
+      <div className="absolute inset-0 grid-overlay" />
       <div className="container">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-12">
