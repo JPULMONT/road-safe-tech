@@ -14,7 +14,7 @@ export const WhyCarstoreTeaser = () => {
   return (
     <section className="relative py-20 bg-surface-dark overflow-hidden">
       <ParallaxBackground src={bgMexicoChina} opacity="opacity-[0.10]" />
-      <div className="absolute inset-0 bg-background/90" />
+      <div className="absolute inset-0 bg-background/60" />
       <div className="absolute inset-0 grid-overlay" />
       <div className="container relative">
         <ScrollReveal>
