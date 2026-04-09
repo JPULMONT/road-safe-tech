@@ -11,7 +11,7 @@ export const CasosSection = () => {
 
   return (
     <section className="relative py-20 bg-background overflow-hidden">
-      <ParallaxBackground src={bgCasosTrucks} opacity="opacity-[0.10]" />
+      <ParallaxBackground src={bgCasosTrucks} opacity="opacity-[0.05]" />
       <div className="absolute inset-0 grid-overlay" />
       <div className="container relative z-10">
         <ScrollReveal>
