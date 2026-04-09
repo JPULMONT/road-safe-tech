@@ -12,7 +12,7 @@ export const CasosSection = () => {
   return (
     <section className="relative py-20 bg-background overflow-hidden">
       <ParallaxBackground src={bgCasosTrucks} opacity="opacity-[0.02]" />
-      <div className="absolute inset-0 grid-overlay" />
+      <div className="absolute inset-0 grid-overlay opacity-50" />
       <div className="container relative z-10">
         <ScrollReveal>
           <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Casos de éxito</p>
