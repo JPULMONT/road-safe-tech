@@ -4,6 +4,7 @@ import hechoEnMexicoLogo from "@/assets/hecho-en-mexico.png";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { SocialLinks } from "@/components/ui/SocialLinks";
+import { CONSENT_KEY, CONSENT_DATE_KEY } from "@/lib/cookieConsent";
 
 const footerLinks = {
   Soluciones: [
@@ -138,6 +139,16 @@ export const Footer = () => {
             <Link to="/terminos-y-condiciones" className="text-xs text-foreground/60/40 hover:text-foreground/60 transition-colors">
               Términos y condiciones
             </Link>
+            <button
+              onClick={() => {
+                localStorage.removeItem(CONSENT_KEY);
+                localStorage.removeItem(CONSENT_DATE_KEY);
+                window.location.reload();
+              }}
+              className="text-xs text-foreground/60/40 hover:text-foreground/60 transition-colors"
+            >
+              Gestionar cookies
+            </button>
           </div>
         </div>
       </div>
