@@ -1,22 +1,18 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { Button } from "@/components/ui/button";
 import { getFeaturedCasos } from "@/data/casos";
-import bgCasos from "@/assets/bg-casos.jpg";
+import bgCasosTrucks from "@/assets/bg-casos-trucks.png";
 
 export const CasosSection = () => {
   const featured = getFeaturedCasos();
 
   return (
     <section className="relative py-20 bg-background overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 overflow-hidden">
-        <img src={bgCasos} alt="" className="w-full h-full object-cover opacity-30" loading="lazy" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent to-background/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/75 to-background/30" />
-        <div className="absolute inset-0 grid-overlay" />
-      </div>
+      <ParallaxBackground src={bgCasosTrucks} opacity="opacity-[0.20]" />
+      <div className="absolute inset-0 grid-overlay" />
       <div className="container relative z-10">
         <ScrollReveal>
           <p className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Casos de éxito</p>
